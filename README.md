@@ -10,3 +10,5 @@ RuiJiPortal
 4. Last
 
 5. Acknowledgement
+
+6. Test
