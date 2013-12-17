@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RuiJi.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EF")]
+[assembly: AssemblyCompany("RuiJi")]
 [assembly: AssemblyProduct("RuiJi.UI")]
-[assembly: AssemblyCopyright("Copyright © EF 2013")]
+[assembly: AssemblyCopyright("Copyright © RuiJi 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
