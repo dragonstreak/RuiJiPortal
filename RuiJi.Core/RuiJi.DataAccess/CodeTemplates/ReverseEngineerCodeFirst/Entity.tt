@@ -7,6 +7,7 @@
 #>
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace <#= code.EscapeNamespace(efHost.Namespace) #>
 {
@@ -48,6 +49,12 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
                 "System.Data.Spatial.",
                 "System.Data.Entity.Spatial.");
         }
+#>
+<#	if(code.Escape(property).ToString() == "TIMESTAMP")
+	{
+#>
+		[Timestamp]
+<#   }
 #>
         <#= Accessibility.ForProperty(property) #> <#= typeUsage #> <#= code.Escape(property) #> { get; set; }
 <#

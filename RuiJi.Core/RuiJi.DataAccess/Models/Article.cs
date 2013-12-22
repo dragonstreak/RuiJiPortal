@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RuiJi.DataAccess.Models
 {
@@ -17,6 +18,7 @@ namespace RuiJi.DataAccess.Models
         public string UpdateBy { get; set; }
         public Nullable<System.DateTime> InsertDate { get; set; }
         public string InsertBy { get; set; }
+		[Timestamp]
         public byte[] TIMESTAMP { get; set; }
         public virtual ArticleType_Lkp ArticleType_Lkp { get; set; }
     }
