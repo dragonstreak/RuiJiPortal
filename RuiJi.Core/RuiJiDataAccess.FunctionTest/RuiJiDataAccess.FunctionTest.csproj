@@ -56,6 +56,12 @@
     <Compile Include="ArticleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RuiJi.DataAccess\RuiJi.DataAccess.csproj">
+      <Project>{67d2bcd0-824e-41dc-a2af-837754325641}</Project>
+      <Name>RuiJi.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
