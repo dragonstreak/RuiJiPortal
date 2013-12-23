@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RuiJi.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("RuiJi")]
+[assembly: AssemblyCompany("EF")]
 [assembly: AssemblyProduct("RuiJi.UI")]
-[assembly: AssemblyCopyright("Copyright © RuiJi 2013")]
+[assembly: AssemblyCopyright("Copyright © EF 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9f52c232-64a3-409a-8ca4-e8ad758c83b8")]
+[assembly: Guid("1dcd9fa3-5518-4cd6-9126-cf50c1cfcdb4")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
+using System.Web.Mvc;
 using System.Web.Security;
 
 namespace RuiJi.UI.Models
@@ -18,11 +19,11 @@ namespace RuiJi.UI.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 
-    //[Table("UserProfile")]
+    [Table("UserProfile")]
     public class UserProfile
     {
         [Key]
-        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
     }
@@ -51,7 +52,7 @@ namespace RuiJi.UI.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        //[Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -84,7 +85,7 @@ namespace RuiJi.UI.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
