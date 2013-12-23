@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using RuiJi.DataAccess.Models;
 
-namespace RuiJi.DataAccess.Articles.Data
+namespace RuiJi.DataAccess.Articles
 {
-    internal interface IArticleMgr
+    public interface IArticleSvc
     {
         int Add(Article article);
         void Update(Article article);

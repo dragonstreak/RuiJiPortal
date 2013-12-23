@@ -43,5 +43,14 @@ namespace RuiJi.DataAccess.Articles.Data
             }
         }
 
+        public Article LoadById(int articleId)
+        {
+            using (var db = new RuijiPortalContext())
+            {
+                Article article = db.Articles.Find(articleId);
+                return article;
+            }
+        }
+
     }
 }

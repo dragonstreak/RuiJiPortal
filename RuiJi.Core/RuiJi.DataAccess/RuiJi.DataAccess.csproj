@@ -49,9 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Articles\ArticleSvc.cs" />
+    <Compile Include="Articles\ArticleSvcProvider.cs" />
     <Compile Include="Articles\Data\ArticleMgr.cs" />
     <Compile Include="Articles\Data\IArticleMgr.cs" />
+    <Compile Include="Articles\IArticleSvc.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="IServiceProvider.cs" />
+    <Compile Include="MissingServiceException.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleType_Lkp.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
@@ -61,6 +66,10 @@
     <Compile Include="Models\SystemUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RuijiPortalContextCustom.cs" />
+    <Compile Include="RuiJiPortalServiceLocator.cs" />
+    <Compile Include="ServiceLocatorBase.cs" />
+    <Compile Include="ServiceProviderBase.cs" />
+    <Compile Include="ServiceProviderBindingAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D38135
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D98BBA64-C4FC-4B31-8CB0-37838CF8F4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJiDataAccess.FunctionTest", "RuiJiDataAccess.FunctionTest\RuiJiDataAccess.FunctionTest.csproj", "{7EBC3E21-84B1-47B8-BB73-1B3630FD2751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +30,15 @@ Global
 		{AB409AC5-30BF-4B99-9A6E-D58E9EC2C274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB409AC5-30BF-4B99-9A6E-D58E9EC2C274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB409AC5-30BF-4B99-9A6E-D58E9EC2C274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBC3E21-84B1-47B8-BB73-1B3630FD2751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC3E21-84B1-47B8-BB73-1B3630FD2751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC3E21-84B1-47B8-BB73-1B3630FD2751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC3E21-84B1-47B8-BB73-1B3630FD2751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EBC3E21-84B1-47B8-BB73-1B3630FD2751} = {D98BBA64-C4FC-4B31-8CB0-37838CF8F4C9}
 	EndGlobalSection
 EndGlobal
