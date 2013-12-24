@@ -314,6 +314,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_General.cshtml" />
     <Content Include="Views\Portal\Index.cshtml" />
+    <Content Include="Views\Shared\_Master.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
