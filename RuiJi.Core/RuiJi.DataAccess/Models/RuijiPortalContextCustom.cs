@@ -14,7 +14,7 @@ namespace RuiJi.DataAccess.Models
                                             s =>
                                             {
                                                 s.Insert(i => i.HasName("Article_Insert_p"));
-                                                s.Update(u => u.HasName("Article_Save_p"));
+                                                s.Update(u => u.HasName("Article_Save_p").RowsAffectedParameter("row_affected"));
                                                 s.Delete(d => d.HasName("Article_Delete_p"));
                                             });
 

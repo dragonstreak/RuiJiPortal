@@ -29,11 +29,11 @@ namespace RuiJi.DataAccess.Articles.Data
             using (var db = new RuijiPortalContext())
             {
                 db.Entry(article).State = EntityState.Modified;
-                db.SaveChanges();
+                var updateCount = db.SaveChanges();
             }
         }
 
-        public void Delete(int articleId)
+        public void PhysicalDelete(int articleId)
         {
             using (var db = new RuijiPortalContext())
             {
@@ -48,7 +48,14 @@ namespace RuiJi.DataAccess.Articles.Data
             using (var db = new RuijiPortalContext())
             {
                 Article article = db.Articles.Find(articleId);
-                return article;
+                if (article != null && !article.IsDeleted)
+                {
+                    return article;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

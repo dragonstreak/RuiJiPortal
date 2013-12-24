@@ -10,7 +10,8 @@ namespace RuiJi.DataAccess.Articles
     {
         int Add(Article article);
         void Update(Article article);
-        void Delete(int articleId);
+        void Delete(int articleId, string operatorName);
         Article LoadById(int articleId);
+        void PhysicalDelete(int articleId);
     }
 }

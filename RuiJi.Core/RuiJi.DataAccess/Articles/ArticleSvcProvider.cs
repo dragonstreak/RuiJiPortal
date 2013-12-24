@@ -11,14 +11,14 @@ namespace RuiJi.DataAccess.Articles
     {
         protected override IArticleSvc GetServiceCore()
         {
-            var dataMgr = CreateBookingMgr();
+            var dataMgr = CreateArticleMgr();
          
             return new ArticleSvc(
                 dataMgr
                 );
         }
 
-        IArticleMgr CreateBookingMgr()
+        IArticleMgr CreateArticleMgr()
         {
             return new ArticleMgr();
         }

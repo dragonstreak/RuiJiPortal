@@ -13,7 +13,7 @@ namespace RuiJi.DataAccess.Articles
 
         internal ArticleSvc(IArticleMgr mgr)
         {
-            mgr = _mgr;
+            _mgr = mgr;
         }
 
         public int Add(Article article)
@@ -23,17 +23,33 @@ namespace RuiJi.DataAccess.Articles
 
         public void Update(Article article)
         {
+           _mgr.Update(article);
+        }
+
+        public void Delete(int articleId, string operatorName)
+        {
+            var article = LoadById(articleId);
+            article.IsDeleted = true;
+            article.UpdateBy = operatorName;
             _mgr.Update(article);
         }
 
-        public void Delete(int articleId)
+        public void PhysicalDelete(int articleId)
         {
-            _mgr.Delete(articleId);
+            _mgr.PhysicalDelete(articleId);
         }
 
         public Article LoadById(int articleId)
         {
-            return _mgr.LoadById(articleId);
+            var article = _mgr.LoadById(articleId);
+            if (article == null)
+            {
+                throw new RuiJiDataAccessException("The Article not existing!");
+            }
+            else
+            {
+                return article;
+            }
         }
 
     }
