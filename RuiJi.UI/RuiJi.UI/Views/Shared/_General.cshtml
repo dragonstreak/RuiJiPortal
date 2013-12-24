@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>RuiJi</title>
+    <meta name="keywords" content="server,admin" />
+    <meta name="description" content="RuiJi" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("Logo", "Index", "Portal")</p>
+            </div>
+            <div class="float-right">
+                <section id="overtop_nav">
+                    <ul>
+                        <li>总经理信箱</li>
+                        <li>网站导航</li>
+                        <li>法律声明</li>
+                        <li>交换链接</li>
+                        <li>English</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="float-right">
+                <form action="#" method="post">
+                    <input type="text" placeholder="search" />
+                </form>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>走近今日</li>
+                    <li>新闻中心</li>
+                    <li>方案中心</li>
+                    <li>服务中心</li>
+                    <li>成功案例</li>
+                    <li>资料提供</li>
+                    <li>人力资源</li>
+                    <li>联系我们</li>
+                    <li>客户论坛</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>Today Science Technology Development Corporation 2007-2009 All right reserved.</p>
+            </div>
+            <div class="float-right">
+                <select>
+                    <option>ABC</option>
+                    <option>DEF</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
