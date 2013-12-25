@@ -67,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{fda23ed9-cc96-4427-9bbb-eaf28a1a9e59}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RuiJi.DataAccess\RuiJi.DataAccess.csproj">
       <Project>{67d2bcd0-824e-41dc-a2af-837754325641}</Project>
       <Name>RuiJi.DataAccess</Name>

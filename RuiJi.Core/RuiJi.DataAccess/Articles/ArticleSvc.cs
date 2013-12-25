@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Common.Enums;
 using RuiJi.DataAccess.Articles.Data;
 using RuiJi.DataAccess.Models;
 
@@ -50,6 +51,11 @@ namespace RuiJi.DataAccess.Articles
             {
                 return article;
             }
+        }
+
+        public List<Article> LoadByArticleType(ArticleType articleType)
+        {
+            return _mgr.LoadByArticleType(articleType);
         }
 
     }

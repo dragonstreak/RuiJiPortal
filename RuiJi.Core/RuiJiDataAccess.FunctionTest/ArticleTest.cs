@@ -1,4 +1,5 @@
 ﻿using System;
+using Common.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuiJi.DataAccess;
 using RuiJi.DataAccess.Articles;
@@ -52,6 +53,12 @@ namespace RuiJiDataAccess.FunctionTest
             Assert.AreEqual(null, article);
         }
 
+        [TestMethod]
+        public void LoadByArticleTypeTest()
+        {
+            var articleList = ArticleSvc.LoadByArticleType(ArticleType.News);
+            Assert.AreEqual(true, articleList.Count > 0);
+        }
 
         private IArticleSvc _articleSvc;
         private IArticleSvc ArticleSvc
