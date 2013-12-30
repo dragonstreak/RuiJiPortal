@@ -3,14 +3,6 @@
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
 
-@section headerStyles {
-    
-}
-
-@section headerScripts {
-    <script type="text/javascript" src="/sea-modules/assets/ruiji/src/AC_RunActiveContent.js"></script>
-}
-
 <div id="wrap"> 
   <div class="top"> 
         	<h1>TodayChina.com</h1> 
@@ -335,7 +327,7 @@
 @section Scripts {
 <script type="text/javascript">
     if (ruiji.isDebug()) {                     // for development
-        seajs.use("./sea-modules/assets/ruiji/src/index");
+        seajs.use("assets/ruiji/src/index");
     } else {                                    // for production
         seajs.use("ruiji/1.0.0/main");
     }

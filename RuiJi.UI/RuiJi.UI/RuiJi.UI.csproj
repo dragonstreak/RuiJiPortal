@@ -293,7 +293,6 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="sea-modules\assets\ruiji\src\AC_RunActiveContent.js" />
     <Content Include="sea-modules\assets\ruiji\src\index.js" />
     <Content Include="sea-modules\assets\ruiji\src\sdmenu.css" />
     <Content Include="sea-modules\assets\ruiji\src\sdmenu.js" />
