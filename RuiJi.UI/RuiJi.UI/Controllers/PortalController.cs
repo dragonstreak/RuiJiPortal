@@ -16,5 +16,10 @@ namespace RuiJi.UI.Controllers
             return View();
         }
 
+
+        public ActionResult HomePage()
+        {
+            return View("HomePage");
+        }
     }
 }

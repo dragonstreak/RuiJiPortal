@@ -1,0 +1,8 @@
+﻿{
+	"family": "ruiji",
+	"name": "portal",
+	"version": "1.0.0",
+	"spm": {
+		"output": ["util.js"]
+	}
+}

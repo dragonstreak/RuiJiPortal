@@ -259,6 +259,15 @@
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\RuiJi.UI.ReleasePublish.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\ruiji\banner.swf" />
+    <Content Include="Images\ruiji\ccc.gif" />
+    <Content Include="Images\ruiji\logo.gif" />
+    <Content Include="Images\ruiji\news_bg.gif" />
+    <Content Include="Images\ruiji\news_line.gif" />
+    <Content Include="Images\ruiji\table_title_bg1.png" />
+    <Content Include="Images\ruiji\table_title_bg2.png" />
+    <Content Include="Images\ruiji\tab_bg.gif" />
+    <Content Include="Images\ruiji\tlb.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -273,6 +282,13 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="sea-modules\assets\ruiji\src\AC_RunActiveContent.js" />
+    <Content Include="sea-modules\assets\ruiji\src\index.js" />
+    <Content Include="sea-modules\assets\ruiji\src\sdmenu.css" />
+    <Content Include="sea-modules\assets\ruiji\src\style.css" />
+    <Content Include="sea-modules\assets\util\src\util.js" />
+    <Content Include="sea-modules\jquery\jquery\1.10.1\jquery-debug.js" />
+    <Content Include="sea-modules\jquery\jquery\1.10.1\jquery.js" />
     <Content Include="sea-modules\seajs\seajs\2.1.1\sea-debug.js" />
     <Content Include="sea-modules\seajs\seajs\2.1.1\sea.js" />
     <Content Include="Web.config" />
@@ -320,9 +336,15 @@
     <Content Include="sea-modules\seajs\seajs\2.1.1\package.json" />
     <Content Include="sea-modules\seajs\seajs\2.1.1\sea.js.map" />
     <Content Include="Views\Portal\HomePage.cshtml" />
+    <Content Include="Views\Shared\_Blank.cshtml" />
+    <Content Include="sea-modules\assets\ruiji\package.json" />
+    <Content Include="sea-modules\assets\util\package.json" />
+    <Content Include="sea-modules\jquery\jquery\1.10.1\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="sea-modules\assets\ruiji\dist\" />
+    <Folder Include="sea-modules\assets\util\dist\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,18 @@
+﻿{
+	"family": "ruiji",
+	"name": "portal",
+	"version": "1.0.0",
+
+	"spm": {
+		"alias": {
+			"jquery": "jquery",
+			"util": "util"
+		},
+		"output": []
+	},
+
+	"devDependencies": {
+		"jquery": "1.10.3",
+		"util": "1.0.0"
+	}
+}
