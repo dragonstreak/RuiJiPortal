@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using RuiJi.UI.Common;
+using RuiJi.UI.Models;
 using RuiJi.Web.MvcBase;
 
 namespace RuiJi.UI.Controllers
@@ -37,7 +38,8 @@ namespace RuiJi.UI.Controllers
 
         public ActionResult SolutionCenter()
         {
-            return View("SolutionCenter");
+            ArticleListModel list = new ArticleListModel();
+            return View("ItemList", list);
         }
 
         public ActionResult ServiceCenter()
@@ -63,6 +65,15 @@ namespace RuiJi.UI.Controllers
         public ActionResult ContactUs()
         {
             return View("ContactUs");
+        }
+
+        public ActionResult Detail(int? articleId)
+        {
+            ArticleModel model = new ArticleModel();
+
+
+
+            return View("ItemDetail", model);
         }
     }
 }
