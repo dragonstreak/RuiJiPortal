@@ -200,6 +200,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ArticleListModel.cs" />
+    <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -263,9 +265,16 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\ruiji\banner.swf" />
     <Content Include="Images\ruiji\ccc.gif" />
+    <Content Include="Images\ruiji\list_ico.gif" />
+    <Content Include="Images\ruiji\list_img.gif" />
+    <Content Include="Images\ruiji\list_look.gif" />
+    <Content Include="Images\ruiji\list_righth.gif" />
     <Content Include="Images\ruiji\logo.gif" />
     <Content Include="Images\ruiji\news_bg.gif" />
     <Content Include="Images\ruiji\news_line.gif" />
+    <Content Include="Images\ruiji\sec_bg.gif" />
+    <Content Include="Images\ruiji\sec_navbg.gif" />
+    <Content Include="Images\ruiji\sec_navimg2.gif" />
     <Content Include="Images\ruiji\table_title_bg1.png" />
     <Content Include="Images\ruiji\table_title_bg2.png" />
     <Content Include="Images\ruiji\tab_bg.gif" />
@@ -287,6 +296,7 @@
     <Content Include="sea-modules\assets\ruiji\src\AC_RunActiveContent.js" />
     <Content Include="sea-modules\assets\ruiji\src\index.js" />
     <Content Include="sea-modules\assets\ruiji\src\sdmenu.css" />
+    <Content Include="sea-modules\assets\ruiji\src\sdmenu.js" />
     <Content Include="sea-modules\assets\ruiji\src\style.css" />
     <Content Include="sea-modules\assets\util\src\util.js" />
     <Content Include="sea-modules\jquery\jquery\1.10.1\jquery-debug.js" />
@@ -334,7 +344,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_General.cshtml" />
     <Content Include="Views\Portal\Index.cshtml" />
-    <Content Include="Views\Shared\_Master.cshtml" />
+    <Content Include="Views\Shared\_MasterGeneral.cshtml" />
     <Content Include="sea-modules\seajs\seajs\2.1.1\package.json" />
     <Content Include="sea-modules\seajs\seajs\2.1.1\sea.js.map" />
     <Content Include="Views\Portal\HomePage.cshtml" />
@@ -342,6 +352,7 @@
     <Content Include="sea-modules\assets\ruiji\package.json" />
     <Content Include="sea-modules\assets\util\package.json" />
     <Content Include="sea-modules\jquery\jquery\1.10.1\package.json" />
+    <Content Include="Views\Portal\SolutionCenter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

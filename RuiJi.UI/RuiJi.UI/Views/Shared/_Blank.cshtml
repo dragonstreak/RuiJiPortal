@@ -9,6 +9,8 @@
     <meta name="keywords" content="server,admin" />
     <meta name="description" content="RuiJi" />
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="@Url.Content("~/sea-modules/assets/ruiji/src/style.css")" />
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="@Url.Content("~/sea-modules/assets/ruiji/src/sdmenu.css")" />
     @RenderSection("headerStyles", required:false)
     @RenderSection("headerScripts", required: false)
 </head>
@@ -30,9 +32,7 @@
                 return ruiji._debug;
             };
 
-            //ruiji.deleteJobApiUrl = '@Url.Action("Delete", "Portal")';
-
-            ruiji.jobListApiUrl = '@Url.Action("HomePage", "Portal")';
+            ruiji.homepageApiUrl = '@Url.Action("HomePage", "Portal")';
 
             return ruiji;
             })(this);
