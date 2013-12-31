@@ -363,6 +363,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Resources\RuiJi.UI.Resources.csproj">
+      <Project>{f750324e-ee1a-4710-8c83-bdb73cd5f221}</Project>
+      <Name>RuiJi.UI.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RuiJi.Web\RuiJi.Web.csproj">
       <Project>{6415ba21-0ff9-47ab-a225-e65392f242e0}</Project>
       <Name>RuiJi.Web</Name>

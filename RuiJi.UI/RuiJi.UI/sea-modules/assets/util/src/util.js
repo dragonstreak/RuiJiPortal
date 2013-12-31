@@ -21,6 +21,12 @@
         return $('<div/>').html(val).text();
     };
 
+    exports.setCookie = function (name, value) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() + 30 * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    };
+
     function Paging(total, current, container, callback) {
         this._total = total || 0;
         this._cur = current || 0;

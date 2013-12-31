@@ -6,6 +6,7 @@ using System.Web.Configuration;
 using System.Web.Mvc;
 using RuiJi.UI.Common;
 using RuiJi.UI.Models;
+using RuiJi.Web.Helper;
 using RuiJi.Web.MvcBase;
 
 namespace RuiJi.UI.Controllers
@@ -20,6 +21,26 @@ namespace RuiJi.UI.Controllers
             return View();
         }
 
+        // no use for now.
+        public ActionResult SetCulture(string culture)
+        {
+            culture = CultureHelper.GetImplementedCulture(culture);
+
+            HttpCookie cookie = Request.Cookies["_culture"];
+            if (cookie != null)
+            {
+                cookie.Value = culture;
+            }
+            else
+            {
+                cookie = new HttpCookie("_culture");
+                cookie.Value = culture;
+                cookie.Expires = DateTime.Now.AddYears(1);
+            }
+
+            Response.Cookies.Add(cookie);
+            return RedirectToAction("HomePage");
+        }
 
         public ActionResult HomePage()
         {
