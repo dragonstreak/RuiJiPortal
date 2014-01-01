@@ -4,10 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using Common.Enums;
+using RuiJi.DataAccess;
+using RuiJi.DataAccess.Articles;
 using RuiJi.UI.Common;
 using RuiJi.UI.Models;
 using RuiJi.Web.Helper;
 using RuiJi.Web.MvcBase;
+using RuiJi.UI.Extensions;
 
 namespace RuiJi.UI.Controllers
 {
@@ -54,12 +58,19 @@ namespace RuiJi.UI.Controllers
 
         public ActionResult NewsCenter()
         {
+
             return View("NewsCenter");
         }
 
         public ActionResult SolutionCenter()
         {
             ArticleListModel list = new ArticleListModel();
+
+			var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+			var solutionList = svc.LoadByArticleType(ArticleType.Solution);
+
+			list.Articles = solutionList.ToModels();
+
             return View("ItemList", list);
         }
 
