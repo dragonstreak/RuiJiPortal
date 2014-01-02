@@ -209,6 +209,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ArticleListModel.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\NavTreeNodeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +365,8 @@
     <Content Include="Views\Portal\ItemList.cshtml" />
     <Content Include="Views\Portal\ItemDetail.cshtml" />
     <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
+    <Content Include="Views\Shared\_SideBarNavPartial.cshtml" />
+    <Content Include="Views\Shared\_SideBarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
