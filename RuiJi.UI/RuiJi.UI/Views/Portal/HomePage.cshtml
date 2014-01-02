@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "HomePage";
+    ViewBag.Title = Resource.Breadcrumb_Top;
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
 
@@ -7,11 +7,11 @@
   <div class="top"> 
         	<h1>TodayChina.com</h1> 
     <ul class="red"> 
-                <li><a href="mailto:demoservice@todaychina.com">总经理信箱</a></li><li>|</li>
-                <li><a href="http://www.todaychina.com/sitemap.html">网站导航</a></li><li>|</li>
-                <li><a href="http://www.todaychina.com/legal.html">法律声明</a></li><li>|</li>
-                <li><a href="http://www.todaychina.com/link_exchange.html">交换链接</a></li><li>|</li>
-                <li><a href="#" id="switch-lang" culturecode="@Resource.Menu_SwitchLanguage_Key">@Resource.Menu_SwitchLanguage</a></li>
+                <li><a href="mailto:demoservice@todaychina.com">@Resource.Nav_MailBox</a></li><li>|</li>
+                <li><a href="@Url.Action("SiteMap")">@Resource.Nav_Navigation</a></li><li>|</li>
+                <li><a href="@Url.Action("LegalInformation")">@Resource.Nav_LegalInformation</a></li><li>|</li>
+                <li><a href="@Url.Action("Links")">@Resource.Nav_Links</a></li><li>|</li>
+                <li><a href="#" id="switch-lang" culturecode="@Resource.Nav_SwitchLanguage_Key">@Resource.Nav_SwitchLanguage</a></li>
     </ul> 
             <p>
             </p><form action="/app/search.php?o=search" method="POST">
@@ -24,15 +24,15 @@
         </div> 
         <ul class="nav"> 
         	<li><a href="@Url.Action("Ruiji")" style=" background-image:none;">@Resource.Menu_StepIntoRuiji</a></li><li>|</li>
-            <li><a href="@Url.Action("NewsCenter")" style=" background-image:none;">新闻中心</a></li><li>|</li>
-            <li><a href="@Url.Action("SolutionCenter")" style=" background-image:none;">方案中心</a></li><li>|</li>
-            <li><a href="@Url.Action("ServiceCenter")" style=" background-image:none;">服务中心</a></li><li>|</li>
-            <li><a href="@Url.Action("SuccessCases")" style=" background-image:none;">成功案例</a></li><li>|</li>
-            <li><a href="@Url.Action("Information")" style=" background-image:none;">资料提供</a></li><li>|</li>
-            <li><a href="@Url.Action("HumanResources")" style=" background-image:none;">人力资源</a></li><li>|</li>
-            <li><a href="@Url.Action("ContactUs")" style=" background-image:none;">联系我们</a></li><li>|</li>
-            <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" style=" background-image:none;" target="_blank">客户论坛</a></li>
-  </ul> 
+            <li><a href="@Url.Action("NewsCenter")" style=" background-image:none;">@Resource.Menu_NewsCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("SolutionCenter")" style=" background-image:none;">@Resource.Menu_SolutionCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ServiceCenter")" style=" background-image:none;">@Resource.Menu_ServiceCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("SuccessCases")" style=" background-image:none;">@Resource.Menu_SuccessCases</a></li><li>|</li>
+            <li><a href="@Url.Action("Information")" style=" background-image:none;">@Resource.Menu_Information</a></li><li>|</li>
+            <li><a href="@Url.Action("HumanResources")" style=" background-image:none;">@Resource.Menu_HumanResources</a></li><li>|</li>
+            <li><a href="@Url.Action("ContactUs")" style=" background-image:none;">@Resource.Menu_ContactUs</a></li><li>|</li>
+            <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" style=" background-image:none;" target="_blank">@Resource.Menu_Forum</a></li>
+        </ul> 
         <div class="banner white">
 @*﻿          <script type="text/javascript">
                AC_FL_RunContent('codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0', 'width', '930', 'height', '274', 'src', '/style/images/banner', 'quality', 'high', 'pluginspage', 'http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash', 'movie', '/style/images/banner'); //end AC code
@@ -328,6 +328,7 @@
 <script type="text/javascript">
     if (ruiji.isDebug()) {                     // for development
         seajs.use("assets/ruiji/src/index");
+        seajs.use("assets/ruiji/src/master");
     } else {                                    // for production
         seajs.use("ruiji/1.0.0/main");
     }

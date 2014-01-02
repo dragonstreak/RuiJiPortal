@@ -61,7 +61,88 @@ namespace RuiJi.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Step into RuiJi.
+        ///   Looks up a localized string similar to Your current location:.
+        /// </summary>
+        public static string Breadcrumb_Title {
+            get {
+                return ResourceManager.GetString("Breadcrumb_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homepage.
+        /// </summary>
+        public static string Breadcrumb_Top {
+            get {
+                return ResourceManager.GetString("Breadcrumb_Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Menu_ContactUs {
+            get {
+                return ResourceManager.GetString("Menu_ContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forum.
+        /// </summary>
+        public static string Menu_Forum {
+            get {
+                return ResourceManager.GetString("Menu_Forum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HR.
+        /// </summary>
+        public static string Menu_HumanResources {
+            get {
+                return ResourceManager.GetString("Menu_HumanResources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Menu_Information {
+            get {
+                return ResourceManager.GetString("Menu_Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News.
+        /// </summary>
+        public static string Menu_NewsCenter {
+            get {
+                return ResourceManager.GetString("Menu_NewsCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Services.
+        /// </summary>
+        public static string Menu_ServiceCenter {
+            get {
+                return ResourceManager.GetString("Menu_ServiceCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solutions.
+        /// </summary>
+        public static string Menu_SolutionCenter {
+            get {
+                return ResourceManager.GetString("Menu_SolutionCenter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Step in.
         /// </summary>
         public static string Menu_StepIntoRuiji {
             get {
@@ -70,20 +151,74 @@ namespace RuiJi.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cases.
+        /// </summary>
+        public static string Menu_SuccessCases {
+            get {
+                return ResourceManager.GetString("Menu_SuccessCases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to Home.
+        /// </summary>
+        public static string Nav_BackToHome {
+            get {
+                return ResourceManager.GetString("Nav_BackToHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legal Info.
+        /// </summary>
+        public static string Nav_LegalInformation {
+            get {
+                return ResourceManager.GetString("Nav_LegalInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Links.
+        /// </summary>
+        public static string Nav_Links {
+            get {
+                return ResourceManager.GetString("Nav_Links", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MailBox.
+        /// </summary>
+        public static string Nav_MailBox {
+            get {
+                return ResourceManager.GetString("Nav_MailBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string Nav_Navigation {
+            get {
+                return ResourceManager.GetString("Nav_Navigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 汉语.
         /// </summary>
-        public static string Menu_SwitchLanguage {
+        public static string Nav_SwitchLanguage {
             get {
-                return ResourceManager.GetString("Menu_SwitchLanguage", resourceCulture);
+                return ResourceManager.GetString("Nav_SwitchLanguage", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to zh-CN.
         /// </summary>
-        public static string Menu_SwitchLanguage_Key {
+        public static string Nav_SwitchLanguage_Key {
             get {
-                return ResourceManager.GetString("Menu_SwitchLanguage_Key", resourceCulture);
+                return ResourceManager.GetString("Nav_SwitchLanguage_Key", resourceCulture);
             }
         }
     }
