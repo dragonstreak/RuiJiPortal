@@ -13,6 +13,7 @@ namespace Common.Enums
         Achievement = 4,
         TechResource = 5,
         HumanResource = 6,
-        ContactUs = 7
+        ContactUs = 7,
+        CompanyInfo = 8
     }
 }

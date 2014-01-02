@@ -68,6 +68,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MissingServiceException.cs" />
     <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\ArticleTopic.cs" />
     <Compile Include="Models\ArticleType_Lkp.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
     <Compile Include="Models\Mapping\ArticleType_LkpMap.cs" />
