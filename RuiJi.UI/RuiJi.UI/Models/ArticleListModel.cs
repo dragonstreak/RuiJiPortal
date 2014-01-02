@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using RuiJi.Web.MvcBase;
 
 namespace RuiJi.UI.Models
 {
-    public class ArticleListModel
+    public class ArticleListModel : BaseModel
     {
         public List<ArticleModel> Articles { get; set; }
 

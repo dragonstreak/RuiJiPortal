@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace RuiJi.UI.Common
 {
     public class Constants
     {
+        public const int SiteMapArticleId = 1;
+        public const int LegalInformationArticleId = 2;
+        public const int LinksArticleId = 3;
     }
 
     public static class AppSettingsKey

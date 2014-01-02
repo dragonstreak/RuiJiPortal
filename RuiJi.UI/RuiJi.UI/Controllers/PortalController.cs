@@ -17,6 +17,7 @@ namespace RuiJi.UI.Controllers
 {
     public class PortalController : BaseController
     {
+        #region Public Methods
         //
         // GET: /Portal/
 
@@ -26,25 +27,25 @@ namespace RuiJi.UI.Controllers
         }
 
         // no use for now.
-        public ActionResult SetCulture(string culture)
-        {
-            culture = CultureHelper.GetImplementedCulture(culture);
+        //public ActionResult SetCulture(string culture)
+        //{
+        //    culture = CultureHelper.GetImplementedCulture(culture);
 
-            HttpCookie cookie = Request.Cookies["_culture"];
-            if (cookie != null)
-            {
-                cookie.Value = culture;
-            }
-            else
-            {
-                cookie = new HttpCookie("_culture");
-                cookie.Value = culture;
-                cookie.Expires = DateTime.Now.AddYears(1);
-            }
+        //    HttpCookie cookie = Request.Cookies["_culture"];
+        //    if (cookie != null)
+        //    {
+        //        cookie.Value = culture;
+        //    }
+        //    else
+        //    {
+        //        cookie = new HttpCookie("_culture");
+        //        cookie.Value = culture;
+        //        cookie.Expires = DateTime.Now.AddYears(1);
+        //    }
 
-            Response.Cookies.Add(cookie);
-            return RedirectToAction("HomePage");
-        }
+        //    Response.Cookies.Add(cookie);
+        //    return RedirectToAction("HomePage");
+        //}
 
         public ActionResult HomePage()
         {
@@ -58,54 +59,145 @@ namespace RuiJi.UI.Controllers
 
         public ActionResult NewsCenter()
         {
+            ArticleListModel list = new ArticleListModel();
 
-            return View("NewsCenter");
+            var articleModelList = this.LoadByArticleType(ArticleType.News);
+
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
+
+            return View("ItemList", list);
         }
 
         public ActionResult SolutionCenter()
         {
             ArticleListModel list = new ArticleListModel();
 
-			var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-			var solutionList = svc.LoadByArticleType(ArticleType.Solution);
+            var articleModelList = this.LoadByArticleType(ArticleType.Solution);
 
-			list.Articles = solutionList.ToModels();
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
 
             return View("ItemList", list);
         }
 
         public ActionResult ServiceCenter()
         {
-            return View("ServiceCenter");
+            ArticleListModel list = new ArticleListModel();
+
+            var articleModelList = this.LoadByArticleType(ArticleType.Service);
+
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
+
+            return View("ItemList", list);
         }
 
         public ActionResult SuccessCases()
         {
-            return View("SuccessCases");
+            ArticleListModel list = new ArticleListModel();
+
+            var articleModelList = this.LoadByArticleType(ArticleType.Achievement);
+
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
+
+            return View("ItemList", list);
         }
 
         public ActionResult Information()
         {
-            return View("Information");
+            ArticleListModel list = new ArticleListModel();
+
+            var articleModelList = this.LoadByArticleType(ArticleType.TechResource);
+
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
+
+            return View("ItemList", list);
         }
 
         public ActionResult HumanResources()
         {
-            return View("HumanResources");
+            ArticleListModel list = new ArticleListModel();
+
+            var articleModelList = this.LoadByArticleType(ArticleType.HumanResource);
+
+            list.Articles = articleModelList;
+            list.IsSuccess = true;
+
+            return View("ItemList", list);
         }
 
         public ActionResult ContactUs()
         {
-            return View("ContactUs");
+            ArticleListModel list = new ArticleListModel();
+
+            var articleModelList = this.LoadByArticleType(ArticleType.ContactUs);
+
+            list.Articles = articleModelList;
+
+            list.IsSuccess = true;
+            return View("ItemList", list);
         }
 
         public ActionResult Detail(int? articleId)
         {
             ArticleModel model = new ArticleModel();
 
+            if (!articleId.HasValue)
+            {
+                model.IsSuccess = false;
+                model.ErrorMsg = string.Format("Invalid articleId: {#0}", articleId);
+            }
 
+            model = LoadArticle(articleId.GetValueOrDefault());
+            model.IsSuccess = true;
 
             return View("ItemDetail", model);
         }
+
+        public ActionResult SiteMap()
+        {
+            ArticleModel model = new ArticleModel();
+            model = LoadArticle(RuiJi.UI.Common.Constants.SiteMapArticleId);
+            return View("ItemDetail", model);
+        }
+
+        public ActionResult LegalInformation()
+        {
+            ArticleModel model = new ArticleModel();
+            model = LoadArticle(RuiJi.UI.Common.Constants.LegalInformationArticleId);
+            return View("ItemDetail", model);
+        }
+
+        public ActionResult Links()
+        {
+            ArticleModel model = new ArticleModel();
+            model = LoadArticle(RuiJi.UI.Common.Constants.LinksArticleId);
+            return View("ItemDetail", model);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private ArticleModel LoadArticle(int articleId)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+            var article = svc.LoadById(articleId);
+
+            return article.ToModel();
+        }
+
+        private List<ArticleModel> LoadByArticleType(ArticleType type)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+            var modelList = svc.LoadByArticleType(type);
+
+            return modelList.ToModels();
+        }
+
+        #endregion
     }
 }
