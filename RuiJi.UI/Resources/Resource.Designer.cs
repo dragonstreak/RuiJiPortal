@@ -61,6 +61,24 @@ namespace RuiJi.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your current location:.
+        /// </summary>
+        public static string Breadcrumb_Title {
+            get {
+                return ResourceManager.GetString("Breadcrumb_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Homepage.
+        /// </summary>
+        public static string Breadcrumb_Top {
+            get {
+                return ResourceManager.GetString("Breadcrumb_Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
         public static string Menu_ContactUs {

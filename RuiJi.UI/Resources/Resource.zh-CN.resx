@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Breadcrumb_Title" xml:space="preserve">
+    <value>您现在的位置：</value>
+  </data>
+  <data name="Breadcrumb_Top" xml:space="preserve">
+    <value>网站首页</value>
+  </data>
   <data name="Menu_ContactUs" xml:space="preserve">
     <value>联系我们</value>
   </data>
