@@ -1,9 +1,11 @@
-﻿@{
-    ViewBag.Title = "SolutionCenter";
+﻿@model RuiJi.UI.Models.ArticleListModel
+
+@{
+    ViewBag.Title = Model.MenuSectionTitle;
     Layout = "~/Views/Shared/_MasterGeneral.cshtml";
 }
 
-@model RuiJi.UI.Models.ArticleListModel
+
 
 @section contentItem {
     <div class="main">
@@ -11,10 +13,19 @@
             <h4>您现在的位置：
                 <a href="http://www.todaychina.com/index.html"> 网站首页 </a>  &gt; <a href="http://www.todaychina.com/app/index.php/4,0.html"> 方案中心 </a>
             </h4>
+
+            @foreach (var item in Model.Articles) {
+                <h5>@item.Title</h5>
+                <p class="fontdetail">@item.Abstract<a href="@Url.Action("Detail", new { articleId = item.ArticleId })"><img src="/images/ruiji/list_look.gif"></a></p>
+                <hr style="margin-top: 10px;" size="1">
+            }
+
+
             <h5>[安全设备]主动安全、应用无忧  网络安全行为管理与信息安全防范8e6产品介绍</h5>
 
                 <p class="fontdetail">网络安全行为管理运作方式网络安全行为管理架构图传统的Pass-Through过滤方式•基于服务器的插件,必须与防火墙或代理服务器集成•“Stops and checks” 模式造成信息流量变慢•多开发商及多功能解决方案会产生扩充的...<a href="http://www.todaychina.com/app/content.php/118,0.html"><img src="/images/ruiji/list_look.gif"></a></p>
                 <hr style="margin-top: 10px;" size="1">
+
                 <h5>[存储]存储</h5>
                 <p class="fontdetail">EMC 公司是全球信息存储及管理产品、服务和解决方案方面的领先公司。我们是每一种主要计算平台的信息存储标准，而且，世界上最重要信息中的 2/3 以上都是通过我们的解决方案管理的。我们通过信息生命周期管理 (ILM) ...<a href="http://www.todaychina.com/app/content.php/84,0.html"><img src="/images/ruiji/list_look.gif"></a></p>
                 <hr style="margin-top: 10px;" size="1">
@@ -44,9 +55,9 @@
                 <hr style="margin-top: 10px;" size="1">
 
 
-            <p style="padding: 15px 0px 15px 0px ;text-align: center;">
+            @*<p style="padding: 15px 0px 15px 0px ;text-align: center;">
                 <b><a href="http://www.todaychina.com/app/index.php/4,0.html">上一页</a></b>&nbsp;&nbsp;<a href="http://www.todaychina.com/app/index.php/4,0.html">1</a>&nbsp;<font color="#FF0000">[2]</font>&nbsp;<a href="http://www.todaychina.com/app/index.php/4,2.html">3</a>&nbsp;<a href="http://www.todaychina.com/app/index.php/4,3.html">4</a>&nbsp;&nbsp;<b><a href="http://www.todaychina.com/app/index.php/4,2.html">下一页</a></b>
-            </p>
+            </p>*@
 
     </div>
 }

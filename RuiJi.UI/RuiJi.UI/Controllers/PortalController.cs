@@ -12,6 +12,7 @@ using RuiJi.UI.Models;
 using RuiJi.Web.Helper;
 using RuiJi.Web.MvcBase;
 using RuiJi.UI.Extensions;
+using RuiJi.UI.Resources;
 
 namespace RuiJi.UI.Controllers
 {
@@ -64,6 +65,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.News);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_NewsCenter;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -76,6 +78,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.Solution);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_SolutionCenter;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -88,6 +91,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.Service);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_ServiceCenter;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -100,6 +104,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.Achievement);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_SuccessCases;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -112,6 +117,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.TechResource);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_Information;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -124,6 +130,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.HumanResource);
 
             list.Articles = articleModelList;
+            list.MenuSectionTitle = Resource.Menu_HumanResources;
             list.IsSuccess = true;
 
             return View("ItemList", list);
@@ -136,7 +143,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleType(ArticleType.ContactUs);
 
             list.Articles = articleModelList;
-
+            list.MenuSectionTitle = Resource.Menu_ContactUs;
             list.IsSuccess = true;
             return View("ItemList", list);
         }
@@ -148,7 +155,7 @@ namespace RuiJi.UI.Controllers
             if (!articleId.HasValue)
             {
                 model.IsSuccess = false;
-                model.ErrorMsg = string.Format("Invalid articleId: {#0}", articleId);
+                model.ErrorMsg = string.Format("Invalid articleId: #{0}", articleId);
             }
 
             model = LoadArticle(articleId.GetValueOrDefault());

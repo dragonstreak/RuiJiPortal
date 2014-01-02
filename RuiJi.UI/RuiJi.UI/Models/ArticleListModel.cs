@@ -8,6 +8,8 @@ namespace RuiJi.UI.Models
 {
     public class ArticleListModel : BaseModel
     {
+        public string MenuSectionTitle { get; set; }
+
         public List<ArticleModel> Articles { get; set; }
 
         public int TotalCount { get; set; }

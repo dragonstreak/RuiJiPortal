@@ -117,13 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Menu_ContactUs" xml:space="preserve">
+    <value>联系我们</value>
+  </data>
+  <data name="Menu_Forum" xml:space="preserve">
+    <value>客户论坛</value>
+  </data>
+  <data name="Menu_HumanResources" xml:space="preserve">
+    <value>人力资源</value>
+  </data>
+  <data name="Menu_Information" xml:space="preserve">
+    <value>资料提供</value>
+  </data>
+  <data name="Menu_NewsCenter" xml:space="preserve">
+    <value>新闻中心</value>
+  </data>
+  <data name="Menu_ServiceCenter" xml:space="preserve">
+    <value>服务中心</value>
+  </data>
+  <data name="Menu_SolutionCenter" xml:space="preserve">
+    <value>方案中心</value>
+  </data>
   <data name="Menu_StepIntoRuiji" xml:space="preserve">
     <value>走进今日</value>
   </data>
-  <data name="Menu_SwitchLanguage" xml:space="preserve">
+  <data name="Menu_SuccessCases" xml:space="preserve">
+    <value>成功案例</value>
+  </data>
+  <data name="Nav_BackToHome" xml:space="preserve">
+    <value>返回首页</value>
+  </data>
+  <data name="Nav_LegalInformation" xml:space="preserve">
+    <value>法律声明</value>
+  </data>
+  <data name="Nav_Links" xml:space="preserve">
+    <value>交换链接</value>
+  </data>
+  <data name="Nav_MailBox" xml:space="preserve">
+    <value>总经理信箱</value>
+  </data>
+  <data name="Nav_Navigation" xml:space="preserve">
+    <value>网站导航</value>
+  </data>
+  <data name="Nav_SwitchLanguage" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="Menu_SwitchLanguage_Key" xml:space="preserve">
+  <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>en-US</value>
   </data>
 </root>

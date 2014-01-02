@@ -117,13 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Menu_StepIntoRuiji" xml:space="preserve">
-    <value>Step into RuiJi</value>
+  <data name="Menu_ContactUs" xml:space="preserve">
+    <value>Contact</value>
   </data>
-  <data name="Menu_SwitchLanguage" xml:space="preserve">
+  <data name="Menu_Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="Menu_HumanResources" xml:space="preserve">
+    <value>HR</value>
+  </data>
+  <data name="Menu_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Menu_NewsCenter" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Menu_ServiceCenter" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Menu_SolutionCenter" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="Menu_StepIntoRuiji" xml:space="preserve">
+    <value>Step in</value>
+  </data>
+  <data name="Menu_SuccessCases" xml:space="preserve">
+    <value>Cases</value>
+  </data>
+  <data name="Nav_BackToHome" xml:space="preserve">
+    <value>Back to Home</value>
+  </data>
+  <data name="Nav_LegalInformation" xml:space="preserve">
+    <value>Legal Info</value>
+  </data>
+  <data name="Nav_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Nav_MailBox" xml:space="preserve">
+    <value>MailBox</value>
+  </data>
+  <data name="Nav_Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="Nav_SwitchLanguage" xml:space="preserve">
     <value>汉语</value>
   </data>
-  <data name="Menu_SwitchLanguage_Key" xml:space="preserve">
+  <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>zh-CN</value>
   </data>
 </root>
