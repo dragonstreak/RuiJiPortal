@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Common.Enums;
 using RuiJi.DataAccess.Models;
 
 namespace RuiJi.DataAccess.Articles
@@ -14,6 +13,7 @@ namespace RuiJi.DataAccess.Articles
         void Delete(int articleId, string operatorName);
         Article LoadById(int articleId);
         void PhysicalDelete(int articleId);
-        List<Article> LoadByArticleType(ArticleType articleType);
+        List<Article> LoadByArticleCategoryId(int articleCategoryId);
+        LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param);
     }
 }

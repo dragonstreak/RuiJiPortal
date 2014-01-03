@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Common.Enums;
+using RuiJi.DataAccess.ArticleCategorys;
 using RuiJi.DataAccess.Articles.Data;
 using RuiJi.DataAccess.Models;
 
@@ -11,10 +11,12 @@ namespace RuiJi.DataAccess.Articles
     public class ArticleSvc : IArticleSvc
     {
         private IArticleMgr _mgr;
+        private IArticleCategorySvc _articleCategorySvc;
 
-        internal ArticleSvc(IArticleMgr mgr)
+        internal ArticleSvc(IArticleMgr mgr, IArticleCategorySvc articleCategorySvc)
         {
             _mgr = mgr;
+            _articleCategorySvc = articleCategorySvc;
         }
 
         public int Add(Article article)
@@ -53,9 +55,28 @@ namespace RuiJi.DataAccess.Articles
             }
         }
 
-        public List<Article> LoadByArticleType(ArticleType articleType)
+        public List<Article> LoadByArticleCategoryId(int articleCategoryId)
         {
-            return _mgr.LoadByArticleType(articleType);
+            List<Article> result = new List<Article>();
+            result.AddRange(_mgr.LoadByArticleCategoryId(articleCategoryId));
+
+            var childrenCategory = _articleCategorySvc.LoadByParentId(articleCategoryId);
+            foreach (var category in childrenCategory)
+            {
+                result.AddRange(_mgr.LoadByArticleCategoryId(category.ArticleCategoryId));
+            }
+
+            return result;
+
+        }
+
+        public LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param)
+        {
+            var totalList = LoadByArticleCategoryId(param.ArticleCategoryId);
+            var result = new LoadArticleByPagingResult();
+            result.Total = totalList.Count;
+            result.ArticleList = totalList.Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ToList();
+            return result;
         }
 
     }

@@ -15,6 +15,9 @@ namespace RuiJi.DataAccess.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(100);
 
+            this.Property(t => t.Summary)
+                .HasMaxLength(1000);
+
             this.Property(t => t.ContentDetail)
                 .IsRequired();
 
@@ -38,8 +41,9 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.ToTable("Article");
             this.Property(t => t.ArticleId).HasColumnName("ArticleId");
             this.Property(t => t.Title).HasColumnName("Title");
+            this.Property(t => t.Summary).HasColumnName("Summary");
             this.Property(t => t.ContentDetail).HasColumnName("ContentDetail");
-            this.Property(t => t.ArticleTypeId).HasColumnName("ArticleTypeId");
+            this.Property(t => t.ArticleCategoryId).HasColumnName("ArticleCategoryId");
             this.Property(t => t.Author).HasColumnName("Author");
             this.Property(t => t.IsPublished).HasColumnName("IsPublished");
             this.Property(t => t.PublishDate).HasColumnName("PublishDate");
@@ -51,9 +55,9 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.TIMESTAMP).HasColumnName("TIMESTAMP");
 
             // Relationships
-            this.HasRequired(t => t.ArticleType_Lkp)
+            this.HasRequired(t => t.ArticleCategory)
                 .WithMany(t => t.Articles)
-                .HasForeignKey(d => d.ArticleTypeId);
+                .HasForeignKey(d => d.ArticleCategoryId);
 
         }
     }

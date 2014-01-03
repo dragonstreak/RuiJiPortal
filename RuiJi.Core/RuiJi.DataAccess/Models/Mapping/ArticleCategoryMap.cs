@@ -3,17 +3,14 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace RuiJi.DataAccess.Models.Mapping
 {
-    public class ArticleType_LkpMap : EntityTypeConfiguration<ArticleType_Lkp>
+    public class ArticleCategoryMap : EntityTypeConfiguration<ArticleCategory>
     {
-        public ArticleType_LkpMap()
+        public ArticleCategoryMap()
         {
             // Primary Key
-            this.HasKey(t => t.ArticleTypeId);
+            this.HasKey(t => t.ArticleCategoryId);
 
             // Properties
-            this.Property(t => t.ArticleTypeId)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
             this.Property(t => t.Name)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -29,10 +26,11 @@ namespace RuiJi.DataAccess.Models.Mapping
                 .HasMaxLength(50);
 
             // Table & Column Mappings
-            this.ToTable("ArticleType_Lkp");
-            this.Property(t => t.ArticleTypeId).HasColumnName("ArticleTypeId");
+            this.ToTable("ArticleCategory");
+            this.Property(t => t.ArticleCategoryId).HasColumnName("ArticleCategoryId");
             this.Property(t => t.Name).HasColumnName("Name");
             this.Property(t => t.Description).HasColumnName("Description");
+            this.Property(t => t.ParentCategoryId).HasColumnName("ParentCategoryId");
             this.Property(t => t.IsDeleted).HasColumnName("IsDeleted");
             this.Property(t => t.CreateDate).HasColumnName("CreateDate");
             this.Property(t => t.CreateBy).HasColumnName("CreateBy");

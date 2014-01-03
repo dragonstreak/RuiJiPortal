@@ -1,5 +1,4 @@
 ﻿using System;
-using Common.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuiJi.DataAccess;
 using RuiJi.DataAccess.Articles;
@@ -42,6 +41,7 @@ namespace RuiJiDataAccess.FunctionTest
         }
 
         [TestMethod]
+        [ExpectedException(typeof(RuiJiDataAccessException))]
         public void DeleteTest()
         {
             Article article = GetArticle();
@@ -56,8 +56,26 @@ namespace RuiJiDataAccess.FunctionTest
         [TestMethod]
         public void LoadByArticleTypeTest()
         {
-            var articleList = ArticleSvc.LoadByArticleType(ArticleType.News);
+            var articleList = ArticleSvc.LoadByArticleCategoryId(1);
             Assert.AreEqual(true, articleList.Count > 0);
+        }
+
+        [TestMethod]
+        public void LoadByArticleCategoryIdWithPagingTest()
+        {
+            var param = new LoadArticleByPagingParams()
+            {
+                ArticleCategoryId = 1
+             ,  PageIndex = 2
+             ,  PageSize = 2
+            };
+
+            var result = ArticleSvc.LoadByArticleCategoryIdWithPaging(param);
+            Assert.AreEqual(2, result.ArticleList.Count);
+            param.PageIndex = 100;
+            param.PageSize = 1000;
+            result = ArticleSvc.LoadByArticleCategoryIdWithPaging(param);
+            Assert.AreEqual(0, result.ArticleList.Count);
         }
 
         private IArticleSvc _articleSvc;
@@ -79,8 +97,9 @@ namespace RuiJiDataAccess.FunctionTest
 
             Random r = new Random();
 
-            article.ArticleTypeId = 1;
+            article.ArticleCategoryId = 1;
             article.Author = "Tony";
+            article.Summary = "summary";
             article.ContentDetail = r.Next(1,10000).ToString();
             article.IsPublished = true;
             article.IsDeleted = false;

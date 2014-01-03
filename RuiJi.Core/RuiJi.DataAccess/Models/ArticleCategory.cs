@@ -4,16 +4,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RuiJi.DataAccess.Models
 {
-    public partial class ArticleType_Lkp
+    public partial class ArticleCategory
     {
-        public ArticleType_Lkp()
+        public ArticleCategory()
         {
             this.Articles = new List<Article>();
         }
 
-        public int ArticleTypeId { get; set; }
+        public int ArticleCategoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public Nullable<int> ParentCategoryId { get; set; }
         public bool IsDeleted { get; set; }
         public System.DateTime CreateDate { get; set; }
         public string CreateBy { get; set; }

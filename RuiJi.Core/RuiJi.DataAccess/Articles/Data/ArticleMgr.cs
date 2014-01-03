@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
-using Common.Enums;
 using RuiJi.DataAccess.Models;
 
 namespace RuiJi.DataAccess.Articles.Data
@@ -60,12 +59,12 @@ namespace RuiJi.DataAccess.Articles.Data
             }
         }
 
-        public List<Article> LoadByArticleType(ArticleType articleType)
+        public List<Article> LoadByArticleCategoryId(int articleCategoryId)
         {
             using (var db = new RuijiPortalContext())
             {
                 List<Article> result;
-                var queryResult = db.Database.SqlQuery<Article>(string.Format("select * from dbo.Article where IsDeleted = 0 and ArticleTypeId = {0}", (int)articleType));
+                var queryResult = db.Database.SqlQuery<Article>(string.Format("select * from dbo.Article where IsDeleted = 0 and ArticleCategoryId = {0}", articleCategoryId));
                 result = queryResult.ToList<Article>();
                 return result;
             }

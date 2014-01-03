@@ -17,13 +17,13 @@ namespace RuiJi.DataAccess.Models
         }
 
         public DbSet<Article> Articles { get; set; }
-        public DbSet<ArticleType_Lkp> ArticleType_Lkp { get; set; }
+        public DbSet<ArticleCategory> ArticleCategories { get; set; }
         public DbSet<SystemUser> SystemUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ArticleMap());
-            modelBuilder.Configurations.Add(new ArticleType_LkpMap());
+            modelBuilder.Configurations.Add(new ArticleCategoryMap());
             modelBuilder.Configurations.Add(new SystemUserMap());
 			CustomModelCreating(modelBuilder);
         }
