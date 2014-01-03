@@ -62,7 +62,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.News);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.News);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_NewsCenter;
@@ -75,7 +75,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.Solution);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Solution);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_SolutionCenter;
@@ -88,7 +88,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.Service);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Service);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_ServiceCenter;
@@ -101,7 +101,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.Achievement);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Achievement);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_SuccessCases;
@@ -114,7 +114,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.TechResource);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.TechResource);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_Information;
@@ -127,7 +127,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.HumanResource);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.HumanResource);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_HumanResources;
@@ -140,7 +140,7 @@ namespace RuiJi.UI.Controllers
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleType(ArticleType.ContactUs);
+            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.ContactUs);
 
             list.Articles = articleModelList;
             list.MenuSectionTitle = Resource.Menu_ContactUs;
@@ -197,10 +197,10 @@ namespace RuiJi.UI.Controllers
             return article.ToModel();
         }
 
-        private List<ArticleModel> LoadByArticleType(ArticleType type)
+        private List<ArticleModel> LoadByArticleCategory(ArticleCategoryEnum articleCategory)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-            var modelList = svc.LoadByArticleType(type);
+            var modelList = svc.LoadByArticleCategoryId((int)articleCategory);
 
             return modelList.ToModels();
         }

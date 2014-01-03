@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJi.Web", "RuiJi.Web\RuiJ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJi.UI.Resources", "Resources\RuiJi.UI.Resources.csproj", "{F750324E-EE1A-4710-8C83-BDB73CD5F221}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.UI", "Admin.UI\Admin.UI.csproj", "{81921DB9-0FDD-4D81-8465-8D8A4E18AFCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.UI.Tests", "Admin.UI.Tests\Admin.UI.Tests.csproj", "{F9639F33-4F62-44D7-B17B-0C989B9122D8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,14 +25,6 @@ Global
 		{F750324E-EE1A-4710-8C83-BDB73CD5F221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F750324E-EE1A-4710-8C83-BDB73CD5F221}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F750324E-EE1A-4710-8C83-BDB73CD5F221}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81921DB9-0FDD-4D81-8465-8D8A4E18AFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81921DB9-0FDD-4D81-8465-8D8A4E18AFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81921DB9-0FDD-4D81-8465-8D8A4E18AFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81921DB9-0FDD-4D81-8465-8D8A4E18AFCC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9639F33-4F62-44D7-B17B-0C989B9122D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9639F33-4F62-44D7-B17B-0C989B9122D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9639F33-4F62-44D7-B17B-0C989B9122D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9639F33-4F62-44D7-B17B-0C989B9122D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
