@@ -209,6 +209,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ArticleListModel.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\NavTreeNodeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -348,7 +349,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_General.cshtml" />
     <Content Include="Views\Portal\Index.cshtml" />
     <Content Include="Views\Shared\_MasterGeneral.cshtml" />
@@ -361,6 +364,9 @@
     <Content Include="sea-modules\jquery\jquery\1.10.1\package.json" />
     <Content Include="Views\Portal\ItemList.cshtml" />
     <Content Include="Views\Portal\ItemDetail.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
+    <Content Include="Views\Shared\_SideBarNavPartial.cshtml" />
+    <Content Include="Views\Shared\_SideBarPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

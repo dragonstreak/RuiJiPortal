@@ -26,6 +26,15 @@ namespace RuiJi.Web.MvcBase
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(cultureName);
             Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
+            if (Response.Cookies["_culture"] != null)
+            {
+                Response.Cookies["_culture"].Value = cultureName;
+            }
+            else
+            {
+                Response.Cookies.Add(cultureCookie);
+            }
+
             return base.BeginExecuteCore(callback, state);
         }
     }
