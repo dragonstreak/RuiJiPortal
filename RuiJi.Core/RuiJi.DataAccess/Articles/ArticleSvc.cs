@@ -58,10 +58,8 @@ namespace RuiJi.DataAccess.Articles
         public List<Article> LoadByArticleCategoryId(int articleCategoryId)
         {
             List<Article> result = new List<Article>();
-            result.AddRange(_mgr.LoadByArticleCategoryId(articleCategoryId));
-
-            var childrenCategory = _articleCategorySvc.LoadByParentId(articleCategoryId);
-            foreach (var category in childrenCategory)
+            var categoryList = LoadArticleCategoryWithChild(articleCategoryId);
+            foreach (var category in categoryList)
             {
                 result.AddRange(_mgr.LoadByArticleCategoryId(category.ArticleCategoryId));
             }
@@ -75,7 +73,28 @@ namespace RuiJi.DataAccess.Articles
             var totalList = LoadByArticleCategoryId(param.ArticleCategoryId);
             var result = new LoadArticleByPagingResult();
             result.Total = totalList.Count;
-            result.ArticleList = totalList.Skip((param.PageIndex - 1) * param.PageSize).Take(param.PageSize).ToList();
+            result.ArticleList = totalList.OrderByDescending(_ => _.PublishDate)
+                                          .Skip((param.PageIndex - 1) * param.PageSize)
+                                          .Take(param.PageSize).ToList();
+            return result;
+        }
+
+        private List<ArticleCategory> LoadArticleCategoryWithChild(int articleCategoryId)
+        {
+            List<ArticleCategory> result = new List<ArticleCategory>();
+
+            var category =_articleCategorySvc.LoadById(articleCategoryId);
+            if (category != null)
+            {
+                result.Add(category);
+            }
+
+            var childCategoryList = _articleCategorySvc.LoadByParentId(articleCategoryId);
+            foreach (var childCategory in childCategoryList)
+            {
+                result.AddRange(LoadArticleCategoryWithChild(childCategory.ArticleCategoryId));
+            }
+
             return result;
         }
 
