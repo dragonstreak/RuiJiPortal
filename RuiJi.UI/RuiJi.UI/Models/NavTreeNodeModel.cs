@@ -9,10 +9,10 @@ namespace RuiJi.UI.Models
     {
         public NavTreeNodeModel()
         {
-            this.Childs = new List<NavTreeNodeModel>();
+            this.Children = new List<NavTreeNodeModel>();
         }
 
-        public List<NavTreeNodeModel> Childs { get; set; }
+        public List<NavTreeNodeModel> Children { get; set; }
 
         //public NavTreeNodeModel Parent { get; set; }
 

@@ -11,6 +11,36 @@ namespace RuiJi.UI.Common
 {
     public class RenderManger
     {
+        // Only renders until subtop
+        public static void RenderNewsSection(StringBuilder stringBuilder, NavTreeNodeModel treeNode, HtmlHelper<dynamic> htmlHelper)
+        {
+            string linkText = ResourceManager.GetLocalizedString(treeNode.ResourceKey);
+
+            if (treeNode.IsTopLevel)
+            {
+                string actionLink = htmlHelper.ActionLink(linkText, "NewsCenter").ToHtmlString();
+                stringBuilder.Append(string.Format("<li><strong>{0}</strong></li>", actionLink));
+
+                if (treeNode.Children.Count > 0)
+                {
+                    foreach (var node in treeNode.Children)
+                    {
+                        RenderNewsSection(stringBuilder, node, htmlHelper);
+                    }
+                }
+            }
+            else if (treeNode.IsSubTopLevel)
+            {
+                string link = htmlHelper.ActionLink(linkText, "ItemList", new { categoryId = treeNode.CategoryId, title = linkText }).ToHtmlString();
+
+                stringBuilder.Append(string.Format("<li>{0}</li>", link));
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public static void RenderMenuTreeChildren(StringBuilder stringBuilder, NavTreeNodeModel treeNode, HtmlHelper<dynamic> htmlHelper, string indention = "")
         {
             var linkText = ResourceManager.GetLocalizedString(treeNode.ResourceKey);
@@ -42,9 +72,9 @@ namespace RuiJi.UI.Common
 
             stringBuilder.Append(menuNode);
 
-            if (treeNode.Childs.Count > 0)
+            if (treeNode.Children.Count > 0)
             {
-                foreach (var subNode in treeNode.Childs)
+                foreach (var subNode in treeNode.Children)
                 {
                     RenderMenuTreeChildren(stringBuilder, subNode, htmlHelper, indention + Constants.MENU_NODE_INDENT);
                 }

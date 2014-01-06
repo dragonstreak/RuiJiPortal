@@ -50,17 +50,16 @@
             </section>
         </div>
         <div class="secnews">
-
-
             <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/3,0.html">新闻中心</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/10,0.html" title="公司新闻">公司新闻</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/11,0.html" title="媒体看今日">媒体看今日</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/12,0.html" title="业界动态">业界动态</a></li>
+                @{
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    RuiJi.UI.Common.RenderManger.RenderNewsSection(sb, RuiJi.UI.Common.NavTreeContext.NewsCenter, this.Html);
+                    Html.Raw(sb.ToString());
+                }
+                
             </ul>
             <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/4,0.html">方案中心</a></strong></li>
+            	<li><strong>@Html.ActionLink(Resource.Menu_SolutionCenter, "SolutionCenter")</strong></li>
 
                 <li><a href="http://www.todaychina.com/app/index.php/13,0.html" title="IT策略-应用规划">IT策略-应用规划</a></li>
                 <li><a href="http://www.todaychina.com/app/index.php/14,0.html" title="IT构建-基础设计及应用测试">IT构建-基础设计及应...</a></li>
@@ -97,7 +96,9 @@
 
 			  <option value="http://www.todaycnc.com">今日标准精密机器</option>
 			</select></p>
-        	<p>Today Science Technology Development Corporation 2007-2009 All right reserved.<br> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11002232号-2</a></p>        </div>
+        	<p>Today Science Technology Development Corporation 2007-2009 All right reserved.<br> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11002232号-2</a></p>        
+
+        </div>
 </div>
 
 </div>

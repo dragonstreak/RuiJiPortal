@@ -16,6 +16,16 @@ namespace RuiJi.UI.Common
     {
         public static Lazy<List<NavTreeNodeModel>> NavTree = new Lazy<List<NavTreeNodeModel>>(LoadTree);
 
+        //public static List<NavTreeNodeModel> Path(int articleCategoryId)
+        //{
+
+        //}
+
+        //public static NavTreeNodeModel Locate(int articleCategoyId)
+        //{
+
+        //}
+
         public static NavTreeNodeModel StepIn
         {
             get
@@ -134,13 +144,8 @@ namespace RuiJi.UI.Common
 
             if (childCategories.Count <= 0)
             {
-                // set parent?
                 return model;
             }
-
-            //model.Childs.ForEach(t => {
-            //    t.Parent = model;
-            //});
 
             childCategories.ForEach(t =>
             {
@@ -152,7 +157,7 @@ namespace RuiJi.UI.Common
                     childNode.IsSubTopLevel = true;
                 }
 
-                model.Childs.Add(childNode);
+                model.Children.Add(childNode);
             });
 
             return model;

@@ -4,7 +4,7 @@ namespace RuiJi.UI.Common
 {
     public class Constants
     {
-        public const int ITEM_LIST_PAGE_SIZE = 10;
+        public const int ITEM_LIST_PAGE_SIZE = 3;
         public const string MENU_NODE_INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;";
 
         public static readonly ArticleCategoryEnum[] TOP_LEVEL_ARTICLE_CATEGORIES = new ArticleCategoryEnum[] { 
