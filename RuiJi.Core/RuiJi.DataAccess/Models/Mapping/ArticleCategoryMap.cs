@@ -15,6 +15,9 @@ namespace RuiJi.DataAccess.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(50);
 
+            this.Property(t => t.UIResourceKey)
+                .HasMaxLength(50);
+
             this.Property(t => t.Description)
                 .HasMaxLength(100);
 
@@ -29,8 +32,10 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.ToTable("ArticleCategory");
             this.Property(t => t.ArticleCategoryId).HasColumnName("ArticleCategoryId");
             this.Property(t => t.Name).HasColumnName("Name");
+            this.Property(t => t.UIResourceKey).HasColumnName("UIResourceKey");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.ParentCategoryId).HasColumnName("ParentCategoryId");
+            this.Property(t => t.IsShowOnHomePage).HasColumnName("IsShowOnHomePage");
             this.Property(t => t.IsDeleted).HasColumnName("IsDeleted");
             this.Property(t => t.CreateDate).HasColumnName("CreateDate");
             this.Property(t => t.CreateBy).HasColumnName("CreateBy");
