@@ -25,5 +25,7 @@ namespace RuiJi.UI.Models
         public string ResourceKey { get; set; }
 
         public int CategoryId { get; set; }
+
+		public string Name { get; set; }
     }
 }

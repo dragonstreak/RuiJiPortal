@@ -33,7 +33,8 @@ namespace RuiJi.UI.Extensions {
             NavTreeNodeModel model = new NavTreeNodeModel()
             {
                 CategoryId = articleCategory.ArticleCategoryId,
-                ResourceKey = articleCategory.UIResourceKey
+                ResourceKey = articleCategory.UIResourceKey,
+				Name = articleCategory.Name
             };
 
             return model;

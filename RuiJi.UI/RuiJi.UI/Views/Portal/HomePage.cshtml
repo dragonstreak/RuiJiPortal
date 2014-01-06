@@ -47,26 +47,57 @@
         </noscript>
         </div> 
         <div class="tabde"> 
-            <div class="table_title tabel-title-wrapper"> 
+            <div class="table_title table-title-wrapper"> 
                 <ul> 
-                    <li key="tag0" class="other">IT构建---基础设计及应用测试</li> 
+                    @foreach (var node in RuiJi.UI.Common.NavTreeContext.HomePageShown) {
+                        <li key="@("tag-" + node.Name)" class="other">@RuiJi.UI.Common.ResourceManager.GetLocalizedString(node.ResourceKey)</li>
+                    }
+                    @*<li key="tag0" class="other">IT构建---基础设计及应用测试</li> 
                     <li key="tag1" class="other">IT运维---应用监控、管理与维护</li> 
                     <li key="tag2" class="other">专业实施服务</li> 
-                    <li key="tag3" class="">资料提供</li>       
+                    <li key="tag3" class="">资料提供</li>   *@    
                 </ul> 
                 <div class="clear"></div> 
             </div> 
 
             <div class="table-content-wrapper">
-                <div class="table_content" key="tag0" style="display: none;"> 
+                @foreach (var node in RuiJi.UI.Common.NavTreeContext.HomePageShown) {
+                    <div class="table_content" key="@("tag-" + node.Name)" style="display: none;">
+                        <table border="0" cellpadding="15" cellspacing="15" width="100%"> 
+                            <tbody>
+                                <tr>
+                                    @foreach (var subnode in node.Children) {
+                                        string linkText = RuiJi.UI.Common.ResourceManager.GetLocalizedString(subnode.ResourceKey);
+                                        <td width="150"><strong><a href="@Url.Action("ItemList", new { categoryId = subnode.CategoryId })" title="@linkText">@linkText</a></strong></td>
+                                    }
+                                </tr>
+                                <tr>
+                                    @foreach (var subnode in node.Children) {
+                                        <td>
+                                            @foreach (var subsubnode in subnode.Children) {
+                                                string linkText = RuiJi.UI.Common.ResourceManager.GetLocalizedString(subsubnode.ResourceKey);
+                                                <a href="@Url.Action("ItemList", new { categoryId = subsubnode.CategoryId })" title="@linkText">@linkText</a><br>
+                                            }
+                                        </td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+@*                <div class="table_content" key="tag0" style="display: none;"> 
                   <table border="0" cellpadding="15" cellspacing="15" width="100%"> 
 
-                    <tbody><tr>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/16,0.html" title="基础设施中心">基础设施中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/17,0.html" title="质量中心">质量中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/18,0.html" title="性能中心">性能中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/19,0.html" title="安全中心">安全中心</a></strong></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/16,0.html" title="基础设施中心">基础设施中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/17,0.html" title="质量中心">质量中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/18,0.html" title="性能中心">性能中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/19,0.html" title="安全中心">安全中心</a></strong></td>
+                        </tr>
+
+
                     <tr>
 
                       <td>
@@ -264,7 +295,7 @@
                       </td>
                     </tr> 
                   </tbody></table> 
-                </div>
+                </div>*@
             </div>
         
         

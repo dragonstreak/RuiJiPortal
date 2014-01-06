@@ -25,6 +25,15 @@ namespace RuiJi.UI.Common
         //{
 
         //}
+		private static List<NavTreeNodeModel> _homePageShown = null;
+		public static List<NavTreeNodeModel> HomePageShown {
+			get {
+				if (_homePageShown == null) {
+					_homePageShown = LoadHomePageShown();
+				}
+				return _homePageShown;
+			}
+		}
 
         public static NavTreeNodeModel StepIn
         {
@@ -162,6 +171,20 @@ namespace RuiJi.UI.Common
 
             return model;
         }
+
+		private static List<NavTreeNodeModel> LoadHomePageShown() {
+			var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
+			var categories = svc.LoadAllShownOnHomePage();
+
+			List<NavTreeNodeModel> result = new List<NavTreeNodeModel>();
+
+			categories.ForEach(t => {
+				var treeNode = LoadTree(t);
+				result.Add(treeNode);
+			});
+
+			return result;
+		}
     }
 
 }

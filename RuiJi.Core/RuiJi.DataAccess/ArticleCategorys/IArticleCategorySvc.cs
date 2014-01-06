@@ -14,5 +14,6 @@ namespace RuiJi.DataAccess.ArticleCategorys
         ArticleCategory LoadById(int categoryId);
         List<ArticleCategory> LoadByParentId(int parentCategoryId);
         List<ArticleCategory> LoadWithAllChildrens(int categoryId);
+		List<ArticleCategory> LoadAllShownOnHomePage();
     }
 }
