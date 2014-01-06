@@ -9,7 +9,7 @@ namespace RuiJi.UI.Extensions {
 	public static class ModelExtensions {
 		public static ArticleModel ToModel(this Article article) {
 			ArticleModel model = new ArticleModel() {
-				Abstract = "...",
+				Abstract = article.Summary,
 				ArticleId = article.ArticleId,
 				Author = article.Author,
 				ContentDetail = article.ContentDetail,
@@ -27,5 +27,21 @@ namespace RuiJi.UI.Extensions {
 
 			return models;
 		}
+
+        public static NavTreeNodeModel ToNavTreeNodeModel(this ArticleCategory articleCategory)
+        {
+            NavTreeNodeModel model = new NavTreeNodeModel()
+            {
+                CategoryId = articleCategory.ArticleCategoryId,
+                ResourceKey = articleCategory.UIResourceKey
+            };
+
+            return model;
+        }
+
+        public static List<NavTreeNodeModel> ToNavTreeNodeModels(this List<ArticleCategory> articleCategories) {
+            List<NavTreeNodeModel> models = articleCategories.Select(t => t.ToNavTreeNodeModel()).ToList();
+            return models;
+        }
 	}
 }

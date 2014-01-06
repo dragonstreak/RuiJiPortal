@@ -14,7 +14,7 @@ namespace RuiJi.UI.Models
 
         public List<NavTreeNodeModel> Childs { get; set; }
 
-        public NavTreeNodeModel Parent { get; set; }
+        //public NavTreeNodeModel Parent { get; set; }
 
         public bool IsCurrent { get; set; }
 

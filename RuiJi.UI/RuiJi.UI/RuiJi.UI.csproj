@@ -198,6 +198,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\ConfigManager.cs" />
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\NavTreeContext.cs" />
+    <Compile Include="Common\RenderManger.cs" />
+    <Compile Include="Common\ResourceManager.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortalController.cs" />
