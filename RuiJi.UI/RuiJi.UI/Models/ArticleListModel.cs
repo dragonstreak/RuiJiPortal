@@ -10,6 +10,8 @@ namespace RuiJi.UI.Models
 
         public List<ArticleModel> Articles { get; set; }
 
+		public int ArticleCategoryId { get; set; }
+
         public int TotalCount { get; set; }
 
         public int TotalPageCount

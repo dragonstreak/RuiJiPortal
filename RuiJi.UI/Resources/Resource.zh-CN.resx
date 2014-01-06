@@ -171,4 +171,10 @@
   <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>en-US</value>
   </data>
+  <data name="Page_NextPage" xml:space="preserve">
+    <value>下一页</value>
+  </data>
+  <data name="Paging_PreviousPage" xml:space="preserve">
+    <value>上一页</value>
+  </data>
 </root>

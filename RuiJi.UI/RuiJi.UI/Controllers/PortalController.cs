@@ -92,6 +92,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.News, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
 
             list.Articles = articleModelList;
+			list.ArticleCategoryId = (int)ArticleCategoryEnum.News;
             list.PageIndex = pageIndex.GetValueOrDefault();
             list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
             list.TotalCount = totalCount;
@@ -252,6 +253,7 @@ namespace RuiJi.UI.Controllers
             var articleModelList = this.LoadByArticleCategoryPaged(categoryId, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
 
             list.Articles = articleModelList;
+			list.ArticleCategoryId = categoryId;
             list.PageIndex = pageIndex.GetValueOrDefault();
             list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
             list.TotalCount = totalCount;

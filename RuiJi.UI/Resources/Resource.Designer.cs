@@ -221,5 +221,23 @@ namespace RuiJi.UI.Resources {
                 return ResourceManager.GetString("Nav_SwitchLanguage_Key", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Page_NextPage {
+            get {
+                return ResourceManager.GetString("Page_NextPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        public static string Paging_PreviousPage {
+            get {
+                return ResourceManager.GetString("Paging_PreviousPage", resourceCulture);
+            }
+        }
     }
 }

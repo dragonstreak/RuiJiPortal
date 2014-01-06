@@ -3,6 +3,8 @@
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
 
+@using Common.Enums
+
 <div id="wrap"> 
   <div class="top"> 
         	<h1>TodayChina.com</h1> 
@@ -23,14 +25,14 @@
             <p></p> 
         </div> 
         <ul class="nav"> 
-        	<li><a href="@Url.Action("Ruiji")" style=" background-image:none;">@Resource.Menu_StepIntoRuiji</a></li><li>|</li>
-            <li><a href="@Url.Action("NewsCenter")" style=" background-image:none;">@Resource.Menu_NewsCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("SolutionCenter")" style=" background-image:none;">@Resource.Menu_SolutionCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("ServiceCenter")" style=" background-image:none;">@Resource.Menu_ServiceCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("SuccessCases")" style=" background-image:none;">@Resource.Menu_SuccessCases</a></li><li>|</li>
-            <li><a href="@Url.Action("Information")" style=" background-image:none;">@Resource.Menu_Information</a></li><li>|</li>
-            <li><a href="@Url.Action("HumanResources")" style=" background-image:none;">@Resource.Menu_HumanResources</a></li><li>|</li>
-            <li><a href="@Url.Action("ContactUs")" style=" background-image:none;">@Resource.Menu_ContactUs</a></li><li>|</li>
+        	<li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.CompanyInfo })" style=" background-image:none;">@Resource.Menu_StepIntoRuiji</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.News })" style=" background-image:none;">@Resource.Menu_NewsCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Solution })" style=" background-image:none;">@Resource.Menu_SolutionCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Service })" style=" background-image:none;">@Resource.Menu_ServiceCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Achievement })" style=" background-image:none;">@Resource.Menu_SuccessCases</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })" style=" background-image:none;">@Resource.Menu_Information</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })" style=" background-image:none;">@Resource.Menu_HumanResources</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })" style=" background-image:none;">@Resource.Menu_ContactUs</a></li><li>|</li>
             <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" style=" background-image:none;" target="_blank">@Resource.Menu_Forum</a></li>
         </ul> 
         <div class="banner white">

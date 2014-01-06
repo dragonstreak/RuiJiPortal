@@ -171,4 +171,10 @@
   <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>zh-CN</value>
   </data>
+  <data name="Page_NextPage" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Paging_PreviousPage" xml:space="preserve">
+    <value>Previous</value>
+  </data>
 </root>
