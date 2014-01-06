@@ -13,5 +13,6 @@ namespace RuiJi.DataAccess.ArticleCategorys
         void Delete(int categoryId, string operatorName);
         ArticleCategory LoadById(int categoryId);
         List<ArticleCategory> LoadByParentId(int parentCategoryId);
+        List<ArticleCategory> LoadWithAllChildrens(int categoryId);
     }
 }
