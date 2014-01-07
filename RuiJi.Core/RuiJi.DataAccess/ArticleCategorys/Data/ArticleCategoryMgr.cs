@@ -67,5 +67,12 @@ namespace RuiJi.DataAccess.ArticleCategorys.Data
             }
         }
 
+        public List<ArticleCategory> LoadAll()
+        {
+            using (var db = new RuijiPortalContext())
+            {
+                return db.ArticleCategories.ToList();
+            }
+        }
     }
 }

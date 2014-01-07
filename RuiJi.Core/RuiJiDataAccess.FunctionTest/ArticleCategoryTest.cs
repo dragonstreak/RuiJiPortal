@@ -20,6 +20,14 @@ namespace RuiJiDataAccess.FunctionTest
             Assert.AreEqual(true, category.ArticleCategoryId > 0);
         }
 
+        [TestMethod]
+        public void ArticleCategoryCacheTest()
+        {
+            var categorys = ArticleCategoryCacheSvc.LoadAllArticleCategory();
+            Assert.AreEqual(true, categorys != null);
+            categorys = ArticleCategoryCacheSvc.LoadAllArticleCategory();
+            Assert.AreEqual(true, categorys.Count > 0);
+        }
 
         private ArticleCategory GetArticleCategory()
         {
@@ -50,5 +58,21 @@ namespace RuiJiDataAccess.FunctionTest
                 return _articleCategorySvc;
             }
         }
+
+        private IArticleCategoryCacheSvc _articleCategoryCacheSvc;
+        private IArticleCategoryCacheSvc ArticleCategoryCacheSvc
+        {
+            get
+            {
+                if (_articleCategoryCacheSvc == null)
+                {
+                    _articleCategoryCacheSvc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategoryCacheSvc>();
+                }
+
+                return _articleCategoryCacheSvc;
+            }
+        }
+
+
     }
 }
