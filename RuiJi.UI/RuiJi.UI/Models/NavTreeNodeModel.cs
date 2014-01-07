@@ -9,12 +9,12 @@ namespace RuiJi.UI.Models
     {
         public NavTreeNodeModel()
         {
-            this.Childs = new List<NavTreeNodeModel>();
+            this.Children = new List<NavTreeNodeModel>();
         }
 
-        public List<NavTreeNodeModel> Childs { get; set; }
+        public List<NavTreeNodeModel> Children { get; set; }
 
-        public NavTreeNodeModel Parent { get; set; }
+        //public NavTreeNodeModel Parent { get; set; }
 
         public bool IsCurrent { get; set; }
 
@@ -25,5 +25,7 @@ namespace RuiJi.UI.Models
         public string ResourceKey { get; set; }
 
         public int CategoryId { get; set; }
+
+		public string Name { get; set; }
     }
 }

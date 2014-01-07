@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Activities_Title" xml:space="preserve">
+    <value>今日在线动态</value>
+  </data>
   <data name="Breadcrumb_Title" xml:space="preserve">
     <value>您现在的位置：</value>
   </data>
@@ -170,5 +173,11 @@
   </data>
   <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>en-US</value>
+  </data>
+  <data name="Page_NextPage" xml:space="preserve">
+    <value>下一页</value>
+  </data>
+  <data name="Paging_PreviousPage" xml:space="preserve">
+    <value>上一页</value>
   </data>
 </root>

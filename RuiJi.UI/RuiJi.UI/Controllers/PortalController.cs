@@ -53,97 +53,211 @@ namespace RuiJi.UI.Controllers
             return View("HomePage");
         }
 
-        public ActionResult Ruiji()
-        {
-            return View("Ruiji");
-        }
+		//public ActionResult Ruiji(int? pageIndex)
+		//{
+		//	var tree = NavTreeContext.NavTree.Value;
 
-        public ActionResult NewsCenter()
+
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0) {
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.CompanyInfo, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_NewsCenter;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult NewsCenter(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.News, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.ArticleCategoryId = (int)ArticleCategoryEnum.News;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_NewsCenter;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult SolutionCenter(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.Solution, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_SolutionCenter;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult ServiceCenter(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.Service, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_ServiceCenter;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult SuccessCases(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.Achievement, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_SuccessCases;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult Information(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.TechResource, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_Information;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult HumanResources(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.HumanResource, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_HumanResources;
+		//	list.IsSuccess = true;
+
+		//	return View("ItemList", list);
+		//}
+
+		//public ActionResult ContactUs(int? pageIndex)
+		//{
+		//	ArticleListModel list = new ArticleListModel();
+
+		//	if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+		//	{
+		//		pageIndex = 1;
+		//	}
+
+		//	int totalCount = 0;
+
+		//	var articleModelList = this.LoadByArticleCategoryPaged(ArticleCategoryEnum.ContactUs, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+
+		//	list.Articles = articleModelList;
+		//	list.PageIndex = pageIndex.GetValueOrDefault();
+		//	list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+		//	list.TotalCount = totalCount;
+		//	list.MenuSectionTitle = Resource.Menu_ContactUs;
+		//	list.IsSuccess = true;
+		//	return View("ItemList", list);
+		//}
+
+        public ActionResult ItemList(int categoryId, int? pageIndex)
         {
             ArticleListModel list = new ArticleListModel();
 
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.News);
+            if (!pageIndex.HasValue || pageIndex.GetValueOrDefault() <= 0)
+            {
+                pageIndex = 1;
+            }
+
+            int totalCount = 0;
+
+            var articleModelList = this.LoadByArticleCategoryPaged(categoryId, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
 
             list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_NewsCenter;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult SolutionCenter()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Solution);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_SolutionCenter;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult ServiceCenter()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Service);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_ServiceCenter;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult SuccessCases()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.Achievement);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_SuccessCases;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult Information()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.TechResource);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_Information;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult HumanResources()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.HumanResource);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_HumanResources;
-            list.IsSuccess = true;
-
-            return View("ItemList", list);
-        }
-
-        public ActionResult ContactUs()
-        {
-            ArticleListModel list = new ArticleListModel();
-
-            var articleModelList = this.LoadByArticleCategory(ArticleCategoryEnum.ContactUs);
-
-            list.Articles = articleModelList;
-            list.MenuSectionTitle = Resource.Menu_ContactUs;
+			list.ArticleCategoryId = categoryId;
+            list.PageIndex = pageIndex.GetValueOrDefault();
+            list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
+            list.TotalCount = totalCount;
+            list.MenuSectionTitle = "Menu Section Title";
             list.IsSuccess = true;
             return View("ItemList", list);
         }
@@ -167,21 +281,21 @@ namespace RuiJi.UI.Controllers
         public ActionResult SiteMap()
         {
             ArticleModel model = new ArticleModel();
-            model = LoadArticle(RuiJi.UI.Common.Constants.SiteMapArticleId);
+            model = LoadArticle(RuiJi.UI.Common.SpecialArticle.SiteMapArticleId);
             return View("ItemDetail", model);
         }
 
         public ActionResult LegalInformation()
         {
             ArticleModel model = new ArticleModel();
-            model = LoadArticle(RuiJi.UI.Common.Constants.LegalInformationArticleId);
+            model = LoadArticle(RuiJi.UI.Common.SpecialArticle.LegalInformationArticleId);
             return View("ItemDetail", model);
         }
 
         public ActionResult Links()
         {
             ArticleModel model = new ArticleModel();
-            model = LoadArticle(RuiJi.UI.Common.Constants.LinksArticleId);
+            model = LoadArticle(RuiJi.UI.Common.SpecialArticle.LinksArticleId);
             return View("ItemDetail", model);
         }
 
@@ -203,6 +317,25 @@ namespace RuiJi.UI.Controllers
             var modelList = svc.LoadByArticleCategoryId((int)articleCategory);
 
             return modelList.ToModels();
+        }
+
+        private List<ArticleModel> LoadByArticleCategoryPaged(int articleCategory, int pageIndex, int pageSize, out int totalCount)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+            var result = svc.LoadByArticleCategoryIdWithPaging(new LoadArticleByPagingParams()
+            {
+                ArticleCategoryId = articleCategory,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            });
+
+            totalCount = result.Total;
+            return result.ArticleList.ToModels();
+        }
+
+        private List<ArticleModel> LoadByArticleCategoryPaged(ArticleCategoryEnum articleCategory, int pageIndex, int pageSize, out int totalCount)
+        {
+            return this.LoadByArticleCategoryPaged((int)articleCategory, pageIndex, pageSize, out totalCount);
         }
 
         #endregion

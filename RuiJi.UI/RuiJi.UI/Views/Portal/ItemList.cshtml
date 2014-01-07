@@ -19,8 +19,30 @@
             <hr style="margin-top: 10px;" size="1">
         }
 
-        @*<p style="padding: 15px 0px 15px 0px ;text-align: center;">
-            <b><a href="http://www.todaychina.com/app/index.php/4,0.html">上一页</a></b>&nbsp;&nbsp;<a href="http://www.todaychina.com/app/index.php/4,0.html">1</a>&nbsp;<font color="#FF0000">[2]</font>&nbsp;<a href="http://www.todaychina.com/app/index.php/4,2.html">3</a>&nbsp;<a href="http://www.todaychina.com/app/index.php/4,3.html">4</a>&nbsp;&nbsp;<b><a href="http://www.todaychina.com/app/index.php/4,2.html">下一页</a></b>
-        </p>*@
+
+        <p style="padding: 15px 0px 15px 0px ;text-align: center;">
+            @if (Model.TotalPageCount > 1) {
+                if (Model.PageIndex > 1) {
+                <b><a href="@Url.Action("ItemList", new { categoryId = Model.ArticleCategoryId, pageIndex = Model.PageIndex - 1 })">@Resource.Paging_PreviousPage</a></b>
+                }
+                
+                Html.Raw("&nbsp;&nbsp;");
+                
+                for (int i = 1; i <= Model.TotalPageCount; i++) {
+                    if (i == Model.PageIndex) {
+                        <font color="#FF0000">[@i]</font>
+                    } else {
+                        string linkText = string.Format("[{0}]", i);
+                        @Html.ActionLink(linkText, "ItemList", new { categoryId = Model.ArticleCategoryId, pageIndex = i })
+                    }
+                }
+
+                Html.Raw("&nbsp;");
+                                                                                
+                if (Model.PageIndex < Model.TotalPageCount) {
+                <b><a href="@Url.Action("ItemList", new { categoryId = Model.ArticleCategoryId, pageIndex = Model.PageIndex + 1 })">@Resource.Page_NextPage</a></b>
+                }
+            }
+        </p>
     
 }

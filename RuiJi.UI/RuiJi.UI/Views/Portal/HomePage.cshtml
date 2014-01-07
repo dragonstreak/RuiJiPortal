@@ -3,6 +3,8 @@
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
 
+@using Common.Enums
+
 <div id="wrap"> 
   <div class="top"> 
         	<h1>TodayChina.com</h1> 
@@ -23,14 +25,14 @@
             <p></p> 
         </div> 
         <ul class="nav"> 
-        	<li><a href="@Url.Action("Ruiji")" style=" background-image:none;">@Resource.Menu_StepIntoRuiji</a></li><li>|</li>
-            <li><a href="@Url.Action("NewsCenter")" style=" background-image:none;">@Resource.Menu_NewsCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("SolutionCenter")" style=" background-image:none;">@Resource.Menu_SolutionCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("ServiceCenter")" style=" background-image:none;">@Resource.Menu_ServiceCenter</a></li><li>|</li>
-            <li><a href="@Url.Action("SuccessCases")" style=" background-image:none;">@Resource.Menu_SuccessCases</a></li><li>|</li>
-            <li><a href="@Url.Action("Information")" style=" background-image:none;">@Resource.Menu_Information</a></li><li>|</li>
-            <li><a href="@Url.Action("HumanResources")" style=" background-image:none;">@Resource.Menu_HumanResources</a></li><li>|</li>
-            <li><a href="@Url.Action("ContactUs")" style=" background-image:none;">@Resource.Menu_ContactUs</a></li><li>|</li>
+        	<li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.CompanyInfo })" style=" background-image:none;">@Resource.Menu_StepIntoRuiji</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.News })" style=" background-image:none;">@Resource.Menu_NewsCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Solution })" style=" background-image:none;">@Resource.Menu_SolutionCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Service })" style=" background-image:none;">@Resource.Menu_ServiceCenter</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Achievement })" style=" background-image:none;">@Resource.Menu_SuccessCases</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })" style=" background-image:none;">@Resource.Menu_Information</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })" style=" background-image:none;">@Resource.Menu_HumanResources</a></li><li>|</li>
+            <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })" style=" background-image:none;">@Resource.Menu_ContactUs</a></li><li>|</li>
             <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" style=" background-image:none;" target="_blank">@Resource.Menu_Forum</a></li>
         </ul> 
         <div class="banner white">
@@ -45,26 +47,57 @@
         </noscript>
         </div> 
         <div class="tabde"> 
-            <div class="table_title tabel-title-wrapper"> 
+            <div class="table_title table-title-wrapper"> 
                 <ul> 
-                    <li key="tag0" class="other">IT构建---基础设计及应用测试</li> 
+                    @foreach (var node in RuiJi.UI.Common.NavTreeContext.HomePageShown) {
+                        <li key="@("tag-" + node.Name)" class="other">@RuiJi.UI.Common.ResourceManager.GetLocalizedString(node.ResourceKey)</li>
+                    }
+                    @*<li key="tag0" class="other">IT构建---基础设计及应用测试</li> 
                     <li key="tag1" class="other">IT运维---应用监控、管理与维护</li> 
                     <li key="tag2" class="other">专业实施服务</li> 
-                    <li key="tag3" class="">资料提供</li>       
+                    <li key="tag3" class="">资料提供</li>   *@    
                 </ul> 
                 <div class="clear"></div> 
             </div> 
 
             <div class="table-content-wrapper">
-                <div class="table_content" key="tag0" style="display: none;"> 
+                @foreach (var node in RuiJi.UI.Common.NavTreeContext.HomePageShown) {
+                    <div class="table_content" key="@("tag-" + node.Name)" style="display: none;">
+                        <table border="0" cellpadding="15" cellspacing="15" width="100%"> 
+                            <tbody>
+                                <tr>
+                                    @foreach (var subnode in node.Children) {
+                                        string linkText = RuiJi.UI.Common.ResourceManager.GetLocalizedString(subnode.ResourceKey);
+                                        <td width="150"><strong><a href="@Url.Action("ItemList", new { categoryId = subnode.CategoryId })" title="@linkText">@linkText</a></strong></td>
+                                    }
+                                </tr>
+                                <tr>
+                                    @foreach (var subnode in node.Children) {
+                                        <td>
+                                            @foreach (var subsubnode in subnode.Children) {
+                                                string linkText = RuiJi.UI.Common.ResourceManager.GetLocalizedString(subsubnode.ResourceKey);
+                                                <a href="@Url.Action("ItemList", new { categoryId = subsubnode.CategoryId })" title="@linkText">@linkText</a><br>
+                                            }
+                                        </td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+
+@*                <div class="table_content" key="tag0" style="display: none;"> 
                   <table border="0" cellpadding="15" cellspacing="15" width="100%"> 
 
-                    <tbody><tr>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/16,0.html" title="基础设施中心">基础设施中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/17,0.html" title="质量中心">质量中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/18,0.html" title="性能中心">性能中心</a></strong></td>
-                      <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/19,0.html" title="安全中心">安全中心</a></strong></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/16,0.html" title="基础设施中心">基础设施中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/17,0.html" title="质量中心">质量中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/18,0.html" title="性能中心">性能中心</a></strong></td>
+                            <td width="150"><strong><a href="http://www.todaychina.com/app/index.php/19,0.html" title="安全中心">安全中心</a></strong></td>
+                        </tr>
+
+
                     <tr>
 
                       <td>
@@ -262,21 +295,23 @@
                       </td>
                     </tr> 
                   </tbody></table> 
-                </div>
+                </div>*@
             </div>
         
         
         </div> 
-    	<h2 class="white"><strong>今日在线动态</strong> » 
-
-<a href="http://www.todaychina.com/app/content.php/155,0.html" target="_blank" title="全员户外拓展---释放激情,携手共赢">全员户外拓展---释放激情,携手共赢</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/154,0.html" target="_blank" title="金秋十月摄影展">金秋十月摄影展</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/153,0.html" target="_blank" title="09夏第一届羽毛球比赛">09夏第一届羽毛球比赛</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/93,0.html" target="_blank" title="今日标准参加09年第11届国际机床展">今日标准参加09年第11届国际机床展</a> &nbsp;&nbsp;&nbsp;
+    <section class="activities-section-wrapper">
+        <h2 class="white">
+            <strong>@Resource.Activities_Title</strong>
+            @Html.Partial("_Activities")
     	</h2> 
-        <div class="news"> 
+    </section>
+    	
 
-            <ul>
+    <section class="news-section-wrapper">
+        <div class="news"> 
+            @Html.Partial("_NewsSection")
+@*            <ul>
             	<li><strong><a href="http://www.todaychina.com/app/index.php/3,0.html">新闻中心</a></strong></li>
 
                 <li><a href="http://www.todaychina.com/app/index.php/10,0.html" title="公司新闻">公司新闻</a></li>
@@ -310,8 +345,9 @@
                 <li><a href="http://www.todaychina.com/app/index.php/58,0.html" title="HP产品资料">HP产品资料</a></li>
                 <li><a href="http://www.todaychina.com/app/index.php/59,0.html" title="EMC产品资料">EMC产品资料</a></li>
                 <li><a href="http://www.todaychina.com/app/index.php/60,0.html" title="Vmware产品资料">Vmware产品资料</a></li>
-            </ul>
+            </ul>*@
         </div> 
+        </section>
         <div class="footer"> 
 
         	<p class="right">

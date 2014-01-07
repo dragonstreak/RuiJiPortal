@@ -1,0 +1,19 @@
+﻿@using RuiJi.UI.Common
+
+@{
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+}
+@foreach (var act in NavTreeContext.Activities)
+{
+    string prefix = (NavTreeContext.Activities[0] == act) ? "» " : "> ";
+    string linkText = act.Title;
+    string link = Html.ActionLink(linkText, "ItemDetail", new { articleId = act.ArticleId, target = "_blank", title = linkText }).ToHtmlString();
+
+    sb.Append(prefix).Append(link).Append("   ");
+}
+@Html.Raw(sb.ToString())
+
+ @*» <a href="http://www.todaychina.com/app/content.php/155,0.html" target="_blank" title="全员户外拓展---释放激情,携手共赢">全员户外拓展---释放激情,携手共赢</a> &nbsp;&nbsp;&nbsp;
+ &gt; <a href="http://www.todaychina.com/app/content.php/154,0.html" target="_blank" title="金秋十月摄影展">金秋十月摄影展</a> &nbsp;&nbsp;&nbsp;
+ &gt; <a href="http://www.todaychina.com/app/content.php/153,0.html" target="_blank" title="09夏第一届羽毛球比赛">09夏第一届羽毛球比赛</a> &nbsp;&nbsp;&nbsp;
+ &gt; <a href="http://www.todaychina.com/app/content.php/93,0.html" target="_blank" title="今日标准参加09年第11届国际机床展">今日标准参加09年第11届国际机床展</a> &nbsp;&nbsp;&nbsp;*@

@@ -74,5 +74,12 @@ namespace RuiJi.DataAccess.ArticleCategorys.Data
                 return db.ArticleCategories.ToList();
             }
         }
+
+        public List<ArticleCategory> LoadAllShownOnHomePage() {
+			using (var db = new RuijiPortalContext()) {
+				var categories = db.ArticleCategories.Where(t => !t.IsDeleted && t.IsShowOnHomePage);
+				return categories.ToList();
+			}
+		}
     }
 }

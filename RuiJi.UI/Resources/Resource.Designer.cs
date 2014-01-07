@@ -61,6 +61,15 @@ namespace RuiJi.UI.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RuiJi Activities.
+        /// </summary>
+        public static string Activities_Title {
+            get {
+                return ResourceManager.GetString("Activities_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your current location:.
         /// </summary>
         public static string Breadcrumb_Title {
@@ -219,6 +228,24 @@ namespace RuiJi.UI.Resources {
         public static string Nav_SwitchLanguage_Key {
             get {
                 return ResourceManager.GetString("Nav_SwitchLanguage_Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Page_NextPage {
+            get {
+                return ResourceManager.GetString("Page_NextPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        public static string Paging_PreviousPage {
+            get {
+                return ResourceManager.GetString("Paging_PreviousPage", resourceCulture);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
+@using Common.Enums
 
     <div id="bgwrap">
 	<div id="wrap">
@@ -26,69 +27,34 @@
         <div class="secnav">
         	<ul>
 
-            	<li><a class="secnavhr" href="@Url.Action("Ruiji")">@Resource.Menu_StepIntoRuiji</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("NewsCenter")">@Resource.Menu_NewsCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("SolutionCenter")">@Resource.Menu_SolutionCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ServiceCenter")">@Resource.Menu_ServiceCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("SuccessCases")">@Resource.Menu_SuccessCases</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("Information")">@Resource.Menu_Information</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("HumanResources")">@Resource.Menu_HumanResources</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ContactUs")">@Resource.Menu_ContactUs</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.CompanyInfo })">@Resource.Menu_StepIntoRuiji</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.News })">@Resource.Menu_NewsCenter</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Solution })">@Resource.Menu_SolutionCenter</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Service })">@Resource.Menu_ServiceCenter</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Achievement })">@Resource.Menu_SuccessCases</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })">@Resource.Menu_Information</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })">@Resource.Menu_HumanResources</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })">@Resource.Menu_ContactUs</a></li>
             	<li><a class="secnavhr" href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" target="_blank">@Resource.Menu_Forum</a></li>
         	</ul>
         </div>
         <div class="content">
             <section class="content-sidebar-wrapper">
             <div class="sidebar">
-                @Html.Partial("_SideBarPartial");
+                @Html.Partial("_SideBarPartial")
             </div>
             </section>
             <section class="content-item-wrapper">
                 <div class="main">
-                    @RenderSection("contentItem", required: false);
+                    @RenderSection("contentItem", required: false)
                 </div>
             </section>
         </div>
+        <section class="news-section-wrapper">
         <div class="secnews">
-
-
-            <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/3,0.html">新闻中心</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/10,0.html" title="公司新闻">公司新闻</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/11,0.html" title="媒体看今日">媒体看今日</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/12,0.html" title="业界动态">业界动态</a></li>
-            </ul>
-            <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/4,0.html">方案中心</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/13,0.html" title="IT策略-应用规划">IT策略-应用规划</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/14,0.html" title="IT构建-基础设计及应用测试">IT构建-基础设计及应...</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/15,0.html" title="IT运维-应用监控|管理与维护">IT运维-应用监控|管理...</a></li>
-            </ul>
-            <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/5,0.html">服务中心</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/52,0.html" title="服务内容介绍">服务内容介绍</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/53,0.html" title="客户建议及投诉">客户建议及投诉</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/54,0.html" title="在线服务">在线服务</a></li>
-            </ul>
-            <ul>
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/6,0.html">成功案例</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/55,0.html" title="客户列表">客户列表</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/56,0.html" title="案例分享">案例分享</a></li>
-            </ul>
-            <ul style="border-right:0;">
-            	<li><strong><a href="http://www.todaychina.com/app/index.php/7,0.html">资料提供</a></strong></li>
-
-                <li><a href="http://www.todaychina.com/app/index.php/57,0.html" title="今日在线服务体系资料">今日在线服务体系资料</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/58,0.html" title="HP产品资料">HP产品资料</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/59,0.html" title="EMC产品资料">EMC产品资料</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/60,0.html" title="Vmware产品资料">Vmware产品资料</a></li>
-                <li><a href="http://www.todaychina.com/app/index.php/61,0.html" title="Oracle产品资料">Oracle产品资料</a></li>
-            </ul>
+            @Html.Partial("_NewsSection")
         </div>
+        </section>
         <div class="footer">
 
         	<p class="right">
@@ -97,7 +63,9 @@
 
 			  <option value="http://www.todaycnc.com">今日标准精密机器</option>
 			</select></p>
-        	<p>Today Science Technology Development Corporation 2007-2009 All right reserved.<br> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11002232号-2</a></p>        </div>
+        	<p>Today Science Technology Development Corporation 2007-2009 All right reserved.<br> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11002232号-2</a></p>        
+
+        </div>
 </div>
 
 </div>
