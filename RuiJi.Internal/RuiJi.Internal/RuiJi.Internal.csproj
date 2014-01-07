@@ -188,6 +188,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -195,6 +196,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +257,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\Logo.gif" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -269,7 +272,67 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Sytles\main.css" />
+    <Content Include="Styles\base.css" />
+    <Content Include="Styles\css_packed.css" />
+    <Content Include="Styles\images\default-head.jpg" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Styles\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\img\arrow.gif" />
+    <Content Include="Styles\img\bl.gif" />
+    <Content Include="Styles\img\bl_10.gif" />
+    <Content Include="Styles\img\booking-card-bg.jpg" />
+    <Content Include="Styles\img\border.gif" />
+    <Content Include="Styles\img\border2.gif" />
+    <Content Include="Styles\img\bottom-bg.gif" />
+    <Content Include="Styles\img\br.gif" />
+    <Content Include="Styles\img\br_10.gif" />
+    <Content Include="Styles\img\corner.gif" />
+    <Content Include="Styles\img\light_bg.jpg" />
+    <Content Include="Styles\img\menu\menu-center-right.gif" />
+    <Content Include="Styles\img\menu\menu-left.gif" />
+    <Content Include="Styles\img\right-bg.gif" />
+    <Content Include="Styles\img\rnd_bottom.gif" />
+    <Content Include="Styles\img\rnd_bottom_gray.gif" />
+    <Content Include="Styles\img\rnd_top.gif" />
+    <Content Include="Styles\img\rnd_top_blue.gif" />
+    <Content Include="Styles\img\rnd_top_gray.gif" />
+    <Content Include="Styles\img\small-button-bg.gif" />
+    <Content Include="Styles\img\tables\corner.gif" />
+    <Content Include="Styles\img\tables\down.gif" />
+    <Content Include="Styles\img\tables\layout.gif" />
+    <Content Include="Styles\img\tables\ok.gif" />
+    <Content Include="Styles\img\tl.gif" />
+    <Content Include="Styles\img\tl_10.gif" />
+    <Content Include="Styles\img\topbar_bottom.gif" />
+    <Content Include="Styles\img\tr.gif" />
+    <Content Include="Styles\img\tr_10.gif" />
+    <Content Include="Styles\main.css" />
+    <Content Include="Styles\menu\menu-bg.gif" />
+    <Content Include="Styles\menu\menu-bg.png" />
+    <Content Include="Styles\menu\menu.css" />
+    <Content Include="Styles\menu\menu0.gif" />
+    <Content Include="Styles\menu\menu1.gif" />
+    <Content Include="Styles\menu\menu2.gif" />
+    <Content Include="Styles\menu\menu3.gif" />
+    <Content Include="Styles\menu\menu7.gif" />
+    <Content Include="Styles\print.css" />
+    <Content Include="Styles\reset.css" />
+    <Content Include="Styles\styles.css" />
+    <Content Include="Styles\tags.css" />
+    <Content Include="Styles\trend.css" />
+    <Content Include="Styles\type.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -309,10 +372,15 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_Master.cshtml" />
+    <Content Include="Styles\img\psd\title.psd" />
+    <Content Include="Styles\menu\psd\menu1.psd" />
+    <Content Include="Styles\menu\psd\menu2.psd" />
+    <Content Include="Styles\menu\psd\menu3.psd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Sytles\Pages\" />
+    <Folder Include="Styles\Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
