@@ -26,7 +26,14 @@
     }
     @Html.Raw(sb.ToString())
 </ul>
-<ul style="border-right:0;">
+<ul>
+    @{
+        sb.Clear();
+        RuiJi.UI.Common.RenderManger.RenderNewsSection(sb, RuiJi.UI.Common.NavTreeContext.Information, this.Html);
+    }
+    @Html.Raw(sb.ToString())
+</ul>
+@*<ul style="border-right:0;">
     <li><strong><a href="http://www.todaychina.com/app/index.php/7,0.html">资料提供</a></strong></li>
 
     <li><a href="http://www.todaychina.com/app/index.php/57,0.html" title="今日在线服务体系资料">今日在线服务体系资料</a></li>
@@ -34,4 +41,4 @@
     <li><a href="http://www.todaychina.com/app/index.php/59,0.html" title="EMC产品资料">EMC产品资料</a></li>
     <li><a href="http://www.todaychina.com/app/index.php/60,0.html" title="Vmware产品资料">Vmware产品资料</a></li>
     <li><a href="http://www.todaychina.com/app/index.php/61,0.html" title="Oracle产品资料">Oracle产品资料</a></li>
-</ul>
+</ul>*@

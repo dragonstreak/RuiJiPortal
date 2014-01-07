@@ -9,13 +9,13 @@
 
 @section contentItem {
     
-        <p><img src="/images/ruiji/list_img.gif"></p>
+        <p><img src="/Contents/UI/images/ruiji/list_img.gif"></p>
 
         @Html.Partial("_BreadcrumbPartial")
 
         @foreach (var item in Model.Articles) {
             <h5>@item.Title</h5>
-            <p class="fontdetail">@item.Abstract<a href="@Url.Action("Detail", new { articleId = item.ArticleId })"><img src="/images/ruiji/list_look.gif"></a></p>
+            <p class="fontdetail">@item.Abstract<a href="@Url.Action("Detail", new { articleId = item.ArticleId })"><img src="/Contents/UI/images/ruiji/list_look.gif"></a></p>
             <hr style="margin-top: 10px;" size="1">
         }
 
