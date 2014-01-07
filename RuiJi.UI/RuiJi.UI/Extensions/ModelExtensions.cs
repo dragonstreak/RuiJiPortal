@@ -20,7 +20,7 @@ namespace RuiJi.UI.Extensions {
 			return model;
 		}
 
-		public static List<ArticleModel> ToModels(this List<Article> articles) {
+		public static List<ArticleModel> ToModels(this IEnumerable<Article> articles) {
 			List<ArticleModel> models = null;
 
 			models = articles.Select(t => t.ToModel()).ToList();

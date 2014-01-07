@@ -35,6 +35,19 @@ namespace RuiJi.UI.Common
 			}
 		}
 
+        private static List<ArticleModel> _activities = null;
+        public static List<ArticleModel> Activities
+        {
+            get
+            {
+                if (_activities == null)
+                {
+                    _activities = LoadActivities(Constants.ACTIVITIES_COUNT);
+                }
+                return _activities;
+            }
+        }
+
         public static NavTreeNodeModel StepIn
         {
             get
@@ -185,6 +198,15 @@ namespace RuiJi.UI.Common
 
 			return result;
 		}
+
+        private static List<ArticleModel> LoadActivities(int count)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+            var articles = svc.LoadByArticleCategoryId(SpecialArticleCategory.ActivitiesId);
+
+            var list = articles.Take(count).ToModels();
+            return list;
+        }
     }
 
 }

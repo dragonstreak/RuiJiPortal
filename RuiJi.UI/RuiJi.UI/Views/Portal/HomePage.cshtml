@@ -300,16 +300,18 @@
         
         
         </div> 
-    	<h2 class="white"><strong>今日在线动态</strong> » 
-
-<a href="http://www.todaychina.com/app/content.php/155,0.html" target="_blank" title="全员户外拓展---释放激情,携手共赢">全员户外拓展---释放激情,携手共赢</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/154,0.html" target="_blank" title="金秋十月摄影展">金秋十月摄影展</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/153,0.html" target="_blank" title="09夏第一届羽毛球比赛">09夏第一届羽毛球比赛</a> &nbsp;&nbsp;&nbsp;
- &gt; <a href="http://www.todaychina.com/app/content.php/93,0.html" target="_blank" title="今日标准参加09年第11届国际机床展">今日标准参加09年第11届国际机床展</a> &nbsp;&nbsp;&nbsp;
+    <section class="activities-section-wrapper">
+        <h2 class="white">
+            <strong>@Resource.Activities_Title</strong>
+            @Html.Partial("_Activities")
     	</h2> 
-        <div class="news"> 
+    </section>
+    	
 
-            <ul>
+    <section class="news-section-wrapper">
+        <div class="news"> 
+            @Html.Partial("_NewsSection")
+@*            <ul>
             	<li><strong><a href="http://www.todaychina.com/app/index.php/3,0.html">新闻中心</a></strong></li>
 
                 <li><a href="http://www.todaychina.com/app/index.php/10,0.html" title="公司新闻">公司新闻</a></li>
@@ -343,8 +345,9 @@
                 <li><a href="http://www.todaychina.com/app/index.php/58,0.html" title="HP产品资料">HP产品资料</a></li>
                 <li><a href="http://www.todaychina.com/app/index.php/59,0.html" title="EMC产品资料">EMC产品资料</a></li>
                 <li><a href="http://www.todaychina.com/app/index.php/60,0.html" title="Vmware产品资料">Vmware产品资料</a></li>
-            </ul>
+            </ul>*@
         </div> 
+        </section>
         <div class="footer"> 
 
         	<p class="right">

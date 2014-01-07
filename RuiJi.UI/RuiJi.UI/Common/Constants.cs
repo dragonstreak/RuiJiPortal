@@ -4,6 +4,7 @@ namespace RuiJi.UI.Common
 {
     public class Constants
     {
+        public const int ACTIVITIES_COUNT = 4;
         public const int ITEM_LIST_PAGE_SIZE = 10;
         public const string MENU_NODE_INDENT = "&nbsp;&nbsp;&nbsp;&nbsp;";
 
@@ -17,6 +18,11 @@ namespace RuiJi.UI.Common
             , ArticleCategoryEnum.Solution
             , ArticleCategoryEnum.TechResource
         };
+    }
+
+    public class SpecialArticleCategory
+    {
+        public const int ActivitiesId = 1;
     }
 
     public class SpecialArticle
