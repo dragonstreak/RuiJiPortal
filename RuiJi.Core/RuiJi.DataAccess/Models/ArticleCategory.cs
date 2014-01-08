@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace RuiJi.DataAccess.Models
 {
@@ -23,5 +22,6 @@ namespace RuiJi.DataAccess.Models
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public string UpdateBy { get; set; }
         public virtual ICollection<Article> Articles { get; set; }
+        public int HomePageDisplayOrder { get; set; }
     }
 }

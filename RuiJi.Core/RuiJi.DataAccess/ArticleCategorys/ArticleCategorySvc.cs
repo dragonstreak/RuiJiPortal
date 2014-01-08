@@ -72,6 +72,11 @@ namespace RuiJi.DataAccess.ArticleCategorys
 			return _mgr.LoadAllShownOnHomePage();
 		}
 
+        /// <summary>
+        /// Returns the sequences of all parent categories from top to down.
+        /// </summary>
+        /// <param name="childArticleCategoryId"></param>
+        /// <returns></returns>
         public List<ArticleCategory> LoadArticleCategoryPath(int childArticleCategoryId)
         {
             List<ArticleCategory> path = new List<ArticleCategory>();

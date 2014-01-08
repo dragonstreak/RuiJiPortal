@@ -41,6 +41,7 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.CreateBy).HasColumnName("CreateBy");
             this.Property(t => t.UpdateDate).HasColumnName("UpdateDate");
             this.Property(t => t.UpdateBy).HasColumnName("UpdateBy");
+            this.Property(t => t.HomePageDisplayOrder).HasColumnName("HomePageDisplayOrder");
         }
     }
 }

@@ -62,6 +62,7 @@ namespace RuiJi.DataAccess.ArticleCategorys.Data
                             where c.ParentCategoryId.HasValue
                                   && c.ParentCategoryId.Value == parentCategoryId
                                   && !c.IsDeleted
+                            orderby c.HomePageDisplayOrder
                             select c;
                 return query.ToList();
             }
@@ -77,7 +78,7 @@ namespace RuiJi.DataAccess.ArticleCategorys.Data
 
         public List<ArticleCategory> LoadAllShownOnHomePage() {
 			using (var db = new RuijiPortalContext()) {
-				var categories = db.ArticleCategories.Where(t => !t.IsDeleted && t.IsShowOnHomePage);
+				var categories = db.ArticleCategories.Where(t => !t.IsDeleted && t.IsShowOnHomePage).OrderBy(t => t.HomePageDisplayOrder);
 				return categories.ToList();
 			}
 		}

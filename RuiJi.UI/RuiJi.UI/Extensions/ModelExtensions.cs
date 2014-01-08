@@ -34,7 +34,8 @@ namespace RuiJi.UI.Extensions {
             {
                 CategoryId = articleCategory.ArticleCategoryId,
                 ResourceKey = articleCategory.UIResourceKey,
-				Name = articleCategory.Name
+				Name = articleCategory.Name,
+                HomePageDisplayOrder = articleCategory.HomePageDisplayOrder
             };
 
             return model;

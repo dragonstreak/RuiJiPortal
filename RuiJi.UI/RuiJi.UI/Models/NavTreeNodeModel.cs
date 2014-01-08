@@ -14,8 +14,6 @@ namespace RuiJi.UI.Models
 
         public List<NavTreeNodeModel> Children { get; set; }
 
-        //public NavTreeNodeModel Parent { get; set; }
-
         public bool IsCurrent { get; set; }
 
         public bool IsSubTopLevel { get; set; }
@@ -27,5 +25,7 @@ namespace RuiJi.UI.Models
         public int CategoryId { get; set; }
 
 		public string Name { get; set; }
+
+        public int HomePageDisplayOrder { get; set; }
     }
 }
