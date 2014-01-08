@@ -71,5 +71,47 @@ namespace RuiJi.DataAccess.ArticleCategorys
 
 			return _mgr.LoadAllShownOnHomePage();
 		}
+
+        public List<ArticleCategory> LoadArticleCategoryPath(int childArticleCategoryId)
+        {
+            List<ArticleCategory> path = new List<ArticleCategory>();
+
+            var category = _mgr.LoadById(childArticleCategoryId);
+
+            if (category == null)
+            {
+                return path;
+            }
+            else
+            {
+                path.Add(category);
+            }
+
+            // Anyway, no need to write test cases, hereby not to do it by recursing.
+            ArticleCategory currentCategory = category;
+            while (currentCategory.ParentCategoryId.HasValue)
+            {
+                if (currentCategory.ParentCategoryId.GetValueOrDefault() <= 0)
+                {
+                    break;
+                }
+
+                var parentCategory = _mgr.LoadById(currentCategory.ParentCategoryId.GetValueOrDefault());
+
+                if (parentCategory != null)
+                {
+                    path.Add(parentCategory);
+                    currentCategory = parentCategory;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            path.Reverse();
+
+            return path;
+        }
     }
 }

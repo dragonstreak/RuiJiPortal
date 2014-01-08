@@ -13,6 +13,7 @@ using RuiJi.Web.Helper;
 using RuiJi.Web.MvcBase;
 using RuiJi.UI.Extensions;
 using RuiJi.UI.Resources;
+using RuiJi.DataAccess.ArticleCategorys;
 
 namespace RuiJi.UI.Controllers
 {
@@ -251,9 +252,10 @@ namespace RuiJi.UI.Controllers
             int totalCount = 0;
 
             var articleModelList = this.LoadByArticleCategoryPaged(categoryId, pageIndex.GetValueOrDefault(), RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE, out totalCount);
+            var articleCategoryModel = this.LoadArticleCategory(categoryId);
 
             list.Articles = articleModelList;
-			list.ArticleCategoryId = categoryId;
+            list.ArticleCategory = articleCategoryModel;
             list.PageIndex = pageIndex.GetValueOrDefault();
             list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
             list.TotalCount = totalCount;
@@ -302,6 +304,12 @@ namespace RuiJi.UI.Controllers
         #endregion
 
         #region Private Methods
+        private NavTreeNodeModel LoadArticleCategory(int articleCategoryId)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
+            var articleCategory = svc.LoadById(articleCategoryId);
+            return articleCategory.ToNavTreeNodeModel();
+        }
 
         private ArticleModel LoadArticle(int articleId)
         {

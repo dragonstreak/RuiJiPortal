@@ -10,7 +10,15 @@ namespace RuiJi.UI.Models
 
         public List<ArticleModel> Articles { get; set; }
 
-		public int ArticleCategoryId { get; set; }
+        public int ArticleCategoryId
+        {
+            get
+            {
+                return ArticleCategory.CategoryId;
+            }
+        }
+
+        public NavTreeNodeModel ArticleCategory { get; set; }
 
         public int TotalCount { get; set; }
 

@@ -16,15 +16,13 @@ namespace RuiJi.UI.Common
     {
         public static Lazy<List<NavTreeNodeModel>> NavTree = new Lazy<List<NavTreeNodeModel>>(LoadTree);
 
-        //public static List<NavTreeNodeModel> Path(int articleCategoryId)
-        //{
+        public static List<NavTreeNodeModel> Path(int articleCategoryId)
+        {
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
+            var list = svc.LoadArticleCategoryPath(articleCategoryId);
+            return list.ToNavTreeNodeModels();
+        }
 
-        //}
-
-        //public static NavTreeNodeModel Locate(int articleCategoyId)
-        //{
-
-        //}
 		private static List<NavTreeNodeModel> _homePageShown = null;
 		public static List<NavTreeNodeModel> HomePageShown {
 			get {
