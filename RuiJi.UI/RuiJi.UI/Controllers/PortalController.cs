@@ -259,7 +259,6 @@ namespace RuiJi.UI.Controllers
             list.PageIndex = pageIndex.GetValueOrDefault();
             list.PageSize = RuiJi.UI.Common.Constants.ITEM_LIST_PAGE_SIZE;
             list.TotalCount = totalCount;
-            list.MenuSectionTitle = "Menu Section Title";
             list.IsSuccess = true;
             return View("ItemList", list);
         }
