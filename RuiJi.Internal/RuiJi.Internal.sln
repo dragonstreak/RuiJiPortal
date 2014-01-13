@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJi.Internal", "RuiJi.Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJi.Internal.Tests", "RuiJi.Internal.Tests\RuiJi.Internal.Tests.csproj", "{BFEE285C-0ADD-418C-8C7E-10DB208531DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuiJi.Internal.Web", "RuiJi.Internal.Web\RuiJi.Internal.Web.csproj", "{EF92C3FD-60F6-4A65-9A46-6525693C041D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BFEE285C-0ADD-418C-8C7E-10DB208531DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFEE285C-0ADD-418C-8C7E-10DB208531DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFEE285C-0ADD-418C-8C7E-10DB208531DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF92C3FD-60F6-4A65-9A46-6525693C041D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF92C3FD-60F6-4A65-9A46-6525693C041D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF92C3FD-60F6-4A65-9A46-6525693C041D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF92C3FD-60F6-4A65-9A46-6525693C041D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
