@@ -90,6 +90,7 @@
     <Compile Include="ArticleCategoryTest.cs" />
     <Compile Include="ArticleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

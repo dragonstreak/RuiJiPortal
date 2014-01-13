@@ -102,9 +102,14 @@
     <Compile Include="Models\ArticleCategory.cs" />
     <Compile Include="Models\Mapping\ArticleCategoryMap.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
     <Compile Include="Models\Mapping\SystemUserMap.cs" />
+    <Compile Include="Models\Mapping\UserRole_lnkMap.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RuijiPortalContext.cs" />
     <Compile Include="Models\SystemUser.cs" />
+    <Compile Include="Models\SystemUserCustom.cs" />
+    <Compile Include="Models\UserRole_lnk.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RuijiPortalContextCustom.cs" />
     <Compile Include="RuiJiDataAccessException.cs" />
@@ -112,9 +117,16 @@
     <Compile Include="ServiceLocatorBase.cs" />
     <Compile Include="ServiceProviderBase.cs" />
     <Compile Include="ServiceProviderBindingAttribute.cs" />
+    <Compile Include="User\Data\IUserMgr.cs" />
+    <Compile Include="User\Data\UserMgr.cs" />
+    <Compile Include="User\IUserSvc.cs" />
+    <Compile Include="User\UserSvc.cs" />
+    <Compile Include="User\UserSvcProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
     <None Include="CodeTemplates\ReverseEngineerCodeFirst\Entity.tt" />
     <None Include="CodeTemplates\ReverseEngineerCodeFirst\Mapping.tt" />
