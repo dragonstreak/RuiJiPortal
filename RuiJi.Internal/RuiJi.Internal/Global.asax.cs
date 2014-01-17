@@ -23,6 +23,8 @@ namespace RuiJi.Internal
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+           
         }
+
     }
 }

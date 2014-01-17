@@ -17,11 +17,6 @@ namespace RuiJi.Internal.Helpers
 {
     public static class MenuHelper
     {
-        private static List<MenuModel> _smartMenus = null;
-        private static List<MenuModel> _miniMenus = null;
-        private static List<MenuModel> _rupeMenus = null;
-        private static List<MenuModel> _indoMenus = null;
-
         private static readonly string script = @"
             <script type='text/javascript'>
             $(function(){
@@ -51,7 +46,7 @@ namespace RuiJi.Internal.Helpers
             if (currentUser == null)
                 return new MvcHtmlString(string.Empty);
 
-            List<MenuModel> menus = LoadMenus(helper, "~/AppData/Menu.xml");
+            List<MenuModel> menus = LoadMenus(helper, "~/App_Data/Menu.xml");
 
 
             var sb = new StringBuilder();

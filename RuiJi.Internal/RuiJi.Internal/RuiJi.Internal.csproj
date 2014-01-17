@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\..\RuiJi.Core\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
@@ -74,6 +77,9 @@
     <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\@Libs\EnterpriseLibrary\5.0\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="RuiJi.DataAccess">
+      <HintPath>..\..\RuiJi.Core\RuiJi.DataAccess\bin\Debug\RuiJi.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -218,14 +224,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\RuiJiCryptoGraphy.cs" />
     <Compile Include="Common\RuiJiContextCookieSerializer.cs" />
     <Compile Include="Context\RuiJiContext.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Handler\LoginAsyncResult.cs" />
+    <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Helpers\JsonSerializationHelper.cs" />
     <Compile Include="Helpers\MenuHelper.cs" />
     <Compile Include="Helpers\MenuUrlProcessor.cs" />
+    <Compile Include="Models\Article\ArticleListModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Module\RuiJiContextModule.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -402,13 +411,16 @@
     <Content Include="Styles\menu\psd\menu1.psd" />
     <Content Include="Styles\menu\psd\menu2.psd" />
     <Content Include="Styles\menu\psd\menu3.psd" />
+    <Content Include="Styles\Pages\Login.css" />
     <Content Include="Styles\print.css" />
     <Content Include="Styles\reset.css" />
     <Content Include="Styles\styles.css" />
     <Content Include="Styles\tags.css" />
     <Content Include="Styles\trend.css" />
     <Content Include="Styles\type.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -436,10 +448,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_Master.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Styles\Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

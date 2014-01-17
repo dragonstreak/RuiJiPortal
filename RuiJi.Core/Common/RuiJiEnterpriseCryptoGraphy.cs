@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.Security.Cryptography;
 
-namespace RuiJi.Internal.Common
+namespace Common
 {
-    public class RuiJiCryptoGraphy
+    public class RuiJiEnterpriseCryptoGraphy
     {
-        public static readonly RuiJiCryptoGraphy Instance = new RuiJiCryptoGraphy();
+        public static readonly RuiJiEnterpriseCryptoGraphy Instance = new RuiJiEnterpriseCryptoGraphy();
 
         private string RuiJiHashProvider = "RuiJiHashProvider";
         private string RuiJiSymmerticProvider = "RuiJiSymmetricCryptoServiceProvider";
 
         private CryptographyManager cryptoManager;
 
-        private RuiJiCryptoGraphy()
+        private RuiJiEnterpriseCryptoGraphy()
         {
             cryptoManager = EnterpriseLibraryContainer.Current.GetInstance<CryptographyManager>();
         }

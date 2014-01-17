@@ -10,10 +10,11 @@ namespace RuiJi.Internal.Context
     {
         public const string ContextCookieKey = "RuiJiCRemain";
 
-        public RuiJiContext(int uid, string name)
+        public RuiJiContext(int uid, string name, List<string> userRoles)
         {
             userId = uid;
             userName = name;
+            roles = userRoles;
             lastGenerateTime = DateTime.Now;
         }
 

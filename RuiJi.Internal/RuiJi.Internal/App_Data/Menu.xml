@@ -14,7 +14,7 @@
         <Id>13210</Id>
         <ParentId>132</ParentId>
         <Type>0</Type>
-        <Name>Article Manage</Name>
+        <Name>ArticleManage</Name>
         <DisplayName>Article Manage</DisplayName>
         <SortIndex>0</SortIndex>
         <Url>~/Article</Url>

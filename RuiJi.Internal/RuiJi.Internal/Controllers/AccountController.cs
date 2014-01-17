@@ -14,7 +14,6 @@ using RuiJi.Internal.Models;
 namespace RuiJi.Internal.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //

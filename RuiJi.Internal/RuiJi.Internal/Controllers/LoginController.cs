@@ -7,17 +7,20 @@ using RuiJi.Internal.Models;
 
 namespace RuiJi.Internal.Controllers
 {
-    public class ArticleController : BaseController
+    public class LoginController : BaseController
     {
         //
-        // GET: /Article/
+        // GET: /Login/
 
         public ActionResult Index()
         {
-            ArticleListModel model = new ArticleListModel();
-            model.SetMenu("SiteManagement", "ArticleManager");
-            return View(model);
+            return View();
         }
 
+        public ActionResult Logon(LoginModel user)
+        {
+
+            return RedirectToAction("Index", "Article");            
+        }
     }
 }

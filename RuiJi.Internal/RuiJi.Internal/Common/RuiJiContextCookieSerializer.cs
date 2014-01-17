@@ -12,6 +12,7 @@ namespace RuiJi.Internal.Common
     {
         private const string MainDelimiter = "$";
         private const string Delimiter = "|";
+        private const char ListDelimiter = ',';
 
         public static string Serialize(RuiJiContext context)
         {
@@ -26,6 +27,9 @@ namespace RuiJi.Internal.Common
             sb.Append(Delimiter);
 
             sb.Append(context.UserName);
+            sb.Append(Delimiter);
+            var roleList = string.Join(ListDelimiter.ToString(), context.Roles);
+            sb.Append(roleList);
 
             var tokenCreateDate = DateTime.UtcNow;
             var token = SecurityService.CreateSecurityToken(new string[] { sb.ToString() });
@@ -68,7 +72,7 @@ namespace RuiJi.Internal.Common
 
             try
             {
-                if (values.Length != 2)
+                if (values.Length != 3)
                 {
                     context = null;
                     //throw new Exception("Oboe User Cookie deserialize error:" + cookieText));
@@ -82,8 +86,9 @@ namespace RuiJi.Internal.Common
                 // login name
                 string loginName = values[1];
 
+                List<string> roles = values[2].Split(ListDelimiter).ToList();
 
-                context = new RuiJiContext(UserId, loginName);
+                context = new RuiJiContext(UserId, loginName, roles);
 
                 return true;
             }
