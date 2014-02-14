@@ -7,4 +7,33 @@
 
 @model ArticleListModel
 
-<h2>Index</h2>
+<form method="post">
+    <fieldset>
+        <legend>My workplace</legend>
+        <div id="errorMessage" class="mandatory" style="text-align: center;">
+           
+        </div>
+        <p>
+            <label for="ArticleCategoryIdQry" class="criteria-title">
+               Article Category:</label>
+            @Html.DropDownList("ArticleCategoryIdQry", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ArticleCategoryIdQry))
+            <label for="TitleQry" class="criteria-title">
+                Title:</label>
+            @Html.TextBoxFor(x => x.TitleQry)
+            <label for="IsPublishedQry" class="criteria-title">
+                HasPublished:</label>
+            @Html.DropDownList("IsPublishedQry", new SelectList(Model.PublishOption, "Value","Name", Model.IsPublishedQry))
+            <input id="btnSearch" type="submit" value="Search" class="button" />
+        </p>
+    </fieldset>
+</form>
+<div id="QueryResult">
+    @if (Model.ArticleList != null)
+    {
+        <table>
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+    }
+</div>

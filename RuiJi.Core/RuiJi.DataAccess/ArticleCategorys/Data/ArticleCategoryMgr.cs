@@ -72,10 +72,10 @@ namespace RuiJi.DataAccess.ArticleCategorys.Data
         {
             using (var db = new RuijiPortalContext())
             {
-                return db.ArticleCategories.ToList();
+                return db.ArticleCategories.Where(_ => !_.IsDeleted).ToList();
             }
         }
-
+        
         public List<ArticleCategory> LoadAllShownOnHomePage() {
 			using (var db = new RuijiPortalContext()) {
 				var categories = db.ArticleCategories.Where(t => !t.IsDeleted && t.IsShowOnHomePage).OrderBy(t => t.HomePageDisplayOrder);

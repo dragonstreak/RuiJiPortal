@@ -25,20 +25,20 @@
                 <h1>@ViewBag.Title.</h1>
             </hgroup>
 
-            <fieldset>
+            <fieldset id="login">
                 <legend>Log in Form</legend>
-                <ol>
+                <ul>
                     <li>
-                        @Html.LabelFor(m => m.UserName)
+                        @Html.LabelFor(m => m.UserName, new {width="100px" })
                         @Html.TextBoxFor(m => m.UserName)
                         @Html.ValidationMessageFor(m => m.UserName)
                     </li>
                     <li>
-                        @Html.LabelFor(m => m.Password)
+                        @Html.LabelFor(m => m.Password, new {width="100px" })
                         @Html.PasswordFor(m => m.Password)
                         @Html.ValidationMessageFor(m => m.Password)
                     </li>
-                </ol>
+                </ul>
                 <input type="submit" value="Log in" />
             </fieldset>
         </div>

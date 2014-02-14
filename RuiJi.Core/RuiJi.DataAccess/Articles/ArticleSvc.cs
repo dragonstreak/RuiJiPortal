@@ -79,6 +79,17 @@ namespace RuiJi.DataAccess.Articles
         }
 
         
+        public List<Article> LoadArticleForManage(int categoryId, string title, bool? published)
+        {
+            var articleList = LoadByArticleCategoryId(categoryId);
+            var result = from a in articleList
+                         where a.Title.Contains(title)
+                               && (!published.HasValue || published.Value == a.IsPublished)
+                         select a;
+
+            return result.ToList();
+        }
+
 
     }
 }
