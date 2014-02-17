@@ -2355,5 +2355,6 @@ ol.statements span
 
 .verticalflow
 {
+    list-style-type: none;
     list-style:none;
 }

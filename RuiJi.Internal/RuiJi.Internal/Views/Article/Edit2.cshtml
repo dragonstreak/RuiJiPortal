@@ -4,7 +4,7 @@
 }
 
 @model RuiJi.Internal.Models.ArticleItemModel
-@section StartupScripts
+@section Scripts
 {    
 <script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.config.js")"></script>
 <script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.all.js")"> </script>
@@ -15,18 +15,17 @@
 {
 <link href="@Url.Content("~/ueditor/themes/default/css/ueditor.css")" rel="stylesheet" type="text/css" />
 }
-    <div>
-        <div id="HiddenArticleData" >
+    <div id="HiddenArticleData" >
         @Html.HiddenFor(_ => _.ArticleId)
     </div>
-    <ul class="verticalflow">
+    <ul style="list-style-type:none; list-style:none">
         <li>
             <label for="Title">Title</label><br />
             @Html.TextBoxFor(_ => _.Title)
         </li>
         <li>
             <label for="Summary">Summary</label><br />
-            @Html.TextAreaFor(_ => _.Summary)
+            @Html.TextAreaFor(_ => _.Summary, new { style = "width:300px"})
         </li>
         <li>
             <label for="ArticleCategoryId">ArticleCategory</label> <br />
@@ -43,7 +42,7 @@
         </li>        
     </ul>
     <div>
-    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+    <script id="editor" type="text/plain" style="width:900px;height:500px;"></script>
     </div>
     <div id="errorMsg">
 
