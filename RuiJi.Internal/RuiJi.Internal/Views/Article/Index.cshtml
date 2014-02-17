@@ -7,6 +7,18 @@
 
 @model ArticleListModel
 
+@section StartupScripts
+{    
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.config.js")"></script>
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.all.js")"> </script>
+<script type="text/javascript" src="@Url.Content("~/ueditor/lang/zh-cn/zh-cn.js")"></script>
+}
+
+@section Styles
+{
+<link href="@Url.Content("~/ueditor/themes/default/css/ueditor.css")" rel="stylesheet" type="text/css" />
+}
+
 <form method="post">
     <fieldset>
         <legend>My workplace</legend>
@@ -25,15 +37,64 @@
             @Html.DropDownList("IsPublishedQry", new SelectList(Model.PublishOption, "Value","Name", Model.IsPublishedQry))
             <input id="btnSearch" type="submit" value="Search" class="button" />
         </p>
+        <p>
+            <input id="btnCreate" type="button" name="btnCreate" value="Create New" />
+        </p>
     </fieldset>
 </form>
+
 <div id="QueryResult">
     @if (Model.ArticleList != null)
     {
-        <table>
+        <table class="table" width="100%">
             <tr>
-                <th></th>
+                <th>Article Category</th>
+                <th>Title</th>
+                <th>Create Date</th>
+                <th>Create By</th>
             </tr>
+            @if (Model.ArticleList.Count > 0)
+            {
+                foreach (var article in Model.ArticleList)
+                {
+                    var title = article.Title.Length > 20? article.Title.Substring(0,20) + "......" : article.Title;
+                    <tr>
+                        <td>@article.ArticleCategoryName</td>
+                        <td>@title</td>
+                        <td>@article.InsertDate.Value.ToString("yyyy/MM/dd hh:mm:ss")</td>
+                        <td>@article.InsertBy</td>
+                    </tr>
+                }
+            }
         </table>
     }
 </div>
+<div id="ArticleEditContainer">
+
+</div>
+
+<script type="text/javascript">
+    _ruiji.internal.Article = {};
+    _ruiji.internal.Article.CreateUrl = '@Url.Content("~/Article/Create")';
+    _ruiji.internal.Article.EditUrl = '@Url.Content("~/Article/Edit")';
+    _ruiji.internal.Article.SaveUrl = '@Url.Content("~/Article/Save")';
+
+    $j("#btnCreate").click(function () {
+        $j("#ArticleEditContainer").empty();
+        $j.ajax({
+            type: "Post",
+            url: _ruiji.internal.Article.CreateUrl,
+            success: function (response) {
+                $j("#ArticleEditContainer").html(response).dialog({
+                    height: 800,
+                    width: 1024,
+                    modal: true
+                });
+                UE.getEditor('ContentDetail');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+</script>

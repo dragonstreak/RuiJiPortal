@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+@model RuiJi.Internal.Models.ArticleItemModel
+    <div id="HiddenArticleData" >
+        @Html.HiddenFor(_ => _.ArticleId)
+    </div>
+    <ul class="verticalflow">
+        <li>
+            <label for="Title">Title</label><br />
+            @Html.TextBoxFor(_ => _.Title)
+        </li>
+        <li>
+            <label for="Summary">Summary</label><br />
+            @Html.TextAreaFor(_ => _.Summary)
+        </li>
+        <li>
+            <label for="ArticleCategoryId">ArticleCategory</label> <br />
+            @Html.DropDownList("ArticleCategoryId", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ArticleCategoryId))
+        </li>
+        <li>
+            <label for="Author">Author</label><br />
+            @Html.TextBoxFor(_ => _.Author)
+        </li>
+        <li>
+            <label for="IsPublished">Publish</label> <br />
+            <input type="radio" id="IsPublished1" name="IsPublished" value="true" @if(Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">Yes</label>
+            <input type="radio" id="IsPublished2" name="IsPublished" value="false" @if(! Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">No</label>
+        </li>        
+    </ul>
+    <div>
+    <script id="ContentDetail" type="text/plain" style="width:1024px;height:500px;"></script>
+    </div>
+    <div id="errorMsg">
+
+    </div>
+    <div>
+        <input type="button" id="btnSave" name="btnSave" value="Save" />
+    </div>
+    
+    <script type="text/javascript">
+        
+        @if(Model.ArticleCategoryId>0)
+        {
+            <text>
+        var content = '@Model.ContentDetail';
+        UI.getEditor('ContentDetail').setContent(content);
+           </text>
+        }
+        var SaveUrl = '@Url.Content("~/Article/Save")';
+        
+        $j("#btnSubmit").click(
+            function () {
+                var content = UE.getEditor('ContentDetail').getContent();
+                var articleId = $j("#ArticleId").val();
+                var title = $j("#Title").val();
+                var summary = $j("#Summary").val();
+                var category = $j("#ArticleCategoryId").val();
+                var author = $j("#Author").val();
+                var ispublish = $j('input:radio[name="IsPublished"]:checked').val();
+
+                $j.ajax({
+                    type: "POST",
+                    url: SaveUrl,
+                    data: {articleId:articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished:ispublish},
+                    success: function (response) {
+                        if (response.IsSuccess) {
+                            alert("Add Article Success");
+                            $j("#btnSearch").Submit();
+                        }
+                        else
+                        {
+                            $j("#errorMsg").empty();
+                            $j("#errorMsg").html(response.ErrorMessage);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        $j("#errorMsg").empty();
+                        $j("#errorMsg").html(jqXHR + "<br/>" + textStatus + "<br/>" + errorThrown);
+                    }
+                });
+            });
+    </script>

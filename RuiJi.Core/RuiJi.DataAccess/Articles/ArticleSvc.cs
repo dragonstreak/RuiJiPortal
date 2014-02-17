@@ -11,12 +11,12 @@ namespace RuiJi.DataAccess.Articles
     public class ArticleSvc : IArticleSvc
     {
         private IArticleMgr _mgr;
-        private IArticleCategorySvc _articleCategorySvc;
+        private IArticleCategoryCacheSvc _articleCategoryCacheSvc;
 
-        internal ArticleSvc(IArticleMgr mgr, IArticleCategorySvc articleCategorySvc)
+        internal ArticleSvc(IArticleMgr mgr, IArticleCategoryCacheSvc articleCategoryCacheSvc)
         {
             _mgr = mgr;
-            _articleCategorySvc = articleCategorySvc;
+            _articleCategoryCacheSvc = articleCategoryCacheSvc;
         }
 
         public int Add(Article article)
@@ -58,7 +58,7 @@ namespace RuiJi.DataAccess.Articles
         public List<Article> LoadByArticleCategoryId(int articleCategoryId)
         {
             List<Article> result = new List<Article>();
-            var categoryList = _articleCategorySvc.LoadWithAllChildrens(articleCategoryId);
+            var categoryList = _articleCategoryCacheSvc.LoadWithAllChildrens(articleCategoryId);
             foreach (var category in categoryList)
             {
                 result.AddRange(_mgr.LoadByArticleCategoryId(category.ArticleCategoryId));
@@ -83,13 +83,12 @@ namespace RuiJi.DataAccess.Articles
         {
             var articleList = LoadByArticleCategoryId(categoryId);
             var result = from a in articleList
-                         where a.Title.Contains(title)
+                         where (title == null || a.Title.Contains(title))
                                && (!published.HasValue || published.Value == a.IsPublished)
                          select a;
 
-            return result.ToList();
+            return result.OrderByDescending(_ => _.InsertDate).ToList();
         }
-
 
     }
 }

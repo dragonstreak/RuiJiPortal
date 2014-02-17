@@ -8,6 +8,6 @@ namespace RuiJi.DataAccess.ArticleCategorys
     public interface IArticleCategoryCacheSvc
     {
         ReadOnlyCollection<ArticleCategory> LoadAllArticleCategory();
-        List<ArticleCategory> LoadWithChildCategory(int categoryId);
+        List<ArticleCategory> LoadWithAllChildrens(int categoryId);
     }
 }

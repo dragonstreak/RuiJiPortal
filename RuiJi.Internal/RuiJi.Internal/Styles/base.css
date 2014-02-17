@@ -4,6 +4,5 @@
 @import url(print.css);
 @import url(tags.css);
 @import url(styles.css); /*These are your own styles that you wish to add on for miscellaneous reasons.*/
-@import url(grid.css);
 
 @media screen { }

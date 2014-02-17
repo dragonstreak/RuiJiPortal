@@ -20,7 +20,11 @@
     <script src="@Url.Content("~/Scripts/jquery-ui-1.10.3.js?ver=" + Constants.ScriptStyleFileVersion)" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.min.js?ver=" + Constants.ScriptStyleFileVersion)" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js?ver=" + Constants.ScriptStyleFileVersion)" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modalbox/modalbox.js?ver=" + Constants.ScriptStyleFileVersion)" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/master.js?ver=" + Constants.ScriptStyleFileVersion)" type="text/javascript"></script>    
+    
+    @RenderSection("Styles", false)
+    @RenderSection("Scripts", false)
 </head>
 <body class="masterbody">
     <div class="l-topbar">

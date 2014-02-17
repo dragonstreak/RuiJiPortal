@@ -13,7 +13,7 @@ namespace RuiJi.DataAccess.Articles
         protected override IArticleSvc GetServiceCore()
         {
             var dataMgr = CreateArticleMgr();
-            var articleCategorySvc = CreateArticleCategorySvc();
+            var articleCategorySvc = CreateArticleCategoryCacheSvc();
          
             return new ArticleSvc(
                 dataMgr
@@ -26,9 +26,9 @@ namespace RuiJi.DataAccess.Articles
             return new ArticleMgr();
         }
 
-        IArticleCategorySvc CreateArticleCategorySvc()
+        IArticleCategoryCacheSvc CreateArticleCategoryCacheSvc()
         {
-            return RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
+            return RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategoryCacheSvc>();
         }
     }
 }

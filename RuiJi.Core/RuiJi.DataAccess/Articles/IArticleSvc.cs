@@ -15,5 +15,6 @@ namespace RuiJi.DataAccess.Articles
         void PhysicalDelete(int articleId);
         List<Article> LoadByArticleCategoryId(int articleCategoryId);
         LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param);
+        List<Article> LoadArticleForManage(int categoryId, string title, bool? published);
     }
 }

@@ -14,12 +14,26 @@
         <Id>13210</Id>
         <ParentId>132</ParentId>
         <Type>0</Type>
-        <Name>ArticleManage</Name>
-        <DisplayName>Article Manage</DisplayName>
+        <Name>ArticleQuery</Name>
+        <DisplayName>Article Query</DisplayName>
         <SortIndex>0</SortIndex>
         <Url>~/Article</Url>
         <Target>_self</Target>
         <Tooltip>Article Manage</Tooltip>
+        <PermissionCodes>
+          <string>SADM</string>
+        </PermissionCodes>
+      </MenuModel>
+      <MenuModel>
+        <Id>13220</Id>
+        <ParentId>132</ParentId>
+        <Type>0</Type>
+        <Name>ArticleEdit</Name>
+        <DisplayName>Article Edit</DisplayName>
+        <SortIndex>0</SortIndex>
+        <Url>~/Article/EditArticle</Url>
+        <Target>_self</Target>
+        <Tooltip>Article Edit</Tooltip>
         <PermissionCodes>
           <string>SADM</string>
         </PermissionCodes>

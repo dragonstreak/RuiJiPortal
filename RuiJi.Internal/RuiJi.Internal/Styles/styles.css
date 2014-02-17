@@ -2352,3 +2352,8 @@ ol.statements span
     float: right;
     margin: 10px 0;
 }
+
+.verticalflow
+{
+    list-style:none;
+}

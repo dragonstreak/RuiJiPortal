@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Collections.Generic;
 using System.Text;
 using RuiJi.DataAccess.ArticleCategorys.Cache;
 using RuiJi.DataAccess.Models;
@@ -17,7 +16,7 @@ namespace RuiJi.DataAccess.ArticleCategorys
         }
 
 
-        public List<ArticleCategory> LoadWithChildCategory(int categoryId)
+        public List<ArticleCategory> LoadWithAllChildrens(int categoryId)
         {
             var categoryList = ArticleCategoryListCache.Instance.ArticleCategorys;
             List<ArticleCategory> result = new List<ArticleCategory>();
@@ -26,7 +25,7 @@ namespace RuiJi.DataAccess.ArticleCategorys
                                    && _.ParentCategoryId.Value == categoryId);
             if (childCategorys.Count() > 0)
             {
-                childCategorys.ToList().ForEach(_ => result.Add(LoadWithChildCategory(_.ArticleCategoryId).First()));
+                childCategorys.ToList().ForEach(_ => result.Add(LoadWithAllChildrens(_.ArticleCategoryId).First()));
             }
 
             return result;
