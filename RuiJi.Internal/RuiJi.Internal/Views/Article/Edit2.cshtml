@@ -15,10 +15,13 @@
 {
 <link href="@Url.Content("~/ueditor/themes/default/css/ueditor.css")" rel="stylesheet" type="text/css" />
 }
+    <div id="errorMsg" class="errormsg-container">
+       
+    </div>
     <div id="HiddenArticleData" >
         @Html.HiddenFor(_ => _.ArticleId)
     </div>
-    <ul style="list-style-type:none; list-style:none">
+    <ul id="articletitle" style="list-style-type:none; margin:10px 0">
         <li>
             <label for="Title">Title</label><br />
             @Html.TextBoxFor(_ => _.Title)
@@ -42,29 +45,36 @@
         </li>        
     </ul>
     <div>
-    <script id="editor" type="text/plain" style="width:900px;height:500px;"></script>
+    <script id="editor" type="text/plain" style="width:900px;height:450px;"></script>
     </div>
-    <div id="errorMsg">
-
-    </div>
+    
     <div>
         <input type="button" id="btnSave" name="btnSave" value="Save" />
     </div>
     
     <script type="text/javascript">
-        UE.getEditor('editor');
-        @if(Model.ArticleCategoryId>0)
+        var initialContent = '';
+        @if(Model.ArticleId>0)
         {
             <text>
-        var content = '@Model.ContentDetail';
-        UI.getEditor('editor').setContent(content);
+        initialContent = '@Html.Raw(Model.ContentDetail)';        
            </text>
         }
+
+        var ue;
+        $j( function(){
+            ue = new UE.ui.Editor({
+                initialContent: initialContent
+            });
+            ue.render("editor");
+        })
+
         var SaveUrl = '@Url.Content("~/Article/Save")';
+        var SuccessUrl = '@Url.Content("~/Article/EditSuccess")'
         
-        $j("#btnSubmit").click(
+        $j("#btnSave").click(
             function () {
-                var content = UE.getEditor('editor').getContent();
+                var content = ue.getContent();
                 var articleId = $j("#ArticleId").val();
                 var title = $j("#Title").val();
                 var summary = $j("#Summary").val();
@@ -78,16 +88,21 @@
                     data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish },
                     success: function (response) {
                         if (response.IsSuccess) {
-                            alert("Add Article Success");
+                            if (articleId == 0) {
+                                window.location.href = SuccessUrl + "?isCreate=true";
+                            }
+                            else {
+                                window.location.href = SuccessUrl + "?isCreate=false";
+                            }
                         }
                         else {
                             $j("#errorMsg").empty();
-                            $j("#errorMsg").html(response.ErrorMessage);
+                            $j("#errorMsg").html("Error : " + response.ErrorMessage);
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         $j("#errorMsg").empty();
-                        $j("#errorMsg").html(jqXHR + "<br/>" + textStatus + "<br/>" + errorThrown);
+                        $j("#errorMsg").html("Error : " +errorThrown);
                     }
                 });
             });

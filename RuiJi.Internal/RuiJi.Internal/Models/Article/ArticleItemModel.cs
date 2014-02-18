@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using RuiJi.Internal.Extensions;
 
 namespace RuiJi.Internal.Models
@@ -16,6 +17,8 @@ namespace RuiJi.Internal.Models
         public int ArticleId { get; set; }
         public string Title { get; set; }
         public string Summary { get; set; }
+
+        //[AllowHtml]
         public string ContentDetail { get; set; }
         public int ArticleCategoryId { get; set; }
         public string Author { get; set; }

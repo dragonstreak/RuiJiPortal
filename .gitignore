@@ -78,6 +78,8 @@ publish
 # Publish Web Output
 *.Publish.xml
 
+upload1
+
 # NuGet Packages Directory
 packages
 

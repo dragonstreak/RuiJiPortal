@@ -2353,8 +2353,19 @@ ol.statements span
     margin: 10px 0;
 }
 
-.verticalflow
+#articletitle
 {
     list-style-type: none;
     list-style:none;
+}
+
+#articletitle li
+{
+    margin: 10px 0px;
+
+}
+
+.errormsg-container
+{
+    color: red;
 }

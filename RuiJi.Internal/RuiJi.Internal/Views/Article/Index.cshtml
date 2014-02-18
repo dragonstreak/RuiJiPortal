@@ -37,9 +37,6 @@
             @Html.DropDownList("IsPublishedQry", new SelectList(Model.PublishOption, "Value","Name", Model.IsPublishedQry))
             <input id="btnSearch" type="submit" value="Search" class="button" />
         </p>
-        <p>
-            <input id="btnCreate" type="button" name="btnCreate" value="Create New" />
-        </p>
     </fieldset>
 </form>
 
@@ -50,8 +47,9 @@
             <tr>
                 <th>Article Category</th>
                 <th>Title</th>
-                <th>Create Date</th>
-                <th>Create By</th>
+                <th>Author</th>
+                <th>IsPublished</th>
+                <th>Edit</th>
             </tr>
             @if (Model.ArticleList.Count > 0)
             {
@@ -61,8 +59,17 @@
                     <tr>
                         <td>@article.ArticleCategoryName</td>
                         <td>@title</td>
-                        <td>@article.InsertDate.Value.ToString("yyyy/MM/dd hh:mm:ss")</td>
-                        <td>@article.InsertBy</td>
+                        <td>@article.Author</td>
+                        <td>@if(article.IsPublished)
+                            {
+                                <span>Yes</span>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                            }
+                        </td>
+                        <td><a href="@Url.Content("~/Article/EditArticle?articleid="+ article.ArticleId.ToString())" class="articleeditlink" articleid="@article.ArticleId">Edit</a> </td>
                     </tr>
                 }
             }
@@ -75,9 +82,7 @@
 
 <script type="text/javascript">
     _ruiji.internal.Article = {};
-    _ruiji.internal.Article.CreateUrl = '@Url.Content("~/Article/Create")';
-    _ruiji.internal.Article.EditUrl = '@Url.Content("~/Article/Edit")';
-    _ruiji.internal.Article.SaveUrl = '@Url.Content("~/Article/Save")';
+    _ruiji.internal.Article.EditUrl = '@Url.Content("~/Article/EditArticle")';
 
     $j("#btnCreate").click(function () {
         $j("#ArticleEditContainer").empty();
@@ -97,4 +102,5 @@
             }
         });
     });
+
 </script>

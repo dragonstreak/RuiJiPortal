@@ -45,26 +45,24 @@ namespace RuiJi.Internal.Controllers
             model.SetMenu("SiteManagement", "ArticleManager");
             return View(model);
         }
-
-        public ViewResult Create()
+        
+        public ActionResult EditArticle(int? articleId)
         {
-            ArticleItemModel article = new ArticleItemModel();
-            return View("Edit", article);
-        }
+            ArticleItemModel article;
+            if (!articleId.HasValue)
+            {
+                article = new ArticleItemModel();
+            }
+            else
+            {
+                article = ArticleSvc.LoadById(articleId.Value).ToItemModel();
+            }
 
-        public ViewResult Edit(int articleId)
-        {
-            var article = ArticleSvc.LoadById(articleId).ToItemModel();
-            return View("Edit", article);
-        }
-
-        public ActionResult EditArticle()
-        {
-            ArticleItemModel article = new ArticleItemModel();
             article.SetMenu("SiteManagement", "ArticleEdit");
             return View("Edit2", article);
         }
 
+        [ValidateInput(false)]
         public JsonResult Save(int articleId,
             string title,
             string summary,
@@ -74,9 +72,18 @@ namespace RuiJi.Internal.Controllers
             string author)
         {
             JsonResultBase result = new JsonResultBase();
+
+            Article article;
             try
             {
-                Article article = new Article();
+                if (articleId == 0)
+                {
+                    article = new Article();
+                }
+                else
+                {
+                    article = ArticleSvc.LoadById(articleId);
+                }
                 article.ArticleId = articleId;
                 article.Title = title;
                 article.Summary = summary;
@@ -111,6 +118,13 @@ namespace RuiJi.Internal.Controllers
                 result.ErrorMessage = ex.Message;
             }
             return Json(result);
+        }
+
+        public ActionResult EditSuccess(bool isCreate)
+        {
+            EditSuccessModel model = new EditSuccessModel() { IsCreate = isCreate };
+            model.SetMenu("SiteManagement", "ArticleEdit");
+            return View(model);
         }
 
 
