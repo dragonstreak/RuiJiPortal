@@ -55,13 +55,17 @@ namespace RuiJi.DataAccess.Articles
             }
         }
 
-        public List<Article> LoadByArticleCategoryId(int articleCategoryId)
+        public List<Article> LoadByArticleCategoryId(int articleCategoryId, bool onlyPublished)
         {
             List<Article> result = new List<Article>();
             var categoryList = _articleCategoryCacheSvc.LoadWithAllChildrens(articleCategoryId);
             foreach (var category in categoryList)
             {
                 result.AddRange(_mgr.LoadByArticleCategoryId(category.ArticleCategoryId));
+            }
+            if (onlyPublished)
+            {
+                result.RemoveAll(_ => _.IsPublished);
             }
 
             return result.OrderByDescending(_ => _.PublishDate).ToList();
@@ -70,7 +74,7 @@ namespace RuiJi.DataAccess.Articles
 
         public LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param)
         {
-            var totalList = LoadByArticleCategoryId(param.ArticleCategoryId);
+            var totalList = LoadByArticleCategoryId(param.ArticleCategoryId, param.OnlyPublished);
             var result = new LoadArticleByPagingResult();
             result.Total = totalList.Count;
             result.ArticleList = totalList.Skip((param.PageIndex - 1) * param.PageSize)
@@ -81,7 +85,7 @@ namespace RuiJi.DataAccess.Articles
         
         public List<Article> LoadArticleForManage(int categoryId, string title, bool? published)
         {
-            var articleList = LoadByArticleCategoryId(categoryId);
+            var articleList = LoadByArticleCategoryId(categoryId, false);
             var result = from a in articleList
                          where (title == null || a.Title.Contains(title))
                                && (!published.HasValue || published.Value == a.IsPublished)

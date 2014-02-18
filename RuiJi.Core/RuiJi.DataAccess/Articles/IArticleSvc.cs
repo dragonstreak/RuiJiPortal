@@ -13,7 +13,7 @@ namespace RuiJi.DataAccess.Articles
         void Delete(int articleId, string operatorName);
         Article LoadById(int articleId);
         void PhysicalDelete(int articleId);
-        List<Article> LoadByArticleCategoryId(int articleCategoryId);
+        List<Article> LoadByArticleCategoryId(int articleCategoryId, bool onlyPublished);
         LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param);
         List<Article> LoadArticleForManage(int categoryId, string title, bool? published);
     }

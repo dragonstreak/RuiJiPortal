@@ -9,6 +9,8 @@ namespace RuiJi.DataAccess.Articles
     {
         public int ArticleCategoryId { get; set; }
 
+        public bool OnlyPublished { get; set; }
+
         public int PageIndex { get; set; }
 
         public int PageSize { get; set; }

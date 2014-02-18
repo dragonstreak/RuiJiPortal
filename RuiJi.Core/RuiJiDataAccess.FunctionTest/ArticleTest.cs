@@ -56,7 +56,7 @@ namespace RuiJiDataAccess.FunctionTest
         [TestMethod]
         public void LoadByArticleTypeTest()
         {
-            var articleList = ArticleSvc.LoadByArticleCategoryId(1);
+            var articleList = ArticleSvc.LoadByArticleCategoryId(1,false);
             Assert.AreEqual(true, articleList.Count > 0);
         }
 

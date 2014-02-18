@@ -321,7 +321,7 @@ namespace RuiJi.UI.Controllers
         private List<ArticleModel> LoadByArticleCategory(ArticleCategoryEnum articleCategory)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-            var modelList = svc.LoadByArticleCategoryId((int)articleCategory);
+            var modelList = svc.LoadByArticleCategoryId((int)articleCategory, true);
 
             return modelList.ToModels();
         }
@@ -332,6 +332,7 @@ namespace RuiJi.UI.Controllers
             var result = svc.LoadByArticleCategoryIdWithPaging(new LoadArticleByPagingParams()
             {
                 ArticleCategoryId = articleCategory,
+                OnlyPublished = true,
                 PageIndex = pageIndex,
                 PageSize = pageSize
             });

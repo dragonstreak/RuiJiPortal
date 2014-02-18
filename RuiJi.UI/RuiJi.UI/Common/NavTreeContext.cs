@@ -200,7 +200,7 @@ namespace RuiJi.UI.Common
         private static List<ArticleModel> LoadActivities(int count)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-            var articles = svc.LoadByArticleCategoryId(SpecialArticleCategory.ActivitiesId);
+            var articles = svc.LoadByArticleCategoryId(SpecialArticleCategory.ActivitiesId, true);
 
             var list = articles.Take(count).ToModels();
             return list;
