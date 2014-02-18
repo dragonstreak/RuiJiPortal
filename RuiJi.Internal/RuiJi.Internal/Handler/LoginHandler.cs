@@ -120,7 +120,7 @@ namespace RuiJi.Internal.Handler
             }
             else
             {
-                httpContext.Response.Redirect(string.Format("~/Logon?loginErrorMsg={0}", result.ErrorMessage), false);
+                httpContext.Response.Redirect(string.Format("~/Login?loginErrorMsg={0}", result.ErrorMessage), false);
                 httpContext.ApplicationInstance.CompleteRequest();
             }
 

@@ -39,6 +39,9 @@
                         @Html.ValidationMessageFor(m => m.Password)
                     </li>
                 </ul>
+                <div class="errormsg-container">
+                    @Model.ErrorMsg
+                </div>
                 <input type="submit" value="Log in" />
             </fieldset>
         </div>

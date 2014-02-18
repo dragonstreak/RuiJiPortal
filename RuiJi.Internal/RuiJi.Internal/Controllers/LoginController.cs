@@ -12,9 +12,11 @@ namespace RuiJi.Internal.Controllers
         //
         // GET: /Login/
 
-        public ActionResult Index()
+        public ActionResult Index(string loginErrorMsg)
         {
-            return View();
+            LoginModel model = new LoginModel();
+            model.ErrorMsg = loginErrorMsg;
+            return View(model);
         }
 
         public ActionResult Logon(LoginModel user)

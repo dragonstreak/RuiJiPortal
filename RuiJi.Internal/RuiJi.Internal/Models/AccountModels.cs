@@ -69,6 +69,8 @@ namespace RuiJi.Internal.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string ErrorMsg;
     }
 
     public class RegisterModel

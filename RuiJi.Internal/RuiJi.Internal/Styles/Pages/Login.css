@@ -27,3 +27,7 @@
             padding-bottom: 5px;
         }
 
+.errormsg-container
+{
+    color: red;
+}
