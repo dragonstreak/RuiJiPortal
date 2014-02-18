@@ -74,6 +74,7 @@
         
         $j("#btnSave").click(
             function () {
+                $j("#btnSave").attr("disabled", "true");
                 var content = ue.getContent();
                 var articleId = $j("#ArticleId").val();
                 var title = $j("#Title").val();
@@ -99,10 +100,12 @@
                             $j("#errorMsg").empty();
                             $j("#errorMsg").html("Error : " + response.ErrorMessage);
                         }
+                        $j("#btnSave").removeAttr("disabled");
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
                         $j("#errorMsg").empty();
-                        $j("#errorMsg").html("Error : " +errorThrown);
+                        $j("#errorMsg").html("Error : " + errorThrown);
+                        $j("#btnSave").removeAttr("disabled");
                     }
                 });
             });

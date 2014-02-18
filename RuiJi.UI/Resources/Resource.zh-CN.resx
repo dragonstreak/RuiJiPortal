@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Activities_Title" xml:space="preserve">
-    <value>今日在线动态</value>
+    <value>瑞玑在线动态</value>
   </data>
   <data name="Breadcrumb_Title" xml:space="preserve">
     <value>您现在的位置：</value>
@@ -148,7 +148,7 @@
     <value>方案中心</value>
   </data>
   <data name="Menu_StepIntoRuiji" xml:space="preserve">
-    <value>走进今日</value>
+    <value>走进瑞玑</value>
   </data>
   <data name="Menu_SuccessCases" xml:space="preserve">
     <value>成功案例</value>
