@@ -143,7 +143,7 @@ namespace RuiJi.UI.Common
             return tree;
         }
 
-        private static NavTreeNodeModel LoadTree(int articleCategoryId)
+        private static NavTreeNodeModel LoadTree(int articleCategoryId, bool? isShownOnHomePage = null)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
 
@@ -154,11 +154,16 @@ namespace RuiJi.UI.Common
             return model;
         }
 
-        private static NavTreeNodeModel LoadTree(ArticleCategory category)
+        private static NavTreeNodeModel LoadTree(ArticleCategory category, bool? isShownOnHomePage = null)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
 
             List<ArticleCategory> childCategories = svc.LoadByParentId(category.ArticleCategoryId);
+
+            if (isShownOnHomePage.HasValue)
+            {
+                childCategories = childCategories.Where(t => t.IsShowOnHomePage == isShownOnHomePage.Value).ToList();
+            }
 
             NavTreeNodeModel model = category.ToNavTreeNodeModel();
 
@@ -184,17 +189,18 @@ namespace RuiJi.UI.Common
         }
 
 		private static List<NavTreeNodeModel> LoadHomePageShown() {
-			var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
-			var categories = svc.LoadAllShownOnHomePage();
+            var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategoryCacheSvc>();
+            var topLevelArticleCategories = svc.LoadAllTopLevelHomePageShown().OrderBy(t => t.HomePageDisplayOrder).ToList();
 
-			List<NavTreeNodeModel> result = new List<NavTreeNodeModel>();
+            List<NavTreeNodeModel> result = new List<NavTreeNodeModel>();
 
-			categories.ForEach(t => {
-				var treeNode = LoadTree(t);
-				result.Add(treeNode);
-			});
+            topLevelArticleCategories.ForEach(t =>
+            {
+                var treeNode = LoadTree(t, true);
+                result.Add(treeNode);
+            });
 
-			return result;
+            return result;
 		}
 
         private static List<ArticleModel> LoadActivities(int count)

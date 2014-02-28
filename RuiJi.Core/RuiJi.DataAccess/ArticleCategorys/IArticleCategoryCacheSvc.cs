@@ -9,5 +9,6 @@ namespace RuiJi.DataAccess.ArticleCategorys
     {
         ReadOnlyCollection<ArticleCategory> LoadAllArticleCategory();
         List<ArticleCategory> LoadWithAllChildrens(int categoryId);
+        List<ArticleCategory> LoadAllTopLevelHomePageShown();
     }
 }

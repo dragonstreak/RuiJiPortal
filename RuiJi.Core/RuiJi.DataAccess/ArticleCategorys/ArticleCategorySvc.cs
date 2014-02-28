@@ -66,12 +66,6 @@ namespace RuiJi.DataAccess.ArticleCategorys
             return result;
         }
 
-		public List<ArticleCategory> LoadAllShownOnHomePage() {
-			List<ArticleCategory> result = new List<ArticleCategory>();
-
-			return _mgr.LoadAllShownOnHomePage();
-		}
-
         /// <summary>
         /// Returns the sequences of all parent categories from top to down.
         /// </summary>

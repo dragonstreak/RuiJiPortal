@@ -30,5 +30,26 @@ namespace RuiJi.DataAccess.ArticleCategorys
 
             return result;
         }
+
+        public List<ArticleCategory> LoadAllTopLevelHomePageShown()
+        {
+            var allShownCategoryList = ArticleCategoryListCache.Instance.ArticleCategorys.Where(t => t.IsShowOnHomePage).ToList();
+
+            var result = allShownCategoryList.Where(t =>
+            {
+                if (!t.ParentCategoryId.HasValue)
+                {
+                    return true;
+                }
+                else
+                {
+                    var parentCategory = ArticleCategoryListCache.Instance.ArticleCategorys.FirstOrDefault(u => u.ArticleCategoryId == t.ParentCategoryId.Value);
+                    
+                    return !(parentCategory.IsShowOnHomePage);
+                }
+            }).ToList();
+
+            return result;
+        }
     }
 }
