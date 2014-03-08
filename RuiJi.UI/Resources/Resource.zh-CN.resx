@@ -120,11 +120,104 @@
   <data name="Activities_Title" xml:space="preserve">
     <value>瑞玑在线动态</value>
   </data>
+  <data name="AnLiFenXiang" xml:space="preserve">
+    <value>案例分享</value>
+  </data>
+  <data name="AnQuanSaoMiao" xml:space="preserve">
+    <value>安全扫描</value>
+  </data>
+  <data name="AnQuanSheBei" xml:space="preserve">
+    <value>安全设备</value>
+  </data>
+  <data name="AnQuanZhongXin" xml:space="preserve">
+    <value>安全中心</value>
+  </data>
+  <data name="BradmarkChanPinZiLiao" xml:space="preserve">
+    <value>Bradmark产品资料</value>
+  </data>
   <data name="Breadcrumb_Title" xml:space="preserve">
     <value>您现在的位置：</value>
   </data>
   <data name="Breadcrumb_Top" xml:space="preserve">
     <value>网站首页</value>
+  </data>
+  <data name="CeShiLiuChengJiQueXianGuanLi" xml:space="preserve">
+    <value>测试流程及缺陷管理</value>
+  </data>
+  <data name="CeShiShiYanShi" xml:space="preserve">
+    <value>测试实验室与测试中心建设咨询</value>
+  </data>
+  <data name="ChanPinShouHouFuWu" xml:space="preserve">
+    <value>产品售后服务</value>
+  </data>
+  <data name="CunChu" xml:space="preserve">
+    <value>存储</value>
+  </data>
+  <data name="CunChuGuanLiJiWeiHu" xml:space="preserve">
+    <value>存储管理及维护</value>
+  </data>
+  <data name="DaoPianFuWuQi" xml:space="preserve">
+    <value>刀片服务器</value>
+  </data>
+  <data name="EMCChanPinZiLiao" xml:space="preserve">
+    <value>EMC产品资料</value>
+  </data>
+  <data name="FuWuNeiRongJieShao" xml:space="preserve">
+    <value>服务内容介绍</value>
+  </data>
+  <data name="FuWuQiZhengShu" xml:space="preserve">
+    <value>服务器证书</value>
+  </data>
+  <data name="FuWuTiXiZiLiao" xml:space="preserve">
+    <value>服务体系资料</value>
+  </data>
+  <data name="GaoJiZiXunFuWu" xml:space="preserve">
+    <value>高级咨询服务</value>
+  </data>
+  <data name="GongSiRongYu" xml:space="preserve">
+    <value>公司荣誉</value>
+  </data>
+  <data name="GongSiXinWen" xml:space="preserve">
+    <value>公司新闻</value>
+  </data>
+  <data name="GongSiZiZhi" xml:space="preserve">
+    <value>公司资质</value>
+  </data>
+  <data name="HPChanPinZiLiao" xml:space="preserve">
+    <value>HP产品资料</value>
+  </data>
+  <data name="ITCeLueYingYongGuiHua" xml:space="preserve">
+    <value>IT策略-应用规划</value>
+  </data>
+  <data name="ITGouJianJiChuSheJi" xml:space="preserve">
+    <value>IT策略-基础设计及应用测试</value>
+  </data>
+  <data name="ITILITSM" xml:space="preserve">
+    <value>ITIL/ITSM整体解决方案</value>
+  </data>
+  <data name="ITYingYongGuiHua" xml:space="preserve">
+    <value>IT应用规划咨询</value>
+  </data>
+  <data name="ITYunWei" xml:space="preserve">
+    <value>IT运维-应用监控|管理与维护</value>
+  </data>
+  <data name="JiaRuRuiJi" xml:space="preserve">
+    <value>加入瑞玑</value>
+  </data>
+  <data name="JiChuSheShi" xml:space="preserve">
+    <value>基础设施和系统管理服务</value>
+  </data>
+  <data name="JiChuSheShiZhongXin" xml:space="preserve">
+    <value>基础设施中心</value>
+  </data>
+  <data name="KeHuJianSheJiTouSu" xml:space="preserve">
+    <value>客户建设及投诉</value>
+  </data>
+  <data name="KeHuLieBiao" xml:space="preserve">
+    <value>客户列表</value>
+  </data>
+  <data name="MeiTiDongTai" xml:space="preserve">
+    <value>媒体动态</value>
   </data>
   <data name="Menu_ContactUs" xml:space="preserve">
     <value>联系我们</value>
@@ -174,10 +267,100 @@
   <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>en-US</value>
   </data>
+  <data name="OracleChanPinZiLiao" xml:space="preserve">
+    <value>Oracle产品资料</value>
+  </data>
+  <data name="OracleZhuanYeFuWu" xml:space="preserve">
+    <value>Oracle专业服务</value>
+  </data>
   <data name="Page_NextPage" xml:space="preserve">
     <value>下一页</value>
   </data>
   <data name="Paging_PreviousPage" xml:space="preserve">
     <value>上一页</value>
+  </data>
+  <data name="QiTaChangShangChanPinZiLiao" xml:space="preserve">
+    <value>其他厂商产品资料</value>
+  </data>
+  <data name="QiYeJiSuanXuNiHua" xml:space="preserve">
+    <value>企业计算虚拟化</value>
+  </data>
+  <data name="RenLiCeLue" xml:space="preserve">
+    <value>人力策略</value>
+  </data>
+  <data name="RenLiGouCheng" xml:space="preserve">
+    <value>人力构成</value>
+  </data>
+  <data name="RongYuZiZhi" xml:space="preserve">
+    <value>荣誉资质</value>
+  </data>
+  <data name="RuanJianZiDongHua" xml:space="preserve">
+    <value>软件自动化功能测试及性能测试</value>
+  </data>
+  <data name="ShuJuBeiFengJiGuiDang" xml:space="preserve">
+    <value>数据备份及归档</value>
+  </data>
+  <data name="ShuJuCangKuJiShangYeZhiNeng" xml:space="preserve">
+    <value>数据仓库及商业智能</value>
+  </data>
+  <data name="ShuJuKuChanPin" xml:space="preserve">
+    <value>数据库产品</value>
+  </data>
+  <data name="ShuJuKuDBAGuanLi" xml:space="preserve">
+    <value>数据库DBA管理</value>
+  </data>
+  <data name="ShuJuKuSuiPianChongZu" xml:space="preserve">
+    <value>数据库碎片重组</value>
+  </data>
+  <data name="ShuJuKuXingNengZhenDuanYuYouHua" xml:space="preserve">
+    <value>数据库性能诊断与优化</value>
+  </data>
+  <data name="VmwareChanPinZiLiao" xml:space="preserve">
+    <value>Wmware产品资料</value>
+  </data>
+  <data name="WangLuoGongCheng" xml:space="preserve">
+    <value>网络工程建设服务</value>
+  </data>
+  <data name="WangLuoJianKongYuGuanLi" xml:space="preserve">
+    <value>网络监控与管理</value>
+  </data>
+  <data name="WangLuoJiChuSheShi" xml:space="preserve">
+    <value>网络基础设施</value>
+  </data>
+  <data name="XiaoXingJi" xml:space="preserve">
+    <value>小型机</value>
+  </data>
+  <data name="XingNengCeShi" xml:space="preserve">
+    <value>性能测试</value>
+  </data>
+  <data name="XingNengZhenDuan" xml:space="preserve">
+    <value>性能诊断</value>
+  </data>
+  <data name="XingNengZhongXin" xml:space="preserve">
+    <value>性能中心</value>
+  </data>
+  <data name="YeJieDongTai" xml:space="preserve">
+    <value>业界动态</value>
+  </data>
+  <data name="YeWuChiXuXingYuHuiFuFuWu" xml:space="preserve">
+    <value>业务持续性与恢复服务</value>
+  </data>
+  <data name="YingYongJiChengPingTai" xml:space="preserve">
+    <value>应用集成平台</value>
+  </data>
+  <data name="YinYongXiTongJianKong" xml:space="preserve">
+    <value>应用系统监控（HP、Bradmark、EMC）</value>
+  </data>
+  <data name="ZaiXianKeFu" xml:space="preserve">
+    <value>在线客服</value>
+  </data>
+  <data name="ZhuanYeShiShiFuWu" xml:space="preserve">
+    <value>专业实施服务</value>
+  </data>
+  <data name="ZiDongHuaCeShiRuanJian" xml:space="preserve">
+    <value>自动化测试软件</value>
+  </data>
+  <data name="ZiLiangZhongXin" xml:space="preserve">
+    <value>质量中心</value>
   </data>
 </root>

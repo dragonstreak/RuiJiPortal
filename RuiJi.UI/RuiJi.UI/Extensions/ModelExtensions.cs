@@ -14,7 +14,8 @@ namespace RuiJi.UI.Extensions {
 				Author = article.Author,
 				ContentDetail = article.ContentDetail,
 				PublishDate = article.PublishDate.GetValueOrDefault(),
-				Title = article.Title
+				Title = article.Title,
+                IsPublished = article.IsPublished
 			};
 
 			return model;

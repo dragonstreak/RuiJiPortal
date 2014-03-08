@@ -65,7 +65,7 @@ namespace RuiJi.DataAccess.Articles
             }
             if (onlyPublished)
             {
-                result.RemoveAll(_ => _.IsPublished);
+                result.RemoveAll(_ => !_.IsPublished);
             }
 
             return result.OrderByDescending(_ => _.PublishDate).ToList();

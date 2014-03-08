@@ -14,5 +14,6 @@ namespace RuiJi.UI.Models
         public string ContentDetail { get; set; }
         public DateTime PublishDate { get; set; }
         public string Author { get; set; }
+        public bool IsPublished { get; set; }
     }
 }

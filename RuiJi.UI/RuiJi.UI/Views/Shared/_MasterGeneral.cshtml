@@ -9,20 +9,12 @@
 
             <ul class="white">
                 <li><a href="@Url.Action("HomePage")">@Resource.Nav_BackToHome</a></li><li>|</li>
-                <li><a href="mailto:demoservice@todaychina.com">@Resource.Nav_MailBox</a></li><li>|</li>
+                <li><a href="#">@Resource.Nav_MailBox</a></li><li>|</li>
                 <li><a href="@Url.Action("LegalInformation")">@Resource.Nav_LegalInformation</a></li><li>|</li>
                 <li><a href="@Url.Action("Links")">@Resource.Nav_Links</a></li><li>|</li>
                 <li><a href="#" id="switch-lang" culturecode="@Resource.Nav_SwitchLanguage_Key">@Resource.Nav_SwitchLanguage</a></li>
             </ul>
-          <p>
-            </p><form action="/app/search.php?o=search" method="POST">
-              <input name="Field" value="Content" type="hidden">
-              <input name="TableID" value="2" type="hidden">
-              <input src="/Contents/UI/images/ruiji/ccc.gif" name="submit" class="btn" type="image">
-              <input class="search" name="Keywords" value="输入解决方案关键字" onclick="this.value = '';" onmouseout="if(this.value == '') this.value = '输入解决方案关键字'" type="text">
-          	</form>
-          <p></p>        
-
+          <p></p>
         </div>
         <div class="secnav">
         	<ul>
@@ -58,12 +50,8 @@
         <div class="footer">
 
         	<p class="right">
-        	<select name="SubSite" onchange="window.location=this.value">
-        	<option selected="selected" value="/">今日集团旗下网站</option>
-
-			  <option value="http://www.todaycnc.com">今日标准精密机器</option>
-			</select></p>
-        	<p>Today Science Technology Development Corporation 2007-2009 All right reserved.<br> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11002232号-2</a></p>        
+        	</p>
+        	<p>版权所有 © 上海瑞玑计算机科技有限公司 未经许可 严禁复制 <br>沪ICP备11034101号</p>        </div> 
 
         </div>
 </div>
