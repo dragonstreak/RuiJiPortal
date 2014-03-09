@@ -202,6 +202,7 @@
     <Compile Include="Common\RenderManger.cs" />
     <Compile Include="Common\ResourceManager.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortalController.cs" />
     <Compile Include="Extensions\ModelExtensions.cs" />
@@ -344,6 +345,8 @@
     <Content Include="Views\Shared\_SideBarPartial.cshtml" />
     <Content Include="Views\Shared\_NewsSection.cshtml" />
     <Content Include="Views\Shared\_Activities.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,7 +24,7 @@ namespace RuiJi.UI.Controllers
         // GET: /Portal/
 
         public ActionResult Index()
-        {
+        {            
             return View();
         }
 
@@ -50,7 +50,7 @@ namespace RuiJi.UI.Controllers
         //}
 
         public ActionResult HomePage()
-        {
+        {            
             return View("HomePage");
         }
 

@@ -86,6 +86,11 @@
     <Compile Include="Articles\LoadArticleByPagingParams.cs" />
     <Compile Include="Articles\LoadArticleByPagingResult.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="ErrorLogs\Data\ErrorLogMgr.cs" />
+    <Compile Include="ErrorLogs\Data\IErrorLogMgr.cs" />
+    <Compile Include="ErrorLogs\ErrorLogSvc.cs" />
+    <Compile Include="ErrorLogs\ErrorLogSvcProvider.cs" />
+    <Compile Include="ErrorLogs\IErrorLogSvc.cs" />
     <Compile Include="ErrorMessage.cs" />
     <Compile Include="IServiceProvider.cs" />
     <Compile Include="Migrations\201312261222077_AddUser.IsValid.cs" />
@@ -100,8 +105,10 @@
     <Compile Include="MissingServiceException.cs" />
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticleCategory.cs" />
+    <Compile Include="Models\ErrorLog.cs" />
     <Compile Include="Models\Mapping\ArticleCategoryMap.cs" />
     <Compile Include="Models\Mapping\ArticleMap.cs" />
+    <Compile Include="Models\Mapping\ErrorLogMap.cs" />
     <Compile Include="Models\Mapping\RoleMap.cs" />
     <Compile Include="Models\Mapping\SystemUserMap.cs" />
     <Compile Include="Models\Mapping\UserRole_lnkMap.cs" />

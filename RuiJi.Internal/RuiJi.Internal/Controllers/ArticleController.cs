@@ -18,7 +18,7 @@ namespace RuiJi.Internal.Controllers
         // GET: /Article/
 
         public ActionResult Index()
-        {
+        {            
             ArticleListModel model = new ArticleListModel();
             model.SetMenu("SiteManagement", "ArticleManager");
             return View(model);

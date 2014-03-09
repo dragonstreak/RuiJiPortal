@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using EFCentral.UI.Controllers;
+using RuiJi.DataAccess;
+using RuiJi.DataAccess.ErrorLogs;
 
 namespace RuiJi.Internal
 {
@@ -49,7 +51,7 @@ namespace RuiJi.Internal
             }
 
             var ex = Server.GetLastError();
-
+            RuiJiPortalServiceLocator.Instance.GetSvc<IErrorLogSvc>().Add(ex);
             var controller = new ErrorController();
             var routeData = new RouteData();
             var action = "Index";
