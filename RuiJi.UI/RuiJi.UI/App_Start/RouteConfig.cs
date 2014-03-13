@@ -12,7 +12,8 @@ namespace RuiJi.UI
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.IgnoreRoute("loginhandler.ashx");
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

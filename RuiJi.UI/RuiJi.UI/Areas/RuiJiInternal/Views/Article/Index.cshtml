@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+
+@using RuiJi.Internal.Models
+
+@model ArticleListModel
+
+@section StartupScripts
+{    
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.config.js")"></script>
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.all.js")"> </script>
+<script type="text/javascript" src="@Url.Content("~/ueditor/lang/zh-cn/zh-cn.js")"></script>
+}
+
+@section Styles
+{
+<link href="@Url.Content("~/ueditor/themes/default/css/ueditor.css")" rel="stylesheet" type="text/css" />
+}
+
+<form method="post">
+    <fieldset>
+        <legend>My workplace</legend>
+        <div id="errorMessage" class="mandatory" style="text-align: center;">
+           
+        </div>
+        <p>
+            <label for="ArticleCategoryIdQry" class="criteria-title">
+               Article Category:</label>
+            @Html.DropDownList("ArticleCategoryIdQry", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ArticleCategoryIdQry))
+            <label for="TitleQry" class="criteria-title">
+                Title:</label>
+            @Html.TextBoxFor(x => x.TitleQry)
+            <label for="IsPublishedQry" class="criteria-title">
+                HasPublished:</label>
+            @Html.DropDownList("IsPublishedQry", new SelectList(Model.PublishOption, "Value","Name", Model.IsPublishedQry))
+            <input id="btnSearch" type="submit" value="Search" class="button" />
+        </p>
+    </fieldset>
+</form>
+
+<div id="QueryResult">
+    @if (Model.ArticleList != null)
+    {
+        <table class="table" width="100%">
+            <tr>
+                <th>Article Category</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>IsPublished</th>
+                <th>Edit</th>
+            </tr>
+            @if (Model.ArticleList.Count > 0)
+            {
+                foreach (var article in Model.ArticleList)
+                {
+                    var title = article.Title.Length > 20? article.Title.Substring(0,20) + "......" : article.Title;
+                    <tr>
+                        <td>@article.ArticleCategoryName</td>
+                        <td>@title</td>
+                        <td>@article.Author</td>
+                        <td>@if(article.IsPublished)
+                            {
+                                <span>Yes</span>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                            }
+                        </td>
+                        <td><a href="@Url.Content("~/RuiJiInternal/Article/EditArticle?articleid="+ article.ArticleId.ToString())" class="articleeditlink" articleid="@article.ArticleId">Edit</a> </td>
+                    </tr>
+                }
+            }
+        </table>
+    }
+</div>
+<div id="ArticleEditContainer">
+
+</div>
+
+<script type="text/javascript">
+    _ruiji.internal.Article = {};
+    _ruiji.internal.Article.EditUrl = '@Url.Content("~/RuiJiInternal/Article/EditArticle")';
+
+    $j("#btnCreate").click(function () {
+        $j("#ArticleEditContainer").empty();
+        $j.ajax({
+            type: "Post",
+            url: _ruiji.internal.Article.CreateUrl,
+            success: function (response) {
+                $j("#ArticleEditContainer").html(response).dialog({
+                    height: 800,
+                    width: 1024,
+                    modal: true
+                });
+                UE.getEditor('ContentDetail');
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+
+</script>

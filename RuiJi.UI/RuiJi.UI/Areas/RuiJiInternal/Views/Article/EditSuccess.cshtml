@@ -1,0 +1,24 @@
+﻿@model RuiJi.Internal.Models.EditSuccessModel
+
+@{
+    if(Model.IsCreate)
+    {
+        ViewBag.Title = "Create Success";
+    }
+    else
+    {
+        ViewBag.Title = "Edit Success";
+    }
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+
+@if(Model.IsCreate)
+{
+<h2>Create Article Success!</h2>
+<div><a href="@Url.Content("~/RuiJiInternal/Article/EditArticle")">Create Another</a></div>
+}
+else
+{
+    <h2>Edit Article Success!</h2>
+}
+

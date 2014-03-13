@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Log in";
+}
+@using RuiJi.Internal.Common
+@model RuiJi.Internal.Models.LoginModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="@Url.Content("~/styles/pages/Login.css?ver=" + Constants.ScriptStyleFileVersion)" type="text/css" />
+    <title>Index</title>
+</head>
+<body class="logonBody">
+
+    <section id="logonForm">
+    <form method="post" action="@Url.Content("~/LoginHandler.ashx")">     
+        <div class="logonContainer">
+        
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+
+            <fieldset id="login">
+                <legend>Log in Form</legend>
+                <ul>
+                    <li>
+                        @Html.LabelFor(m => m.UserName, new {width="100px" })
+                        @Html.TextBoxFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </li>
+                    <li>
+                        @Html.LabelFor(m => m.Password, new {width="100px" })
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </li>
+                </ul>
+                <div class="errormsg-container">
+                    @Model.ErrorMsg
+                </div>
+                <input type="submit" value="Log in" />
+            </fieldset>
+        </div>
+    </form>
+    </section>
+</body>
+</html>

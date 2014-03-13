@@ -1,0 +1,33 @@
+﻿
+.logonBody
+{
+    background:#e2e2e2
+}
+
+.logonContainer
+{
+    margin: 50px 200px;
+}
+
+    .logonContainer input[type="submit"], input[type="button"], button
+    {
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+    }
+
+    .logonContainer fieldset ul
+    {
+        padding:0;
+        list-style: none;
+    }
+
+        .logonContainer fieldset ul li
+        {
+            padding-bottom: 5px;
+        }
+
+.errormsg-container
+{
+    color: red;
+}

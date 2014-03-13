@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Work Space";
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+
+@model RuiJi.Internal.Models.ArticleItemModel
+@section Scripts
+{    
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.config.js")"></script>
+<script type="text/javascript" charset="utf-8" src="@Url.Content("~/ueditor/ueditor.all.js")"> </script>
+<script type="text/javascript" src="@Url.Content("~/ueditor/lang/zh-cn/zh-cn.js")"></script>
+}
+
+@section Styles
+{
+<link href="@Url.Content("~/ueditor/themes/default/css/ueditor.css")" rel="stylesheet" type="text/css" />
+}
+    <div id="errorMsg" class="errormsg-container">
+       
+    </div>
+    <div id="HiddenArticleData" >
+        @Html.HiddenFor(_ => _.ArticleId)
+    </div>
+    <ul id="articletitle" style="list-style-type:none; margin:10px 0">
+        <li>
+            <label for="Title">Title</label><br />
+            @Html.TextBoxFor(_ => _.Title)
+        </li>
+        <li>
+            <label for="Summary">Summary</label><br />
+            @Html.TextAreaFor(_ => _.Summary, new { style = "width:300px"})
+        </li>
+        <li>
+            <label for="ArticleCategoryId">ArticleCategory</label> <br />
+            @Html.DropDownList("ArticleCategoryId", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ArticleCategoryId))
+        </li>
+        <li>
+            <label for="Author">Author</label><br />
+            @Html.TextBoxFor(_ => _.Author)
+        </li>
+        <li>
+            <label for="IsPublished">Publish</label> <br />
+            <input type="radio" id="IsPublished1" name="IsPublished" value="true" @if(Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">Yes</label>
+            <input type="radio" id="IsPublished2" name="IsPublished" value="false" @if(! Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">No</label>
+        </li>        
+    </ul>
+    <div>
+    <script id="editor" type="text/plain" style="width:900px;height:450px;"></script>
+    </div>
+    <div id="test1">
+
+    </div>
+    <div>
+        <input type="button" id="btnSave" name="btnSave" value="Save" />
+    </div>
+    
+    <script type="text/javascript">
+        var initialContent = '';
+        @if(Model.ArticleId>0)
+        {
+            <text>
+        initialContent = '@Html.Raw(Model.ContentDetail)';        
+           </text>
+        }
+
+        var ue;
+        $j( function(){
+            ue = new UE.ui.Editor({
+                initialContent: initialContent
+            });
+            ue.render("editor");
+        })
+
+        var SaveUrl = '@Url.Content("~/RuiJiInternal/Article/Save")';
+        var SuccessUrl = '@Url.Content("~/RuiJiInternal/Article/EditSuccess")'
+        
+        $j("#btnSave").click(
+            function () {
+                $j("#btnSave").attr("disabled", "true");
+                
+                var content = ue.getContent();
+                var articleId = $j("#ArticleId").val();
+                var title = $j("#Title").val();
+                var summary = $j("#Summary").val();
+                var category = $j("#ArticleCategoryId").val();
+                var author = $j("#Author").val();
+                var ispublish = $j('input:radio[name="IsPublished"]:checked').val();
+
+                $j.ajax({
+                    type: "POST",
+                    url: SaveUrl,
+                    data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish },
+                    success: function (response) {
+                        if (response.IsSuccess) {
+                            if (articleId == 0) {
+                                window.location.href = SuccessUrl + "?isCreate=true";
+                            }
+                            else {
+                                window.location.href = SuccessUrl + "?isCreate=false";
+                            }
+                        }
+                        else {
+                            $j("#errorMsg").empty();
+                            $j("#errorMsg").html("Error : " + response.ErrorMessage);
+                        }
+                        $j("#btnSave").removeAttr("disabled");
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        $j("#errorMsg").empty();
+                        $j("#errorMsg").html("Error : " + errorThrown);
+                        $j("#btnSave").removeAttr("disabled");
+                    }
+                });
+            });
+    </script>    

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMenuModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MenuModel>
+    <Id>132</Id>
+    <ParentId>-1</ParentId>
+    <Type>0</Type>
+    <Name>SiteManagement</Name>
+    <DisplayName>Site Management</DisplayName>
+    <SortIndex>0</SortIndex>
+    <Target>_self</Target>
+    <Tooltip>Site Management</Tooltip>
+    <SubMenus>
+      <MenuModel>
+        <Id>13210</Id>
+        <ParentId>132</ParentId>
+        <Type>0</Type>
+        <Name>ArticleQuery</Name>
+        <DisplayName>Article Query</DisplayName>
+        <SortIndex>0</SortIndex>
+        <Url>~/RuiJiInternal/Article</Url>
+        <Target>_self</Target>
+        <Tooltip>Article Manage</Tooltip>
+        <PermissionCodes>
+          <string>SADM</string>
+        </PermissionCodes>
+      </MenuModel>
+      <MenuModel>
+        <Id>13220</Id>
+        <ParentId>132</ParentId>
+        <Type>0</Type>
+        <Name>ArticleEdit</Name>
+        <DisplayName>Article Edit</DisplayName>
+        <SortIndex>0</SortIndex>
+        <Url>~/RuiJiInternal/Article/EditArticle</Url>
+        <Target>_self</Target>
+        <Tooltip>Article Edit</Tooltip>
+        <PermissionCodes>
+          <string>SADM</string>
+        </PermissionCodes>
+      </MenuModel>
+    </SubMenus>
+    <PermissionCodes>
+      <string>SADM</string>
+    </PermissionCodes>
+  </MenuModel>
+</ArrayOfMenuModel>
