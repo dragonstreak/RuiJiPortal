@@ -2,6 +2,7 @@
     Layout = null;
 }
 @model RuiJi.UI.Models.ArticleListModel
+@using RuiJi.UI.Common
 
 <h4>
     @Resource.Breadcrumb_Title
@@ -9,6 +10,6 @@
 
     @foreach (var node in RuiJi.UI.Common.NavTreeContext.Path(Model.ArticleCategoryId))
     {
-        @(">") <a href="@Url.Action("ItemList", new { categoryId = node.CategoryId })"> @RuiJi.UI.Common.ResourceManager.GetLocalizedString(node.ResourceKey) </a>
+        @(">") <a href="@Url.Action("ItemList", new { categoryId = node.CategoryId })"> @LanguageHelper.GetArticleCategoryUIName(node.CategoryId) </a>
     }
 </h4>

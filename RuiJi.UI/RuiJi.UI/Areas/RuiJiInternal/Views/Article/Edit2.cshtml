@@ -35,6 +35,13 @@
             @Html.DropDownList("ArticleCategoryId", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ArticleCategoryId))
         </li>
         <li>
+            <label for="Language">Language</label> <br />
+            <select id="Language" name="Language">
+                <option @if(Model.Language == Common.Enums.LanguageType.CN){ <text> selected="selected" </text>} value="1">CN</option>
+                <option @if(Model.Language == Common.Enums.LanguageType.EN){ <text> selected="selected" </text>} value="2">EN</option>
+            </select>
+        </li>
+        <li>
             <label for="Author">Author</label><br />
             @Html.TextBoxFor(_ => _.Author)
         </li>
@@ -85,11 +92,12 @@
                 var category = $j("#ArticleCategoryId").val();
                 var author = $j("#Author").val();
                 var ispublish = $j('input:radio[name="IsPublished"]:checked').val();
+                var language = $j("#Language").val();
 
                 $j.ajax({
                     type: "POST",
                     url: SaveUrl,
-                    data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish },
+                    data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish, language: language},
                     success: function (response) {
                         if (response.IsSuccess) {
                             if (articleId == 0) {

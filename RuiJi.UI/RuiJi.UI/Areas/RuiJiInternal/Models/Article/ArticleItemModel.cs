@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Common.Enums;
 using RuiJi.Internal.Extensions;
 
 namespace RuiJi.Internal.Models
@@ -33,5 +34,6 @@ namespace RuiJi.Internal.Models
         public string ArticleCategoryName { get; set; }
 
         public List<ArticleCategoryItemModel> ArticleCategoryList { get; set; }
+        public LanguageType Language { get; set; }
     }
 }

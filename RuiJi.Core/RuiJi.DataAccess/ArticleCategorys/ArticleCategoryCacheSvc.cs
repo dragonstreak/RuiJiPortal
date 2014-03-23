@@ -51,5 +51,10 @@ namespace RuiJi.DataAccess.ArticleCategorys
 
             return result;
         }
+
+        public void Refresh()
+        {
+            ArticleCategoryListCache.Instance.Refresh();
+        }
     }
 }

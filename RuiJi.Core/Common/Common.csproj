@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\ArticleCategoryEnum.cs" />
+    <Compile Include="Enums\LanguageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RuiJiCryptoGraphy.cs" />
     <Compile Include="RuiJiEnterpriseCryptoGraphy.cs" />

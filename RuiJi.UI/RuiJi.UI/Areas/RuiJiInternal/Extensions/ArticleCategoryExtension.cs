@@ -26,7 +26,9 @@ namespace RuiJi.Internal.Extensions
                 HomePageDisplayOrder = dbModel.HomePageDisplayOrder,
                 IsShowOnHomePage = dbModel.IsShowOnHomePage,
                 ParentCategoryId = dbModel.ParentCategoryId,
-                UIResourceKey = dbModel.UIResourceKey
+                UIResourceKey = dbModel.UIResourceKey,
+                CNName = dbModel.CNName,
+                ENName = dbModel.ENName
             };
         }
 

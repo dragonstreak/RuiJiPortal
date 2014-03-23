@@ -43,6 +43,15 @@ namespace RuiJi.DataAccess.ArticleCategorys.Cache
             }
         }
 
+        public void Refresh()
+        {
+            _cacheManager.Remove(CacheKey);
+            ReadOnlyCollection<ArticleCategory> articleCategoryList = _mgr.LoadAll().AsReadOnly();
+            ExtendedFormatTime expireTime = new ExtendedFormatTime("10 * * * *");
+
+            _cacheManager.Add(CacheKey, articleCategoryList, CacheItemPriority.Normal, null, expireTime);
+        }
+
         public ReadOnlyCollection<ArticleCategory> ArticleCategorys
         {
             get

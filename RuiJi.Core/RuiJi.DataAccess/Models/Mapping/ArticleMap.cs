@@ -53,12 +53,7 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.InsertDate).HasColumnName("InsertDate");
             this.Property(t => t.InsertBy).HasColumnName("InsertBy");
             this.Property(t => t.TIMESTAMP).HasColumnName("TIMESTAMP");
-
-            // Relationships
-            this.HasRequired(t => t.ArticleCategory)
-                .WithMany(t => t.Articles)
-                .HasForeignKey(d => d.ArticleCategoryId);
-
+            this.Property(t => t.LanguageType).HasColumnName("LanguageType");
         }
     }
 }

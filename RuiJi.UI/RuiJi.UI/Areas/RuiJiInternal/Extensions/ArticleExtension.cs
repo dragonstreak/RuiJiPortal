@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Common.Enums;
 using RuiJi.DataAccess;
 using RuiJi.DataAccess.ArticleCategorys;
 using RuiJi.DataAccess.Models;
@@ -40,6 +41,7 @@ namespace RuiJi.Internal.Extensions
                 Title = dbModel.Title,
                 UpdateBy = dbModel.UpdateBy,
                 UpdateDate = dbModel.UpdateDate,
+                Language = (LanguageType)dbModel.LanguageType.Value,
                 ArticleCategoryName = _articleCategoryCacheSvc.LoadAllArticleCategory().First( _ => _.ArticleCategoryId == dbModel.ArticleCategoryId).Description
             };
         }

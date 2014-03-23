@@ -226,6 +226,7 @@
     <Compile Include="Areas\RuiJiInternal\Common\Constants.cs" />
     <Compile Include="Areas\RuiJiInternal\Common\RuiJiContextCookieSerializer.cs" />
     <Compile Include="Areas\RuiJiInternal\Context\RuiJiContext.cs" />
+    <Compile Include="Areas\RuiJiInternal\Controllers\ArticleCategoryController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\ArticleController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\BaseController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\LoginController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Areas\RuiJiInternal\Helpers\MenuUrlProcessor.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\AccountModels.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\ArticleCategorys\ArticleCategoryItemModel.cs" />
+    <Compile Include="Areas\RuiJiInternal\Models\ArticleCategorys\ArticleCategoryListModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\Article\ArticleItemModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\Article\ArticleListModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\Article\EditSuccessModel.cs" />
@@ -251,6 +253,7 @@
     <Compile Include="Areas\RuiJiInternal\Security\SecurityService.cs" />
     <Compile Include="Common\ConfigManager.cs" />
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\LanguageHelper.cs" />
     <Compile Include="Common\NavTreeContext.cs" />
     <Compile Include="Common\RenderManger.cs" />
     <Compile Include="Common\ResourceManager.cs" />
@@ -336,6 +339,7 @@
     <Content Include="Areas\RuiJiInternal\Views\Shared\_Master.cshtml" />
     <Content Include="Areas\MyTest\Views\Web.config" />
     <Content Include="Areas\MyTest\Views\First\Index.cshtml" />
+    <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Index.cshtml" />
     <None Include="Properties\PublishProfiles\RuiJi.UI.ReleasePublish.pubxml" />
     <None Include="Properties\PublishProfiles\UITony.pubxml" />
     <Content Include="Images\accent.png" />
@@ -692,7 +696,9 @@
     <Content Include="Ueditor\ueditor.config.js" />
     <Content Include="Ueditor\ueditor.parse.js" />
     <Content Include="Ueditor\ueditor.parse.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

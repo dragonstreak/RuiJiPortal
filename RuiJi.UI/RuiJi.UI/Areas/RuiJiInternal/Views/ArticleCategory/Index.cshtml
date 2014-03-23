@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Article Category manage";
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+@model RuiJi.Internal.Models.ArticleCategoryListModel
+
+<table class="table" width="100%">
+            <tr>
+                <th>Code</th>
+                <th>Parent</th>
+                <th>IsShowOnHomePage</th>
+                <th>Chinese</th>
+                <th>English</th>
+            </tr>
+@foreach (var item in Model.ArticleCategoryList)
+{
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.ParentCategoryName</td>
+                <td>@item.IsShowOnHomePage.ToString()</td>
+                <td>@item.CNName</td>
+                <td>@item.ENName</td>
+            </tr>
+}
+</table>

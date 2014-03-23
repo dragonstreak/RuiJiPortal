@@ -1,7 +1,7 @@
 ﻿@model RuiJi.UI.Models.ArticleListModel
 
 @{
-    ViewBag.Title = RuiJi.UI.Common.ResourceManager.GetLocalizedString(Model.ArticleCategory.ResourceKey);
+    ViewBag.Title = RuiJi.UI.Common.LanguageHelper.GetArticleCategoryUIName(Model.ArticleCategory.CategoryId);
     Layout = "~/Views/Shared/_MasterGeneral.cshtml";
 }
 

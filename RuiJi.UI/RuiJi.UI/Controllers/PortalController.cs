@@ -14,6 +14,7 @@ using RuiJi.Web.MvcBase;
 using RuiJi.UI.Extensions;
 using RuiJi.UI.Resources;
 using RuiJi.DataAccess.ArticleCategorys;
+using System.Threading;
 
 namespace RuiJi.UI.Controllers
 {
@@ -321,7 +322,8 @@ namespace RuiJi.UI.Controllers
         private List<ArticleModel> LoadByArticleCategory(ArticleCategoryEnum articleCategory)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-            var modelList = svc.LoadByArticleCategoryId((int)articleCategory, true);
+            LanguageType language = LanguageHelper.GetLanguageTypeByCulture(Thread.CurrentThread.CurrentUICulture.Name);
+            var modelList = svc.LoadByArticleCategoryId((int)articleCategory, language, true);
 
             return modelList.ToModels();
         }
@@ -329,10 +331,12 @@ namespace RuiJi.UI.Controllers
         private List<ArticleModel> LoadByArticleCategoryPaged(int articleCategory, int pageIndex, int pageSize, out int totalCount)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
+            LanguageType language = LanguageHelper.GetLanguageTypeByCulture(Thread.CurrentThread.CurrentUICulture.Name);
             var result = svc.LoadByArticleCategoryIdWithPaging(new LoadArticleByPagingParams()
             {
                 ArticleCategoryId = articleCategory,
                 OnlyPublished = true,
+                Language = language,
                 PageIndex = pageIndex,
                 PageSize = pageSize
             });

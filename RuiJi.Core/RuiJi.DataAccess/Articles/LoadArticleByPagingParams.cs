@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Common.Enums;
 
 namespace RuiJi.DataAccess.Articles
 {
@@ -10,6 +11,8 @@ namespace RuiJi.DataAccess.Articles
         public int ArticleCategoryId { get; set; }
 
         public bool OnlyPublished { get; set; }
+
+        public LanguageType Language { get; set; }
 
         public int PageIndex { get; set; }
 

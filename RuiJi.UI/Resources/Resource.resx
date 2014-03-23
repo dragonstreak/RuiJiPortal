@@ -169,7 +169,7 @@
     <value>Navigation</value>
   </data>
   <data name="Nav_SwitchLanguage" xml:space="preserve">
-    <value>汉语</value>
+    <value>中文</value>
   </data>
   <data name="Nav_SwitchLanguage_Key" xml:space="preserve">
     <value>zh-CN</value>

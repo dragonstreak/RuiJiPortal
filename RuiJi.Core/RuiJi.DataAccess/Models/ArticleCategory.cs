@@ -6,11 +6,6 @@ namespace RuiJi.DataAccess.Models
 {
     public partial class ArticleCategory
     {
-        public ArticleCategory()
-        {
-            this.Articles = new List<Article>();
-        }
-
         public int ArticleCategoryId { get; set; }
         public string Name { get; set; }
         public string UIResourceKey { get; set; }
@@ -23,6 +18,7 @@ namespace RuiJi.DataAccess.Models
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public string UpdateBy { get; set; }
         public int HomePageDisplayOrder { get; set; }
-        public virtual ICollection<Article> Articles { get; set; }
+        public string CNName { get; set; }
+        public string ENName { get; set; }
     }
 }

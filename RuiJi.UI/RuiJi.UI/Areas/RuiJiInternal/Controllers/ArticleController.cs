@@ -9,6 +9,7 @@ using RuiJi.Internal.Models;
 using RuiJi.Internal.Extensions;
 using RuiJi.DataAccess.Models;
 using RuiJi.Internal.Context;
+using Common.Enums;
 
 namespace RuiJi.Internal.Controllers
 {
@@ -41,7 +42,7 @@ namespace RuiJi.Internal.Controllers
                 loadPublishArticle = null;
             }
 
-            model.ArticleList = ArticleSvc.LoadArticleForManage(model.ArticleCategoryIdQry, model.TitleQry, loadPublishArticle).ToListModel();
+            model.ArticleList = ArticleSvc.LoadArticleForManage(model.ArticleCategoryIdQry, model.TitleQry,LanguageType.All, loadPublishArticle).ToListModel();
             model.SetMenu("SiteManagement", "ArticleManager");
             return View(model);
         }
@@ -69,7 +70,8 @@ namespace RuiJi.Internal.Controllers
             string contentDetail,
             int articleCategoryId,
             bool ispublished,
-            string author)
+            string author,
+            int language)
         {
             JsonResultBase result = new JsonResultBase();
             string currentUser = "System";
@@ -96,6 +98,7 @@ namespace RuiJi.Internal.Controllers
                 article.ArticleCategoryId = articleCategoryId;
                 article.IsPublished = ispublished;
                 article.Author = author;
+                article.LanguageType = language;
                 if (ispublished)
                 {
                     article.PublishDate = DateTime.UtcNow;

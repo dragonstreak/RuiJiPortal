@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Common.Enums;
 using RuiJi.DataAccess.ArticleCategorys;
 using RuiJi.DataAccess.Articles.Data;
 using RuiJi.DataAccess.Models;
@@ -55,7 +56,7 @@ namespace RuiJi.DataAccess.Articles
             }
         }
 
-        public List<Article> LoadByArticleCategoryId(int articleCategoryId, bool onlyPublished)
+        public List<Article> LoadByArticleCategoryId(int articleCategoryId, LanguageType language, bool onlyPublished)
         {
             List<Article> result = new List<Article>();
             var categoryList = _articleCategoryCacheSvc.LoadWithAllChildrens(articleCategoryId);
@@ -67,6 +68,10 @@ namespace RuiJi.DataAccess.Articles
             {
                 result.RemoveAll(_ => !_.IsPublished);
             }
+            if (language != LanguageType.All)
+            {
+                result.RemoveAll(_ => !_.LanguageType.HasValue || _.LanguageType != (int)language);
+            }
 
             return result.OrderByDescending(_ => _.PublishDate).ToList();
 
@@ -74,7 +79,7 @@ namespace RuiJi.DataAccess.Articles
 
         public LoadArticleByPagingResult LoadByArticleCategoryIdWithPaging(LoadArticleByPagingParams param)
         {
-            var totalList = LoadByArticleCategoryId(param.ArticleCategoryId, param.OnlyPublished);
+            var totalList = LoadByArticleCategoryId(param.ArticleCategoryId, param.Language, param.OnlyPublished);
             var result = new LoadArticleByPagingResult();
             result.Total = totalList.Count;
             result.ArticleList = totalList.Skip((param.PageIndex - 1) * param.PageSize)
@@ -82,10 +87,10 @@ namespace RuiJi.DataAccess.Articles
             return result;
         }
 
-        
-        public List<Article> LoadArticleForManage(int categoryId, string title, bool? published)
+
+        public List<Article> LoadArticleForManage(int categoryId, string title, LanguageType language, bool? published)
         {
-            var articleList = LoadByArticleCategoryId(categoryId, false);
+            var articleList = LoadByArticleCategoryId(categoryId, language, false);
             var result = from a in articleList
                          where (title == null || a.Title.Contains(title))
                                && (!published.HasValue || published.Value == a.IsPublished)

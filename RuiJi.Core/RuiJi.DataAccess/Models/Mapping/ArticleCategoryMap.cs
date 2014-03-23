@@ -28,6 +28,12 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.UpdateBy)
                 .HasMaxLength(50);
 
+            this.Property(t => t.CNName)
+                .HasMaxLength(50);
+
+            this.Property(t => t.ENName)
+                .HasMaxLength(50);
+
             // Table & Column Mappings
             this.ToTable("ArticleCategory");
             this.Property(t => t.ArticleCategoryId).HasColumnName("ArticleCategoryId");
@@ -42,6 +48,8 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.UpdateDate).HasColumnName("UpdateDate");
             this.Property(t => t.UpdateBy).HasColumnName("UpdateBy");
             this.Property(t => t.HomePageDisplayOrder).HasColumnName("HomePageDisplayOrder");
+            this.Property(t => t.CNName).HasColumnName("CNName");
+            this.Property(t => t.ENName).HasColumnName("ENName");
         }
     }
 }

@@ -9,6 +9,7 @@ using RuiJi.DataAccess.Articles;
 using RuiJi.DataAccess.Models;
 using RuiJi.UI.Models;
 using RuiJi.UI.Extensions;
+using System.Threading;
 
 namespace RuiJi.UI.Common
 {
@@ -206,7 +207,8 @@ namespace RuiJi.UI.Common
         private static List<ArticleModel> LoadActivities(int count)
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleSvc>();
-            var articles = svc.LoadByArticleCategoryId(SpecialArticleCategory.ActivitiesId, true);
+            LanguageType language = LanguageHelper.GetLanguageTypeByCulture(Thread.CurrentThread.CurrentUICulture.Name);
+            var articles = svc.LoadByArticleCategoryId(SpecialArticleCategory.ActivitiesId, language, true);
 
             var list = articles.Take(count).ToModels();
             return list;

@@ -214,7 +214,7 @@ namespace RuiJi.UI.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 汉语.
+        ///   Looks up a localized string similar to 中文.
         /// </summary>
         public static string Nav_SwitchLanguage {
             get {

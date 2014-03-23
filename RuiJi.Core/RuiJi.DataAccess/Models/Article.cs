@@ -21,6 +21,6 @@ namespace RuiJi.DataAccess.Models
         public string InsertBy { get; set; }
 		[Timestamp]
         public byte[] TIMESTAMP { get; set; }
-        public virtual ArticleCategory ArticleCategory { get; set; }
+        public Nullable<int> LanguageType { get; set; }
     }
 }

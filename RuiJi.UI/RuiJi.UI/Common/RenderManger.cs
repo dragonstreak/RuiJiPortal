@@ -14,7 +14,7 @@ namespace RuiJi.UI.Common
         // Only renders until subtop
         public static void RenderNewsSection(StringBuilder stringBuilder, NavTreeNodeModel treeNode, HtmlHelper<dynamic> htmlHelper)
         {
-            string linkText = ResourceManager.GetLocalizedString(treeNode.ResourceKey);
+            string linkText = LanguageHelper.GetArticleCategoryUIName(treeNode.CategoryId);
 
             if (treeNode.IsTopLevel)
             {
@@ -43,7 +43,7 @@ namespace RuiJi.UI.Common
 
         public static void RenderMenuTreeChildren(StringBuilder stringBuilder, NavTreeNodeModel treeNode, HtmlHelper<dynamic> htmlHelper, string indention = "")
         {
-            var linkText = ResourceManager.GetLocalizedString(treeNode.ResourceKey);
+            var linkText = LanguageHelper.GetArticleCategoryUIName(treeNode.CategoryId);
             string menuNode = "";
 
             if (treeNode.IsTopLevel)

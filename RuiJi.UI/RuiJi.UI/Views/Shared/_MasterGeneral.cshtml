@@ -2,16 +2,14 @@
     Layout = "~/Views/Shared/_Blank.cshtml";
 }
 @using Common.Enums
+@using RuiJi.UI.Common
 
     <div id="bgwrap">
 	<div id="wrap">
         <div class="sectop">
 
             <ul class="white">
-                <li><a href="@Url.Action("HomePage")">@Resource.Nav_BackToHome</a></li><li>|</li>
-                <li><a href="#">@Resource.Nav_MailBox</a></li><li>|</li>
-                <li><a href="@Url.Action("LegalInformation")">@Resource.Nav_LegalInformation</a></li><li>|</li>
-                <li><a href="@Url.Action("Links")">@Resource.Nav_Links</a></li><li>|</li>
+                <li><a href="@Url.Action("HomePage")">@Resource.Nav_BackToHome</a></li>                
                 <li><a href="#" id="switch-lang" culturecode="@Resource.Nav_SwitchLanguage_Key">@Resource.Nav_SwitchLanguage</a></li>
             </ul>
           <p></p>
@@ -19,14 +17,14 @@
         <div class="secnav">
         	<ul>
 
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.CompanyInfo })">@Resource.Menu_StepIntoRuiji</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.News })">@Resource.Menu_NewsCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Solution })">@Resource.Menu_SolutionCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Service })">@Resource.Menu_ServiceCenter</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Achievement })">@Resource.Menu_SuccessCases</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })">@Resource.Menu_Information</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })">@Resource.Menu_HumanResources</a></li>
-            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })">@Resource.Menu_ContactUs</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.CompanyInfo })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.CompanyInfo)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.News })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.News)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Solution })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.Solution)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Service })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.Service)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.Achievement })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.Achievement)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.TechResource)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.HumanResource)</a></li>
+            	<li><a class="secnavhr" href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.ContactUs)</a></li>
             	<li><a class="secnavhr" href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" target="_blank">@Resource.Menu_Forum</a></li>
         	</ul>
         </div>

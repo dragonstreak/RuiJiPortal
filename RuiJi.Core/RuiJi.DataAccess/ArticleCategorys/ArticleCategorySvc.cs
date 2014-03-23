@@ -112,5 +112,10 @@ namespace RuiJi.DataAccess.ArticleCategorys
 
             return path;
         }
+
+        public List<ArticleCategory> LoadAll()
+        {
+            return _mgr.LoadAll();
+        }
     }
 }
