@@ -16,6 +16,8 @@ namespace RuiJi.Internal.Models
         public string Description { get; set; }
         public Nullable<int> ParentCategoryId { get; set; }
 
+        public List<ArticleCategoryItemModel> ArticleCategoryList { get; set; }
+
         private string _parentCategoryName;
         public string ParentCategoryName 
         {
@@ -53,5 +55,14 @@ namespace RuiJi.Internal.Models
                 return _articleCategoryCacheSvc;
             }
         }
+
+        public bool Editable
+        {
+            get
+            {
+                return this.ParentCategoryId.HasValue && this.ParentCategoryId.Value > 0;
+            }
+        }
+
     }
 }

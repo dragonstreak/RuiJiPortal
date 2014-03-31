@@ -15,7 +15,17 @@ namespace RuiJi.UI.Common
 {
     public class NavTreeContext
     {
-        public static Lazy<List<NavTreeNodeModel>> NavTree = new Lazy<List<NavTreeNodeModel>>(LoadTree);
+        static NavTreeContext()
+        {
+            NavTree = LoadTree();
+        }
+
+        public static List<NavTreeNodeModel> NavTree;
+
+        public static void Refresh()
+        {
+            NavTree = LoadTree();
+        }
 
         public static List<NavTreeNodeModel> Path(int articleCategoryId)
         {
@@ -51,7 +61,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.CompanyInfo);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.CompanyInfo);
             }
         }
 
@@ -59,7 +69,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.ContactUs);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.ContactUs);
             }
         }
 
@@ -67,7 +77,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.HumanResource);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.HumanResource);
             }
         }
 
@@ -75,7 +85,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.News);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.News);
             }
         }
 
@@ -83,7 +93,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.Service);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.Service);
             }
         }
 
@@ -91,7 +101,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.Solution);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.Solution);
             }
         }
 
@@ -99,7 +109,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.TechResource);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.TechResource);
             }
         }
 
@@ -107,7 +117,7 @@ namespace RuiJi.UI.Common
         {
             get
             {
-                return NavTree.Value.First(t => t.CategoryId == (int)ArticleCategoryEnum.Achievement);
+                return NavTree.First(t => t.CategoryId == (int)ArticleCategoryEnum.Achievement);
             }
         }
 

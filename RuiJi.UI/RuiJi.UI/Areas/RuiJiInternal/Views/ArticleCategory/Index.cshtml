@@ -4,6 +4,10 @@
 }
 @model RuiJi.Internal.Models.ArticleCategoryListModel
 
+<form id="articlecategorymanage" method="get" action="@Url.Content("~/RuiJiInternal/ArticleCategory/")">
+<div>
+    <input type="button" id="btnNew" value="New" class="button" />
+</div>
 <table class="table" width="100%">
             <tr>
                 <th>Code</th>
@@ -11,6 +15,8 @@
                 <th>IsShowOnHomePage</th>
                 <th>Chinese</th>
                 <th>English</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
 @foreach (var item in Model.ArticleCategoryList)
 {
@@ -20,6 +26,72 @@
                 <td>@item.IsShowOnHomePage.ToString()</td>
                 <td>@item.CNName</td>
                 <td>@item.ENName</td>
+                <td>@if(item.Editable){ <a href="#" categoryid="@item.ArticleCategoryId" class="category_edit">Edit</a>}</td>
+                <td>@if(item.Editable){ <a href="#" categoryid="@item.ArticleCategoryId" class="category_delete">Delete</a>}</td>
             </tr>
 }
 </table>
+<div id="CategoryEditContainer">
+    
+</div>
+</form>
+
+<script type="text/javascript">
+    $(".category_edit").click(function () {
+        var categoryid = $(this).attr("categoryid");
+        var editUrl = '@Url.Content("~/RuiJiInternal/ArticleCategory/Edit")';
+        $.ajax({
+            url: editUrl,
+            type: "POST",
+            data: { articleCategoryId: categoryid },
+            success: function (response) {
+                $("#CategoryEditContainer").html(response).dialog({
+                    height: 300,
+                    width: 450,
+                    modal: true
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+
+    $(".category_delete").click(function () {
+        var useconfirm = confirm("Are you sure to delete this Category?");
+        if (!useconfirm) {
+            return false;
+        }
+        var categoryid = $(this).attr("categoryid");
+        var deleteUrl = '@Url.Content("~/RuiJiInternal/ArticleCategory/Delete")';
+        $.ajax({
+            url: deleteUrl,
+            type: "POST",
+            data: { articleCategoryId: categoryid },
+            success: function (response) {
+                $("#articlecategorymanage").submit();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+
+    $("#btnNew").click(function () {
+        var newUrl = '@Url.Content("~/RuiJiInternal/ArticleCategory/New")';
+        $.ajax({
+            url: newUrl,
+            type: "POST",
+            success: function (response) {
+                $("#CategoryEditContainer").html(response).dialog({
+                    height: 300,
+                    width: 450,
+                    modal: true
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
+</script>

@@ -1,0 +1,59 @@
+﻿@model RuiJi.Internal.Models.ArticleCategoryItemModel
+
+<div id="CategoryEditView">
+    @Html.HiddenFor(_ => _.ArticleCategoryId)
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>@Html.TextBoxFor(_ => _.Name)</td>
+        </tr>
+        <tr>
+            <td>Parent:</td>
+            <td>
+            @Html.DropDownList("ParentCategoryId", new SelectList(Model.ArticleCategoryList, "ArticleCategoryId", "Description", Model.ParentCategoryId))</td>
+        </tr>
+        <tr>
+            <td>Display_CN:</td>
+            <td>@Html.TextBoxFor(_ => _.CNName)</td>
+        </tr>
+        <tr>
+            <td>Display_EN:</td>
+            <td>@Html.TextBoxFor(_ => _.ENName) </td>
+        </tr>
+    </table>
+    <div style="text-align:center">
+        <input type="button" id="btnSave" class="button" value="Save" />
+        <input type="button" id="btnCancel" class="button" value="Cancel" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#btnSave").click(function () {
+        $(this).attr("disabled", "true");
+        var saveUrl = '@Url.Content("~/RuiJiInternal/ArticleCategory/Save")';
+        var categoryId = $("#ArticleCategoryId").val();
+        var name = $("#Name").val();
+        var cnName = $("#CNName").val();
+        var enName = $("#ENName").val();
+        var parentId = $("#ParentCategoryId").val();
+
+        $.ajax({
+            url: saveUrl,
+            type: "POST",
+            data: {categoryId:categoryId, name: name, parentCategoryId: parentId, cnname: cnName, enname: enName },
+            success: function (response) {
+                if (response.IsSuccess) {
+                    $("#articlecategorymanage").submit();
+                }
+                else {
+                    alert(response.ErrorMessage);
+                }
+            }
+        });
+    });
+
+    $("#btnCancel").click(function () {
+        $("#CategoryEditContainer").dialog("close");
+    });
+   
+</script>

@@ -340,6 +340,7 @@
     <Content Include="Areas\MyTest\Views\Web.config" />
     <Content Include="Areas\MyTest\Views\First\Index.cshtml" />
     <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Index.cshtml" />
+    <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\RuiJi.UI.ReleasePublish.pubxml" />
     <None Include="Properties\PublishProfiles\UITony.pubxml" />
     <Content Include="Images\accent.png" />
