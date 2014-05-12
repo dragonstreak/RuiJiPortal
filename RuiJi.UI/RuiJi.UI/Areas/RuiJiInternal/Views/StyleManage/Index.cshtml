@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Site Style manage";
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+
+@model RuiJi.Internal.Models.StyleItemModel
+
+<form id="StyleManageForm" method="post">
+<div>
+    <input type="button" id="EditStyle1" value="Edit Style 1" class="button" />
+    <input type="button" id="EditStyle2" value="Edit Style 2" class="button" />
+</div>
+<div>
+    <input type="button" id="ApplyStyle1" value="Apply Style 1" class="button" />
+    <input type="button" id="ApplyStyle2" value="Apply Style 2" class="button" />
+</div>
+<div id="editContainer">
+    @if (Model.EditFileId > 0)
+    {
+        @Html.TextAreaFor(_ => _.StyleDetail, new {rows="100", style="width :800px; height:600px" });
+        <div>
+        <input type="button" id="SaveStyle" value="Save" class="button" />
+        </div>
+    }
+
+</div>
+
+<div>
+    @Html.HiddenFor( _ => _.EditFileId)
+    @Html.HiddenFor( _ => _.ApplyFileId)
+</div>
+</form>
+
+<script type="text/javascript">
+    function StyleManager() {
+    }
+
+    StyleManager.prototype = {
+        EditFile: function (fileId) {
+            $("#EditFileId").val(fileId);
+            $("#StyleManageForm").attr("action", "@Url.Content("~/RuiJiInternal/StyleManage/Edit")");
+            $("#StyleManageForm").submit();
+        },
+
+        ApplyFile: function (fileId) {
+            var applyUrl = '@Url.Content("~/RuiJiInternal/StyleManage/Apply")';
+
+            $.ajax({
+                url: applyUrl,
+                type: "POST",
+                data: { ApplyFileId: fileId},
+                success: function (response) {
+                    if (response.IsSuccess) {
+                        alert("Apply Style Success");
+                    }
+                    else {
+                        alert(response.ErrorMessage);
+                    }
+                },
+                error: function (jqXHR, textStatus, throwError) {
+                    alert(throwError);
+                }
+            });
+        },
+
+        SaveFile: function () {
+            
+            var saveUrl = '@Url.Content("~/RuiJiInternal/StyleManage/Save")';
+            var styleDetail = $("#StyleDetail").val();
+            var fileId = $("#EditFileId").val();
+
+            $.ajax({
+                url: saveUrl,
+                type: "POST",
+                data: { EditFileId: fileId, StyleDetail: styleDetail },
+                success: function (response) {
+                    if (response.IsSuccess) {
+                        alert("Save Style Success");
+                    }
+                    else {
+                        alert(response.ErrorMessage);
+                    }
+                },
+                error: function (jqXHR, textStatus, throwError) {
+                    alert(throwError);
+                }
+            });
+
+        }
+    }
+
+    $(document).ready(function () {
+        $("#EditStyle1").click(function () {
+            var mgr = new StyleManager();
+            mgr.EditFile(1);
+        });
+
+        $("#EditStyle2").click(function () {
+            var mgr = new StyleManager();
+            mgr.EditFile(2);
+        });
+
+        $("#ApplyStyle1").click(function () {
+            var mgr = new StyleManager();
+            mgr.ApplyFile(1);
+        });
+
+        $("#ApplyStyle2").click(function () {
+            var mgr = new StyleManager();
+            mgr.ApplyFile(2);
+        });
+
+    });
+
+    $("#SaveStyle").click(function () {
+
+        var mgr = new StyleManager();
+        mgr.SaveFile();
+    });
+
+</script>

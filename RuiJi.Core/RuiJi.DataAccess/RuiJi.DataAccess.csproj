@@ -110,10 +110,12 @@
     <Compile Include="Models\Mapping\ArticleMap.cs" />
     <Compile Include="Models\Mapping\ErrorLogMap.cs" />
     <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\SiteSettingMap.cs" />
     <Compile Include="Models\Mapping\SystemUserMap.cs" />
     <Compile Include="Models\Mapping\UserRole_lnkMap.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RuijiPortalContext.cs" />
+    <Compile Include="Models\SiteSetting.cs" />
     <Compile Include="Models\SystemUser.cs" />
     <Compile Include="Models\SystemUserCustom.cs" />
     <Compile Include="Models\UserRole_lnk.cs" />
@@ -124,6 +126,11 @@
     <Compile Include="ServiceLocatorBase.cs" />
     <Compile Include="ServiceProviderBase.cs" />
     <Compile Include="ServiceProviderBindingAttribute.cs" />
+    <Compile Include="SiteSettings\Data\ISiteSettingMgr.cs" />
+    <Compile Include="SiteSettings\Data\SiteSettingMgr.cs" />
+    <Compile Include="SiteSettings\ISiteSettingSvc.cs" />
+    <Compile Include="SiteSettings\SiteSettingProvider.cs" />
+    <Compile Include="SiteSettings\SiteSettingSvc.cs" />
     <Compile Include="User\Data\IUserMgr.cs" />
     <Compile Include="User\Data\UserMgr.cs" />
     <Compile Include="User\IUserSvc.cs" />

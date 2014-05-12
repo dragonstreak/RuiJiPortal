@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using RuiJi.UI.Common
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,7 +11,7 @@
     <meta name="keywords" content="server,admin" />
     <meta name="description" content="RuiJi" />
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" type="text/css" media="screen, projection" href="@Url.Content("~/sea-modules/assets/ruiji/src/style.css")" />
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="@Url.Content(ConfigManager.GetMainStyleFilePath())" />
     <link rel="stylesheet" type="text/css" media="screen, projection" href="@Url.Content("~/sea-modules/assets/ruiji/src/sdmenu.css")" />
     @RenderSection("headerStyles", required:false)
     @RenderSection("headerScripts", required: false)

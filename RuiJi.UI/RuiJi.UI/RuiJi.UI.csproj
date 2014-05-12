@@ -230,6 +230,7 @@
     <Compile Include="Areas\RuiJiInternal\Controllers\ArticleController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\BaseController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\LoginController.cs" />
+    <Compile Include="Areas\RuiJiInternal\Controllers\StyleManageController.cs" />
     <Compile Include="Areas\RuiJiInternal\Extensions\ArticleCategoryExtension.cs" />
     <Compile Include="Areas\RuiJiInternal\Extensions\ArticleExtension.cs" />
     <Compile Include="Areas\RuiJiInternal\Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -248,6 +249,7 @@
     <Compile Include="Areas\RuiJiInternal\Models\JsonResultBase.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\MenuModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\SimpleDDLItemModel.cs" />
+    <Compile Include="Areas\RuiJiInternal\Models\StyleManage\StyleItemModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Module\RuiJiContextModule.cs" />
     <Compile Include="Areas\RuiJiInternal\RuiJiInternalAreaRegistration.cs" />
     <Compile Include="Areas\RuiJiInternal\Security\SecurityService.cs" />
@@ -341,6 +343,7 @@
     <Content Include="Areas\MyTest\Views\First\Index.cshtml" />
     <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Index.cshtml" />
     <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Edit.cshtml" />
+    <Content Include="Areas\RuiJiInternal\Views\StyleManage\Index.cshtml" />
     <None Include="Properties\PublishProfiles\RuiJi.UI.ReleasePublish.pubxml" />
     <None Include="Properties\PublishProfiles\UITony.pubxml" />
     <Content Include="Images\accent.png" />
@@ -392,6 +395,7 @@
     <Content Include="sea-modules\assets\ruiji\src\sdmenu.css" />
     <Content Include="sea-modules\assets\ruiji\src\sdmenu.js" />
     <Content Include="sea-modules\assets\ruiji\src\style.css" />
+    <Content Include="sea-modules\assets\ruiji\src\style2.css" />
     <Content Include="sea-modules\assets\util\src\util.js" />
     <Content Include="sea-modules\jquery\jquery\1.10.1\jquery-debug.js" />
     <Content Include="sea-modules\jquery\jquery\1.10.1\jquery.js" />

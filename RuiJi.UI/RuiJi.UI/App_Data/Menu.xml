@@ -52,6 +52,20 @@
           <string>SADM</string>
         </PermissionCodes>
       </MenuModel>
+      <MenuModel>
+        <Id>13240</Id>
+        <ParentId>133</ParentId>
+        <Type>0</Type>
+        <Name>Style Manage</Name>
+        <DisplayName>Style Manage</DisplayName>
+        <SortIndex>0</SortIndex>
+        <Url>~/RuiJiInternal/StyleManage</Url>
+        <Target>_self</Target>
+        <Tooltip>Style Manage</Tooltip>
+        <PermissionCodes>
+          <string>SADM</string>
+        </PermissionCodes>
+      </MenuModel>
     </SubMenus>
     <PermissionCodes>
       <string>SADM</string>

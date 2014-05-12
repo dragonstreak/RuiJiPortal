@@ -7,7 +7,7 @@
 {
     string prefix = (NavTreeContext.Activities[0] == act) ? "» " : "> ";
     string linkText = act.Title;
-    string link = Html.ActionLink(linkText, "ItemDetail", new { articleId = act.ArticleId, target = "_blank", title = linkText }).ToHtmlString();
+    string link = Html.ActionLink(linkText, "Detail", new { articleId = act.ArticleId}).ToHtmlString();
 
     sb.Append(prefix).Append(link).Append("   ");
 }

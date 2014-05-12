@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Configuration;
+using RuiJi.DataAccess.SiteSettings;
 
 namespace RuiJi.UI.Common
 {
@@ -21,6 +23,11 @@ namespace RuiJi.UI.Common
             {
                 return GetAppSettings(AppSettingsKey.ForumUrl);
             }
+        }
+
+        public static string GetMainStyleFilePath()
+        {
+            return string.Format("{0}?ver={1}",SiteSettingSvc.Current.MasterCSSFile,SiteSettingSvc.Current.CSSVersion);
         }
     }
 }
