@@ -27,7 +27,7 @@ a.more:hover{ text-decoration:underline;color:#009;}
 
 /*index*/
 #wrap{width:930px;margin:0 auto;}
-.top{height:56px;padding-top:46px;}
+.top{height:56px;padding-top:46px;background:white}
 .top ul{float:right;}
 .top ul li{display:inline;margin-left:5px;}
 .top form{float:right;width:930px;text-align:right;background:url(/Contents/UI/Images/ruiji/tlb.png) right no-repeat;height:25px;text-align:right;display:block;}
@@ -56,8 +56,16 @@ a.more:hover{ text-decoration:underline;color:#009;}
 
 
 /*sec*/
-#bgwrap{width:100%;background:url(/Contents/UI/Images/ruiji/sec_bg.gif) repeat-x ;}
-.sectop{line-height:40px;height:40px;}
+#bgwrap{width:100%;}
+
+.sectop{line-height:40px;height:40px;
+        background:-webkit-linear-gradient(top,#000,#fff);
+    background:-moz-linear-gradient(top,#000,#fff);
+    background:-o-linear-gradient(top,#000,#fff);
+    background:linear-gradient(top,#000,#fff);
+    background:-ms-linear-gradient(top,#000,#fff);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorStr=#000000,endColorStr=#ffffff); 
+}
 .sectop ul{float:left;}
 .sectop ul li{display:inline;margin-right:6px;}
 /*.sectop p {float:right;background:#fff;height:21px;margin-top:8px;}*/
@@ -67,13 +75,13 @@ a.more:hover{ text-decoration:underline;color:#009;}
 /*.sectop .search{;width:168px;border:0;color:#ccc;font-weight:bold;}*/
 .sectop .search{height:18px;line-height:18px;padding:2px 0 2px 8px;display:inline;width:168px;border:0;color:#ccc;font-weight:bold;margin-top:-26px;float:left;}
 .button{border:0;height:20px;width:26px;}
-.secnav{height:122px; left top ;}
-.secnav ul{margin-top:56px;float:left;}
+.secnav{height:42px;}
+.secnav ul{float:left;}
 .secnav li{float:left;line-height:46px;color:#fff;}
 a.secnavoth {background:url(/Contents/UI/Images/ruiji/sec_navimg.gif) no-repeat ;display:block;width:98px;height:46px;color:#fff;font-weight:bold;text-align:center;}
 a:hover.secnavoth {background:url(/Contents/UI/Images/ruiji/sec_navimg1.gif) no-repeat ;color:#000;text-decoration:none;}
 
-a.secnavhr {background:url(/Contents/UI/Images/ruiji/sec_navimg2.gif) no-repeat ;width:102px;display:block;height:46px;color:#fff;font-weight:bold;text-align:center;font-size:14px;}
+a.secnavhr {background:url(/Contents/UI/Images/ruiji/sec_navimg2.gif) no-repeat ;width:103px;display:block;height:46px;color:#fff;font-weight:bold;text-align:center;font-size:14px;}
 a:hover.secnavhr{background:#fff;color:#000;text-decoration:none;font-size:14px;}
 
 .content{width:930px;margin-bottom:15px;height:auto;overflow:auto;}
