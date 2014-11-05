@@ -363,4 +363,7 @@
   <data name="ZiLiangZhongXin" xml:space="preserve">
     <value>质量中心</value>
   </data>
+  <data name="Menu_TrackingService" xml:space="preserve">
+    <value>服务跟踪</value>
+  </data>
 </root>

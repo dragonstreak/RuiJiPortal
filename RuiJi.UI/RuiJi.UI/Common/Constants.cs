@@ -34,6 +34,6 @@ namespace RuiJi.UI.Common
 
     public static class AppSettingsKey
     {
-        public static string ForumUrl = "forum";
+        public static string TrackingServiceUrl = "TrackingService";
     }
 }

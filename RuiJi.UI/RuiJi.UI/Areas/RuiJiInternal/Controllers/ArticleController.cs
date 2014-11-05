@@ -71,7 +71,8 @@ namespace RuiJi.Internal.Controllers
             int articleCategoryId,
             bool ispublished,
             string author,
-            int language)
+            int language,
+            int displayOrder)
         {
             JsonResultBase result = new JsonResultBase();
             string currentUser = "System";
@@ -99,6 +100,7 @@ namespace RuiJi.Internal.Controllers
                 article.IsPublished = ispublished;
                 article.Author = author;
                 article.LanguageType = language;
+                article.DisplayOrder = displayOrder;
                 if (ispublished)
                 {
                     article.PublishDate = DateTime.UtcNow;

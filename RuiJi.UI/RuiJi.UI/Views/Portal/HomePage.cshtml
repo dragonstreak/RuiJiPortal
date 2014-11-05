@@ -8,7 +8,7 @@
 
 <div id="wrap"> 
   <div class="top"> 
-           <img src="@Url.Content("~/Contents/UI/Images/Ruiji/ruijilogo.gif")"  width="161px" height="22" />
+           <img src="@Url.Content("~/Contents/UI/Images/Ruiji/ruijilogo2.gif")"  width="193px" height="53px" />
            @*<span style="font-size:30px; font-weight:900; color:red">Ridgess</span><span style="font-size:30px; font-weight:900;">.com</span>*@
         	@*<h1>TodayChina.com</h1>*@ 
     <ul class="red"> 
@@ -25,7 +25,7 @@
             <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.TechResource })" style=" background-image:none;">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.TechResource)</a></li><li>|</li>
             <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.HumanResource })" style=" background-image:none;">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.HumanResource)</a></li><li>|</li>
             <li><a href="@Url.Action("ItemList", new { categoryId = (int)ArticleCategoryEnum.ContactUs })" style=" background-image:none;">@LanguageHelper.GetArticleCategoryUIName((int)ArticleCategoryEnum.ContactUs)</a></li><li>|</li>
-            <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.ForumUrl)" style=" background-image:none;" target="_blank">@Resource.Menu_Forum</a></li>
+            <li><a href="@(RuiJi.UI.Common.ConfigManager.Instance.TrackingServiceUrl)" style=" background-image:none;" target="_blank">@Resource.Menu_TrackingService</a></li>
         </ul> 
         <div class="banner white">
             <img src="/Contents/UI/Images/ruiji/378.jpg" alt="RuiJi" />

@@ -50,6 +50,10 @@
             <input type="radio" id="IsPublished1" name="IsPublished" value="true" @if(Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">Yes</label>
             <input type="radio" id="IsPublished2" name="IsPublished" value="false" @if(! Model.IsPublished){ <text> checked="checked" </text>} /> <label for="IsPublished1">No</label>
         </li>        
+        <li>
+            <label for="DisplayOrder">DisplayOrder</label><br />
+            @Html.TextBoxFor(_ => _.DisplayOrder)
+        </li>
     </ul>
     <div>
     <script id="editor" type="text/plain" style="width:900px;height:450px;"></script>
@@ -93,11 +97,12 @@
                 var author = $j("#Author").val();
                 var ispublish = $j('input:radio[name="IsPublished"]:checked').val();
                 var language = $j("#Language").val();
+                var displayOrder = $j("#DisplayOrder").val();
 
                 $j.ajax({
                     type: "POST",
                     url: SaveUrl,
-                    data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish, language: language},
+                    data: { articleId: articleId, title: title, summary: summary, contentDetail: content, articleCategoryId: category, author: author, ispublished: ispublish, language: language, displayOrder: displayOrder },
                     success: function (response) {
                         if (response.IsSuccess) {
                             if (articleId == 0) {

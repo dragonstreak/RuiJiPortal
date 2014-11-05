@@ -17,11 +17,11 @@ namespace RuiJi.UI.Common
             return WebConfigurationManager.AppSettings[key];
         }
 
-        public string ForumUrl
+        public string TrackingServiceUrl
         {
             get
             {
-                return GetAppSettings(AppSettingsKey.ForumUrl);
+                return GetAppSettings(AppSettingsKey.TrackingServiceUrl);
             }
         }
 

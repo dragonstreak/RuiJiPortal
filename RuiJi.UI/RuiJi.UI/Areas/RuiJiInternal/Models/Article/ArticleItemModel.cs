@@ -35,5 +35,6 @@ namespace RuiJi.Internal.Models
 
         public List<ArticleCategoryItemModel> ArticleCategoryList { get; set; }
         public LanguageType Language { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }

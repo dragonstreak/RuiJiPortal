@@ -37,6 +37,9 @@ namespace RuiJi.DataAccess.Models.Mapping
                 .HasMaxLength(8)
                 .IsRowVersion();
 
+            this.Property(t => t.DisplayOrder)
+                .IsRequired();
+
             // Table & Column Mappings
             this.ToTable("Article");
             this.Property(t => t.ArticleId).HasColumnName("ArticleId");
@@ -54,6 +57,7 @@ namespace RuiJi.DataAccess.Models.Mapping
             this.Property(t => t.InsertBy).HasColumnName("InsertBy");
             this.Property(t => t.TIMESTAMP).HasColumnName("TIMESTAMP");
             this.Property(t => t.LanguageType).HasColumnName("LanguageType");
+            this.Property(t => t.DisplayOrder).HasColumnName("DisplayOrder");
         }
     }
 }

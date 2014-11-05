@@ -42,6 +42,7 @@ namespace RuiJi.Internal.Extensions
                 UpdateBy = dbModel.UpdateBy,
                 UpdateDate = dbModel.UpdateDate,
                 Language = (LanguageType)dbModel.LanguageType.Value,
+                DisplayOrder = dbModel.DisplayOrder,
                 ArticleCategoryName = _articleCategoryCacheSvc.LoadAllArticleCategory().First( _ => _.ArticleCategoryId == dbModel.ArticleCategoryId).Description
             };
         }

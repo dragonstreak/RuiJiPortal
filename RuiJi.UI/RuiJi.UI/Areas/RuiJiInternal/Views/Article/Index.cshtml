@@ -45,12 +45,13 @@
     {
         <table class="table" width="100%">
             <tr>
-                <th>Article Category</th>
+                <th width ="120px">Article Category</th>
                 <th>Title</th>
-                <th>Author</th>
-                <th>Language</th>
-                <th>IsPublished</th>
-                <th>Edit</th>
+                <th width ="120px">Author</th>
+                <th width ="60px"}>Language</th>
+                <th width ="70px">IsPublished</th>
+                <th width ="80px">DisplayOrder</th>
+                <th width ="50px">Edit</th>
             </tr>
             @if (Model.ArticleList.Count > 0)
             {
@@ -71,6 +72,7 @@
                                 <span>No</span>
                             }
                         </td>
+                        <td>@article.DisplayOrder</td>
                         <td><a href="@Url.Content("~/RuiJiInternal/Article/EditArticle?articleid="+ article.ArticleId.ToString())" class="articleeditlink" articleid="@article.ArticleId">Edit</a> </td>
                     </tr>
                 }

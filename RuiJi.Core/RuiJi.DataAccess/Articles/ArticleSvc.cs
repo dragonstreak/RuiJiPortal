@@ -73,7 +73,7 @@ namespace RuiJi.DataAccess.Articles
                 result.RemoveAll(_ => !_.LanguageType.HasValue || _.LanguageType != (int)language);
             }
 
-            return result.OrderByDescending(_ => _.PublishDate).ToList();
+            return result.OrderBy(_ => _.DisplayOrder).ThenByDescending(_ => _.PublishDate).ToList();
 
         }
 
@@ -96,7 +96,7 @@ namespace RuiJi.DataAccess.Articles
                                && (!published.HasValue || published.Value == a.IsPublished)
                          select a;
 
-            return result.OrderByDescending(_ => _.InsertDate).ToList();
+            return result.OrderBy(_ => _.DisplayOrder).ThenByDescending(_ => _.InsertDate).ToList();
         }
 
     }

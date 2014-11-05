@@ -22,5 +22,6 @@ namespace RuiJi.DataAccess.Models
 		[Timestamp]
         public byte[] TIMESTAMP { get; set; }
         public Nullable<int> LanguageType { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }
