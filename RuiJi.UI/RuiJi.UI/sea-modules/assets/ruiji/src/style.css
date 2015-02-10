@@ -3,6 +3,16 @@
 *{margin: 0;padding: 0;}
 html{width:100%;}
 body{font-size:12px;font-family:"宋体", "Arial";line-height:21px;color:#000;}
+body
+{
+    background:-webkit-linear-gradient(top,#ECF5FF,#0072E3);
+    background:-moz-linear-gradient(top,#ECF5FF,#0072E3);
+    background:-o-linear-gradient(top,#ECF5FF,#0072E3);
+    background:linear-gradient(top,#ECF5FF,#0072E3);
+    background:-ms-linear-gradient(top,#ECF5FF,#0072E3);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorStr=#ECF5FF,endColorStr=#0072E3); 
+    min-height:1024px;
+}
 /* h1{width:211px;height:23px;float:left;display:inline;background:url(/Contents/UI/Images/ruiji/logo.gif) no-repeat;text-indent:-9999px;} */
 ul,li{list-style-type:none;margin:0;padding:0;}
 img{border: 0;}
@@ -26,14 +36,14 @@ a.more:hover{ text-decoration:underline;color:#009;}
 .borderbot{border-bottom:1px solid #C6C8C9;}
 
 /*index*/
-#wrap{width:930px;margin:0 auto;}
+#wrap{width:930px;margin:0 auto; background-color:white;}
 .top{height:56px;padding-top:46px;background:white}
 .top ul{float:right;}
 .top ul li{display:inline;margin-left:5px;}
 .top form{float:right;width:930px;text-align:right;background:url(/Contents/UI/Images/ruiji/tlb.png) right no-repeat;height:25px;text-align:right;display:block;}
 .top form .btn{width:25px;height:25px;float:right;}
 .top .search{height:18px;line-height:18px;padding:4px 0 0 8px;width:168px;border:0;color:#ccc;font-weight:bold;margin-top:1px;float:right;}
-.nav{font-size:14px;margin-bottom:48px;text-align: center;padding-left:  20px;}
+.nav{font-size:14px; height:48px; background-color:white; text-align: center;padding-left:  20px;}
 .nav li{float:left;line-height:35px;color:#E0E0E0;}
 .nav li a{background:url(../images/nav_ico.gif) no-repeat 72px 16px;display:block;width:72px;height:35px;padding:0 8px 0 12px;color:#666;font-weight:bold;}
 .nav li a:hover{background:url(../images/nav_ico1.gif) #000 no-repeat 72px 16px;color:#fff;text-decoration:none;}
@@ -41,7 +51,14 @@ a.more:hover{ text-decoration:underline;color:#009;}
 .banner p{width:386px;float:right;margin:83px 45px 0 0;display:inline;}
 .banner p img{margin:15px 0 0 281px;display:block;}
 .tabde{background:url(/Contents/UI/Images/ruiji/tab_bg.gif) repeat-x #e1e1e1; padding:10px;}
-.news{height:130px;overflow:hidden;background:url(/Contents/UI/Images/ruiji/news_bg.gif) ;padding-top:7px;}
+.news{overflow:hidden;
+      background:-webkit-linear-gradient(top,#ADADAD,#d0d0d0);
+    background:-moz-linear-gradient(top,#ADADAD,#d0d0d0);
+    background:-o-linear-gradient(top,#ADADAD,#d0d0d0);
+    background:linear-gradient(top,#ADADAD,#d0d0d0);
+    background:-ms-linear-gradient(top,#ADADAD,#d0d0d0);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0,startColorStr=#ECF5FF,endColorStr=#0072E3); 
+      padding-top:7px;}
 .news ul{width:155px;margin-left:25px;background:url(/Contents/UI/Images/ruiji/news_line.gif) no-repeat right center ;float:left;}
 .news ul li{display:list-item;}
 .news ul li strong{font-size:14px;line-height:40px;}
