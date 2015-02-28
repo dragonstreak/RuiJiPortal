@@ -230,6 +230,7 @@
     <Compile Include="Areas\RuiJiInternal\Controllers\ArticleController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\BaseController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\LoginController.cs" />
+    <Compile Include="Areas\RuiJiInternal\Controllers\PictureController.cs" />
     <Compile Include="Areas\RuiJiInternal\Controllers\StyleManageController.cs" />
     <Compile Include="Areas\RuiJiInternal\Extensions\ArticleCategoryExtension.cs" />
     <Compile Include="Areas\RuiJiInternal\Extensions\ArticleExtension.cs" />
@@ -248,6 +249,7 @@
     <Compile Include="Areas\RuiJiInternal\Models\BaseModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\JsonResultBase.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\MenuModel.cs" />
+    <Compile Include="Areas\RuiJiInternal\Models\Picture\PictureListModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\SimpleDDLItemModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Models\StyleManage\StyleItemModel.cs" />
     <Compile Include="Areas\RuiJiInternal\Module\RuiJiContextModule.cs" />
@@ -344,6 +346,7 @@
     <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Index.cshtml" />
     <Content Include="Areas\RuiJiInternal\Views\ArticleCategory\Edit.cshtml" />
     <Content Include="Areas\RuiJiInternal\Views\StyleManage\Index.cshtml" />
+    <Content Include="Areas\RuiJiInternal\Views\Picture\Index.cshtml" />
     <None Include="Properties\PublishProfiles\RuiJi.UI.ReleasePublish.pubxml" />
     <None Include="Properties\PublishProfiles\UITony.pubxml" />
     <Content Include="Images\accent.png" />

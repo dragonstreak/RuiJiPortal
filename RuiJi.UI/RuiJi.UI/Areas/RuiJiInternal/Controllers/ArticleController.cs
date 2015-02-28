@@ -46,7 +46,7 @@ namespace RuiJi.Internal.Controllers
             model.SetMenu("SiteManagement", "ArticleManager");
             return View(model);
         }
-        
+
         public ActionResult EditArticle(int? articleId)
         {
             ArticleItemModel article;
@@ -61,6 +61,30 @@ namespace RuiJi.Internal.Controllers
 
             article.SetMenu("SiteManagement", "ArticleEdit");
             return View("Edit2", article);
+        }
+
+        public ActionResult DeleteArticle(int? articleId)
+        {
+            JsonResultBase result = new JsonResultBase();
+            try
+            {
+
+                string currentUser = "System";
+                if (RuiJiContext.Current != null)
+                {
+                    currentUser = RuiJiContext.Current.UserName;
+                }
+
+                ArticleSvc.Delete(articleId.Value, currentUser);
+
+                result.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                result.IsSuccess = false;
+                result.ErrorMessage = ex.Message;
+            }
+            return Json(result);
         }
 
         [ValidateInput(false)]

@@ -52,6 +52,7 @@
                 <th width ="70px">IsPublished</th>
                 <th width ="80px">DisplayOrder</th>
                 <th width ="50px">Edit</th>
+                <th width ="50px">Delete</th>
             </tr>
             @if (Model.ArticleList.Count > 0)
             {
@@ -74,6 +75,7 @@
                         </td>
                         <td>@article.DisplayOrder</td>
                         <td><a href="@Url.Content("~/RuiJiInternal/Article/EditArticle?articleid="+ article.ArticleId.ToString())" class="articleeditlink" articleid="@article.ArticleId">Edit</a> </td>
+                        <td><a href="#" class="articleDelete" ArticleId="@article.ArticleId" >Delete</a> </td>
                     </tr>
                 }
             }
@@ -87,6 +89,7 @@
 <script type="text/javascript">
     _ruiji.internal.Article = {};
     _ruiji.internal.Article.EditUrl = '@Url.Content("~/RuiJiInternal/Article/EditArticle")';
+    _ruiji.internal.Article.DeleteUrl = '@Url.Content("~/RuiJiInternal/Article/DeleteArticle")';
 
     $j("#btnCreate").click(function () {
         $j("#ArticleEditContainer").empty();
@@ -107,4 +110,24 @@
         });
     });
 
+    $j(".articleDelete").click(function () {
+        var useconfirm = confirm("Are you sure to delete this Article?");
+        if (!useconfirm) {
+            return false;
+            event.preventDefault();
+        }
+
+        var artId = $j(this).attr("ArticleId");
+        $j.ajax({
+            type: "Post",
+            url: _ruiji.internal.Article.DeleteUrl,
+            data: {ArticleId: artId},
+            success: function (response) {
+                $j("#btnSearch").click();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        });
+    });
 </script>

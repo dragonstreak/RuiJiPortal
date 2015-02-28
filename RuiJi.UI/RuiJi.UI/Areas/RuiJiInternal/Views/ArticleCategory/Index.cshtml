@@ -12,20 +12,22 @@
             <tr>
                 <th>Code</th>
                 <th>Parent</th>
-                <th>IsShowOnHomePage</th>
                 <th>Chinese</th>
                 <th>English</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>IsShowOnHomePage</th>
+                <th>DisplayOrder</th>
+                <th width="50px">Edit</th>
+                <th width="50px">Delete</th>
             </tr>
 @foreach (var item in Model.ArticleCategoryList)
 {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.ParentCategoryName</td>
-                <td>@item.IsShowOnHomePage.ToString()</td>
                 <td>@item.CNName</td>
                 <td>@item.ENName</td>
+                <td>@item.IsShowOnHomePage.ToString()</td>
+                <td>@item.HomePageDisplayOrder</td>
                 <td>@if(item.Editable){ <a href="#" categoryid="@item.ArticleCategoryId" class="category_edit">Edit</a>}</td>
                 <td>@if(item.Editable){ <a href="#" categoryid="@item.ArticleCategoryId" class="category_delete">Delete</a>}</td>
             </tr>
@@ -61,6 +63,7 @@
         var useconfirm = confirm("Are you sure to delete this Category?");
         if (!useconfirm) {
             return false;
+            event.preventDefault();
         }
         var categoryid = $(this).attr("categoryid");
         var deleteUrl = '@Url.Content("~/RuiJiInternal/ArticleCategory/Delete")';

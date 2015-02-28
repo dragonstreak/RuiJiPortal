@@ -13,6 +13,42 @@ if (typeof (_ruiji.internal.master) == "undefined")
 if (typeof (_ruiji.ModalBox) == "undefined")
     _ruiji.ModalBox = {};
 
+function strobj(o) {
+    var temp = '';
+    var t, a = [];
+    for (var i in o) {
+        try {
+            if (typeof (o[i]) == "function") {
+                t = '""' + i + '""' + ':' + 'function(){<em>[native code]</em>}' + '';
+            }
+            else if (Object.prototype.toString.call(o[i]) === '[object Array]') //数组
+            {
+                var p, b = [];
+                for (var j in o[i]) {
+                    if (isNaN(o[i][j])) { p = '"' + o[i][j] + '"'; } else { p = '' + o[i][j] + ''; }
+                    b.push(p);
+                }
+                t = '""' + i + '""' + ':[' + b.join(',') + ']';
+            }
+            else {
+                if (typeof (o[i]) == 'object') //对象,其他
+                {
+                    t = '""' + i + '""' + ':' + strobj(o[i]) + '';
+                }
+                else {
+                    if (isNaN(o[i])) { t = '""' + i + '""' + ':"' + o[i] + '"'; } else { t = '""' + i + '""' + ':' + o[i] + ''; }
+                }
+            }
+            a.push(t); t = '';
+        }
+        catch (e) {
+            alert(e.message);
+        }
+    }
+    temp = "{" + a.join(', ') + "}";
+    return temp;
+}
+
 _ruiji.internal.master.escapeHtml = function (html) {
     var findReplace = [[/&/g, "&amp;"], [/</g, "&lt;"], [/>/g, "&gt;"], [/"/g, "&quot;"]];
     for (var item in findReplace)

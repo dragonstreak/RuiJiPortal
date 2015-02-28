@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Picture manage";
+    Layout = "~/Areas/RuiJiInternal/Views/Shared/_Master.cshtml";
+}
+@model RuiJi.Internal.Models.PictureListModel
+
+<form id="homepagepicform" method="post" action="@Url.Content("~/RuiJiInternal/Picture/HomePage")" enctype="multipart/form-data">
+<ul style="list-style:none">
+    <li>Home Page Picture</li>
+    <li>Current: <img src="@Url.Content("~/Contents/UI/Images/Ruiji/378.jpg")" style="width:279px; height:82px"/></li>
+    <li>Replace with: <input type="file" id="homepagepic" name="homepagepic" accept="image/*" /> <input type="submit" name="Upload" value="Upload" /> </li>
+</ul>
+</form>

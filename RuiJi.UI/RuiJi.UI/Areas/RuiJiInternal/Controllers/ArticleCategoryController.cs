@@ -52,15 +52,15 @@ namespace RuiJi.Internal.Controllers
             return View("Edit",model);
         }
 
-        public JsonResult Save(int categoryId, string name, string cnname, string enname, int? parentCategoryId)
+        public JsonResult Save(int articleCategoryId, string name, string cnname, string enname, int? parentCategoryId, bool isShowOnHomePage, int? homePageDisplayOrder)
         {
             JsonResultBase result = new JsonResultBase();
             try
             {
                 ArticleCategory category;
-                if (categoryId > 0)
+                if (articleCategoryId > 0)
                 {
-                    category = ArticleCategoryCacheSvc.LoadAllArticleCategory().FirstOrDefault(_ => _.ArticleCategoryId == categoryId);
+                    category = ArticleCategoryCacheSvc.LoadAllArticleCategory().FirstOrDefault(_ => _.ArticleCategoryId == articleCategoryId);
                 }
                 else
                 {
@@ -80,6 +80,13 @@ namespace RuiJi.Internal.Controllers
                     category.ParentCategoryId = parentCategoryId;
                 }
                 category.Description = category.CNName;
+                category.IsShowOnHomePage = isShowOnHomePage;
+                if (homePageDisplayOrder.HasValue)
+                {
+                    category.HomePageDisplayOrder = homePageDisplayOrder.Value;
+                }
+                category.UIResourceKey = name;      
+
                 if (category.ArticleCategoryId > 0)
                 {
                     category.UpdateBy = currentUser;
@@ -90,8 +97,7 @@ namespace RuiJi.Internal.Controllers
                     category.CreateBy = currentUser;
                     ArticleCategorySvc.Add(category);
                 }
-                category.IsShowOnHomePage = false;
-                category.UIResourceKey = name;               
+                         
                 ArticleCategoryCacheSvc.Refresh();
                 NavTreeContext.Refresh();
                 result.IsSuccess = true;

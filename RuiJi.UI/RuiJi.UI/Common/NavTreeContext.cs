@@ -25,6 +25,7 @@ namespace RuiJi.UI.Common
         public static void Refresh()
         {
             NavTree = LoadTree();
+            _homePageShown = null;
         }
 
         public static List<NavTreeNodeModel> Path(int articleCategoryId)
@@ -169,7 +170,7 @@ namespace RuiJi.UI.Common
         {
             var svc = RuiJiPortalServiceLocator.Instance.GetSvc<IArticleCategorySvc>();
 
-            List<ArticleCategory> childCategories = svc.LoadByParentId(category.ArticleCategoryId);
+            List<ArticleCategory> childCategories = svc.LoadByParentId(category.ArticleCategoryId).OrderBy(_ => _.HomePageDisplayOrder).ToList();
 
             if (isShownOnHomePage.HasValue)
             {

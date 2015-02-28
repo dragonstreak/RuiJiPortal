@@ -10,6 +10,6 @@ namespace RuiJi.Internal.Controllers
     [OutputCache(NoStore = true, Location = OutputCacheLocation.None)]
     public class BaseController : Controller
     {
-
+       
     }
 }

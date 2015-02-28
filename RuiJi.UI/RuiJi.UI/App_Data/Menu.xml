@@ -40,7 +40,7 @@
       </MenuModel>
       <MenuModel>
         <Id>13230</Id>
-        <ParentId>133</ParentId>
+        <ParentId>132</ParentId>
         <Type>0</Type>
         <Name>CategoryManage</Name>
         <DisplayName>Category Manage</DisplayName>
@@ -53,8 +53,22 @@
         </PermissionCodes>
       </MenuModel>
       <MenuModel>
+        <Id>13235</Id>
+        <ParentId>132</ParentId>
+        <Type>0</Type>
+        <Name>PictureManage</Name>
+        <DisplayName>Picture Manage</DisplayName>
+        <SortIndex>0</SortIndex>
+        <Url>~/RuiJiInternal/Picture</Url>
+        <Target>_self</Target>
+        <Tooltip>Picture Manage</Tooltip>
+        <PermissionCodes>
+          <string>SADM</string>
+        </PermissionCodes>
+      </MenuModel>
+      <MenuModel>
         <Id>13240</Id>
-        <ParentId>133</ParentId>
+        <ParentId>132</ParentId>
         <Type>0</Type>
         <Name>Style Manage</Name>
         <DisplayName>Style Manage</DisplayName>

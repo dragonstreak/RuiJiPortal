@@ -1,5 +1,6 @@
 ﻿@model RuiJi.Internal.Models.ArticleCategoryItemModel
 
+<form id="CategoryEditForm">
 <div id="CategoryEditView">
     @Html.HiddenFor(_ => _.ArticleCategoryId)
     <table>
@@ -20,12 +21,24 @@
             <td>Display_EN:</td>
             <td>@Html.TextBoxFor(_ => _.ENName) </td>
         </tr>
+        <tr>
+            <td>Show On HomePage:</td>
+            <td>
+            <input type="radio" id="IsShowOnHomePage1" name="IsShowOnHomePage" value="true" @if(Model.IsShowOnHomePage){ <text> checked="checked" </text>} /> <label for="IsShowOnHomePage1">Yes</label>
+            <input type="radio" id="IsShowOnHomePage2" name="IsShowOnHomePage" value="false" @if (!Model.IsShowOnHomePage){ <text> checked="checked" </text>} /> <label for="IsShowOnHomePage2">No</label>
+            </td>
+        </tr>
+        <tr>
+            <td>HomePage DisplayOrder:</td>
+            <td>@Html.TextBoxFor(_ => _.HomePageDisplayOrder)</td>
+        </tr>
     </table>
     <div style="text-align:center">
         <input type="button" id="btnSave" class="button" value="Save" />
         <input type="button" id="btnCancel" class="button" value="Cancel" />
     </div>
 </div>
+</form>
 
 <script type="text/javascript">
     $("#btnSave").click(function () {
@@ -36,11 +49,14 @@
         var cnName = $("#CNName").val();
         var enName = $("#ENName").val();
         var parentId = $("#ParentCategoryId").val();
+        
+        var data = $('#CategoryEditForm').serialize();
 
+        //alert(strobj(data));
         $.ajax({
             url: saveUrl,
             type: "POST",
-            data: {categoryId:categoryId, name: name, parentCategoryId: parentId, cnname: cnName, enname: enName },
+            data: data,
             success: function (response) {
                 if (response.IsSuccess) {
                     $("#articlecategorymanage").submit();
