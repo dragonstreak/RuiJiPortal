@@ -71,10 +71,12 @@
         
         </div> 
     <section class="activities-section-wrapper">
+        <div>
         <h2 class="white">
             <strong>@Resource.Activities_Title</strong>
-            @Html.Partial("_Activities")
-    	</h2> 
+            <marquee style="position:relative; top:-35px; left:80px; width:835px" direction="left" onMouseOut="this.start()" onMouseOver="this.stop()" >  @Html.Partial("_Activities") </marquee>
+    	</h2>
+        </div> 
     </section>
     	
 
@@ -87,7 +89,7 @@
         <div class="footer"> 
 
 
-        	<p>版权所有 © 上海瑞玑计算机科技有限公司 未经许可 严禁复制 <br>沪ICP备11034101号</p>        </div> 
+        	<p>版权所有 © 上海瑞玑计算机科技有限公司 <br>沪ICP备11034101号</p>        </div> 
 </div>
 
 
